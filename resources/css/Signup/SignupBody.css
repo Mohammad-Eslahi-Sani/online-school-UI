@@ -1,0 +1,7 @@
+.SignupBody{
+	position: fixed;
+	overflow-y: auto;
+	width: 100%;
+	top: 4em;
+	bottom: 4em;
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "roya";
+    font-weight: 300;
+    src: local("☺"), url("../../fonts/WebRoya/WebRoya.woff") format("woff"), url("../../fonts/WebRoya/WebRoya.ttf") format("truetype"), url("../../fonts/WebRoya/WebRoya.svg#webfont3bltmsAc") format("svg");
+}
+body {
+    font-family: roya;
+    direction: rtl;
+}

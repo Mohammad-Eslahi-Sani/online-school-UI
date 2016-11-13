@@ -3,6 +3,12 @@
 	background-color: #F57C00;
 }
 
+.orange-yellow-theme .dark-secondary-color{
+	/* dark background */
+	background-color: #ff8c3b;
+}
+
+
 .orange-yellow-theme .primary-color{
 	/* ordinary background */
 	background-color: #FF9800;
