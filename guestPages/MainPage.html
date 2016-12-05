@@ -1,26 +1,52 @@
+<!-- header and footer must not be modified from here -->
+<!-- Begin guest header -->
 <!DOCTYPE html>
 <html class="GuestPage orange-yellow-theme">
 <head>
-        <!-- js libraries:  -->
-    <script type="text/javascript" src="libs/js/jquery-2.2.0.min.js"></script>
-    <script type="text/javascript" src="libs/js/jquery.cookie.js"></script>
+
+    <!-- ################################################################################ -->
+    <!-- ########## Begin Origin includes  -->
+
+	<!-- js libraries:  -->
+	<script type="text/javascript" src="../libs/js/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="../libs/js/jquery.cookie.js"></script>
+
+	<!--   js classes  -->
+	<script type="text/javascript" src="../resources/js/OriginPage/RedirectManager.js"></script>
+	<script type="text/javascript" src="../resources/js/OriginPage/UiLogicInterface.js"></script>
+	<script type="text/javascript" src="../resources/js/OriginPage/UiInterface.js"></script>
+
+	<!-- css libraries   -->
+	<link href="../libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- css styles    -->
+	<link href="../resources/css/OriginPage/announceMessageDiv.css" rel="stylesheet" type="text/css" />
+	<link href="../resources/css/OriginPage/font.css" rel="stylesheet" type="text/css" />
+	<link href="../resources/css/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+
+
+
+	<!-- ##### End of Origin includes -->
+    <!-- ################################################################################ -->
+    
+    <!-- ################################################################################ -->
+    <!-- ########## Begin Guest Page includes  -->
+
+    <!-- js libraries:  -->
 
     <!--   js classes  -->
-    <script type="text/javascript" src="resources/js/OriginPage/RedirectManager.js"></script>
-    <script type="text/javascript" src="resources/js/OriginPage/UiLogicInterface.js"></script>
 
     <!-- css libraries   -->
-    <link href="libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- css styles    -->
-    <link href="resources/css/GuestPage/footer.css" rel="stylesheet" type="text/css" />
-    <link href="resources/css/GuestPage/header.css" rel="stylesheet" type="text/css" />
-    <link href="resources/css/GuestPage/GuestPage.css" rel="stylesheet" type="text/css" />
-    <link href="resources/css/OriginPage/announceMessageDiv.css" rel="stylesheet" type="text/css" />
-    <link href="resources/css/OriginPage/font.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/css/GuestPage/footer.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/css/GuestPage/header.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/css/GuestPage/GuestPage.css" rel="stylesheet" type="text/css" />
+    
+    <!-- ##### End of Guest Page includes -->
+    <!-- ################################################################################ -->
     
 
-    <link href="resources/css/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
 
 </head>
 <header class="primary-color container-fluid">
@@ -50,21 +76,27 @@
 	</div>
 </header>
 <script type="text/javascript">
-    $(document).ready(function(){
-        
-        $('.login-button-div .login-button').on('click',function(){
-            var redirectObj = new RedirectManager();
-            redirectObj.redirectTo('Login');
-        });
+    var UiInterfaceObj = new UiInterface();
+    function loginListener(){
+        UiInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'login'});
+        UiInterfaceObj.redirect();
+    }
+    function signupListener(){
+        UiInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'signup'});
+        UiInterfaceObj.redirect();
+    }
 
-        $('.register-button-div .signup-button').on('click',function(){
-            var redirectObj = new RedirectManager();
-            redirectObj.redirectTo('Signup');
-        });
+    $(document).ready(function(){
+        $('.login-button-div .login-button').on('click',loginListener);
+
+        $('.register-button-div .signup-button').on('click',signupListener);
     });
 </script>
-    <link href="resources/css/MainPage/MainPageBody.css" rel="stylesheet" type="text/css" />
-    <link href="resources/css/MainPage/courseDiv.css" rel="stylesheet" type="text/css" />
+
+<!-- End of guest header -->
+
+<link href="../resources/css/MainPage/MainPageBody.css" rel="stylesheet" type="text/css" />
+<link href="../resources/css/MainPage/courseDiv.css" rel="stylesheet" type="text/css" />
 
 <body class="light-primary-color">
 	<div class="container-fluid MainPageBody">
@@ -166,19 +198,23 @@
 
 </body>
 <script type="text/javascript">
+    function searchListener(){
+        	UiInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
+            UiInterfaceObj.search();
+    }
     $(document).ready(function(){
         
-        $('.search-column .search-button').on('click',function(){
-            alert('با عرض پوزش، قابلیت جستجو در حال توسعه می باشد.');
-        });
+        $('.search-column .search-button').on('click',searchListener);
 
     });
 </script>
-<footer class="primary-color">
-	<div class="contact-div">
-		<h3 class="contact-div-text secondary-text"> 
-		نسخه آزمایشی
-		</h3>
-	</div>
-</footer>
-</html>
+<!-- Begin Guest Footer -->
+    <footer class="primary-color">
+        <div class="contact-div">
+            <h3 class="contact-div-text secondary-text"> 
+            نسخه آزمایشی
+            </h3>
+        </div>
+    </footer>
+    </html>
+<!-- End of Guest Footer -->

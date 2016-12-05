@@ -12,21 +12,27 @@ function RedirectManager(){
 RedirectManager.prototype.redirectTo = function(destUrl){
 	switch(destUrl){
 		case 'StudentMainPage':
+		case 'studentMainPage':
 			destUrl = this.studentMainPageUrl;
 			break;
 		case 'TeacherMainPage':
+		case 'theacherMainPage':
 			destUrl = this.teacherMainPageUrl;
 			break;
 		case 'Login':
+		case 'login':
 			destUrl = this.loginUrl;
 			break;
 		case 'Signup':
+		case 'signup':
 			destUrl = this.signupUrl;
 			break;
 		case 'StudentCoursePage':
+		case 'studentCoursePage':
 			destUrl = this.studentCoursePageUrl;
 			break;
 		case 'TeacherCoursePage':
+		case 'teacherCoursePage':
 			destUrl = this.teacherCoursePageUrl;
 			break;
 		default:
@@ -42,8 +48,8 @@ RedirectManager.prototype.redirectTo = function(destUrl){
 		}
 	}
 	window.location.href = destUrl;
-}
+};
 
 RedirectManager.prototype.setParametersList = function(parametersList){
 	this.parametersList = parametersList;
-}
+};

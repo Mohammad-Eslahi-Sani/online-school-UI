@@ -1,11 +1,11 @@
 function UiLogicInterface(){
 	this.urlDict = {
-		login : 'http://172.17.8.64:8080/online-school/j_spring_security_check',
-		signup: 'http://172.17.8.64:8080/online-school/signup',
-		createCourse: 'http://172.17.8.64:8080/online-school/course/create',
-		readCourse: 'http://172.17.8.64:8080/online-school/course/read'
-	}
-	this.successFunction;
+		login : 'http://172.18.242.188:8080/online-school/j_spring_security_check',
+		signup: 'http://172.18.242.188:8080/online-school/signup',
+		createCourse: 'http://172.18.242.188:8080/online-school/course/create',
+		readCourse: 'http://172.18.242.188/online-school/course/read'
+	};
+	//this.successFunction;
 }
 
 UiLogicInterface.prototype.doRequest = function(request,sFunc){
@@ -23,16 +23,32 @@ UiLogicInterface.prototype.doRequest = function(request,sFunc){
 	}
 	
 	alert('ajax is starting');
-	console.log(JSON.stringify(requestObj));
-	console.log(requestUrl);
-	var x = "{\""+request[1][0]+"\":\""+request[1][1]+"hmkcode\",\"id\":2}"
+	console.log(requestObj);
+	requestObj = JSON.stringify(requestObj);
+	test = JSON.stringify({ username: "Gerry", role: "20", password: "Sydney" });
+	console.log(requestObj);
+	console.log(test);
+
+/*$.ajax({
+  type: "POST",
+  url: "http://172.18.242.188:8080/online-school/signup",
+  data: requestObj,
+  contentType: 'application/json',
+  success: function(data) {
+    if(data.status == 'OK') alert('Person has been added');
+    else alert('Failed adding person: ' + data.status + ', ' + data.errorMessage);
+  }
+});*/
+
+	// console.log(requestUrl);
+	// var x = "{\""+request[1][0]+"\":\""+request[1][1]+"hmkcode\",\"id\":2}"
 	$.ajax({
 		url: requestUrl,
 		dataType   : 'json',
     	contentType: 'application/json',
     	mimeType: 'application/json',
 		type: 'POST',
-		data: x,
+		data: requestObj,
 
 		success: function(r){
 			r = JSON.parse(r);
@@ -44,9 +60,9 @@ UiLogicInterface.prototype.doRequest = function(request,sFunc){
 			alert(e);
 		}
 			})
-}
+};
 
 UiLogicInterface.prototype.getResponse = function(response){
 	alert(response);
 	this.successFunction(response);
-}
+};
