@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="UserPage orange-yellow-theme">
+<head>
+
+    <!-- ################################################################################ -->
+    <!-- ########## Begin Origin includes  -->
+
+    <!-- js libraries:  -->
+    <script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+
+    <script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+
+    <!--   js classes  -->
+    <script type="text/javascript" src="/ControllerLayer/RedirectManager/RedirectManager.js"></script>
+    <script type="text/javascript" src="/ControllerLayerInterface/ControllerLayerInterface.js"></script>
+
+    <!-- css libraries   -->
+    <link href="/UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- css styles    -->
+    <link href="/UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+    <link href="/UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+
+
+
+    <!-- ##### End of Origin includes -->
+    <!-- ################################################################################ -->
+
+    <!-- ################################################################################ -->
+    <!-- ########## Begin User Page includes  -->
+
+    <!-- js libraries:  -->
+
+    <!--   js classes  -->
+
+    <!-- css libraries   -->
+
+    <!-- css styles    -->
+    <link href="/UiLayer/UserPage/style/UserPage.css" rel="stylesheet" type="text/css" />
+    <link href="/UiLayer/UserHeader/style/header.css" rel="stylesheet" type="text/css" />
+
+    <!-- ##### End of User Page includes -->
+    <!-- ################################################################################ -->
+
+</head>
+<header class="primary-color container-fluid">
+        <div class="row">
+            <div class="col-md-1 exit-col">
+                <button class="exit-button">
+                    خروج
+                </button>
+            </div>
+            <div class="col-md-1 username-col">
+                <span>
+                    معلم / دانش آموز
+                </span>
+            </div>
+            <div class="col-md-1 userType-col">
+                
+                <span>
+                    مهدی اصلاحی ثانی
+                </span>
+            </div>
+
+            <div class="col-md-5"></div>
+            <div class="col-md-4 project-name-div">
+                <h3>
+                    مدرسه آنلاین
+                </h3>
+            </div>
+    
+        </div>
+    
+	<div class="announce-message-div">
+		<h3 class="announce-message-text secondary-text"> Announce Message Here! </h3>
+	</div>
+</header>
+<script type="text/javascript">
+    var ControllerInterfaceObj = new ControllerLayerInterface();
+    function exitListener(){
+        //request for exit using ExitAgent
+        ControllerInterfaceObj.setRequestParameters({requestType:'exit'});
+        ControllerInterfaceObj.executeRequest();
+    }
+
+    $(document).ready(function(){
+        $('.exit-col .exit-button').on('click',exitListener);
+    });
+</script>

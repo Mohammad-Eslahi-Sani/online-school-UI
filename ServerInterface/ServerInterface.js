@@ -1,15 +1,14 @@
-function UiLogicInterface(){
+function ServerInterface(){
+	this.serverAddress = 'http://172.18.242.188:8080';
 	this.urlDict = {
-		login : 'http://172.18.242.188:8080/online-school/j_spring_security_check',
-		signup: 'http://172.18.242.188:8080/online-school/signup',
-		createCourse: 'http://172.18.242.188:8080/online-school/course/create',
-		readCourse: 'http://172.18.242.188/online-school/course/read'
+		login : this.serverAddress+'/online-school/j_spring_security_check',
+		signup: this.serverAddress+'/online-school/signup',
+		createCourse: this.serverAddress+'/online-school/course/create',
+		readCourse: this.serverAddress+'/online-school/course/read'
 	};
-	//this.successFunction;
 }
 
-UiLogicInterface.prototype.doRequest = function(request,sFunc){
-	this.successFunction = sFunc;
+ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
 	var requestObj = {};
 	var requestUrl; 
 	for(var i=0 ; i < request.length ; i++){
@@ -25,9 +24,32 @@ UiLogicInterface.prototype.doRequest = function(request,sFunc){
 	alert('ajax is starting');
 	console.log(requestObj);
 	requestObj = JSON.stringify(requestObj);
-	test = JSON.stringify({ username: "Gerry", role: "20", password: "Sydney" });
-	console.log(requestObj);
-	console.log(test);
+    console.log('after making json:');
+    console.log(requestObj);
+    $.ajax({
+        url: requestUrl,
+        dataType   : 'json',
+        contentType: 'application/json',
+        mimeType: 'application/json',
+        type: 'POST',
+        data: requestObj,
+
+        success: function(r){
+            r = JSON.parse(r);
+            sFunc(r);
+        },
+
+        error: function(e){
+            alert('error in ajax:');
+            eFunc(e);
+        }
+    });
+
+
+
+
+    //var test = JSON.stringify({ username: "Gerry", role: "20", password: "Sydney" });
+	//console.log(test);
 
 /*$.ajax({
   type: "POST",
@@ -42,27 +64,4 @@ UiLogicInterface.prototype.doRequest = function(request,sFunc){
 
 	// console.log(requestUrl);
 	// var x = "{\""+request[1][0]+"\":\""+request[1][1]+"hmkcode\",\"id\":2}"
-	$.ajax({
-		url: requestUrl,
-		dataType   : 'json',
-    	contentType: 'application/json',
-    	mimeType: 'application/json',
-		type: 'POST',
-		data: requestObj,
-
-		success: function(r){
-			r = JSON.parse(r);
-			this.getResponse(r);
-		},
-
-		error: function(e){
-			alert('error in ajax:');
-			alert(e);
-		}
-			})
-};
-
-UiLogicInterface.prototype.getResponse = function(response){
-	alert(response);
-	this.successFunction(response);
 };

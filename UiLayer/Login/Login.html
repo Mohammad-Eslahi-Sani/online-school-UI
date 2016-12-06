@@ -1,0 +1,172 @@
+<!-- header and footer must not be modified from here -->
+<!-- Begin guest header -->
+<!DOCTYPE html>
+<html class="GuestPage orange-yellow-theme">
+<head>
+
+    <!-- ################################################################################ -->
+    <!-- ########## Begin Origin includes  -->
+
+    <!-- js libraries:  -->
+    <script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+
+    <script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+
+    <!--   js classes  -->
+    <script type="text/javascript" src="/ControllerLayer/RedirectManager/RedirectManager.js"></script>
+    <script type="text/javascript" src="/ControllerLayerInterface/ControllerLayerInterface.js"></script>
+
+    <!-- css libraries   -->
+    <link href="/UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- css styles    -->
+    <link href="/UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+    <link href="/UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+
+
+
+    <!-- ##### End of Origin includes -->
+    <!-- ################################################################################ -->
+
+    <!-- ################################################################################ -->
+    <!-- ########## Begin Guest Page includes  -->
+
+    <!-- js libraries:  -->
+
+    <!--   js classes  -->
+
+    <!-- css libraries   -->
+
+    <!-- css styles    -->
+    <link href="/UiLayer/GuestPage/style/GuestPage.css" rel="stylesheet" type="text/css" />
+    <link href="/UiLayer/GuestHeader/style/announceMessageDiv.css" rel="stylesheet" type="text/css" />
+    <link href="/UiLayer/GuestHeader/style/header.css" rel="stylesheet" type="text/css" />
+
+    <!-- ##### End of Guest Page includes -->
+    <!-- ################################################################################ -->
+
+
+
+</head>
+<header class="primary-color container-fluid">
+    <div class="row">
+        <div class="col-md-1 register-button-div">
+            <button class="signup-button">
+                ثبت نام
+            </button>
+        </div>
+        <div class="col-md-1 login-button-div">
+            <button class="login-button">
+                ورود
+            </button>
+        </div>
+
+        <div class="col-md-6"></div>
+        <div class="col-md-4 project-name-div">
+            <h3>
+                مدرسه آنلاین
+            </h3>
+        </div>
+
+    </div>
+
+    <div class="announce-message-div">
+        <h3 class="announce-message-text secondary-text"> Announce Message Here! </h3>
+    </div>
+</header>
+<script type="text/javascript">
+    var ControllerInterfaceObj = new ControllerLayerInterface();
+    function loginListener(){
+        ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'login'});
+        ControllerInterfaceObj.executeRequest();
+    }
+    function signupListener(){
+        ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'signup'});
+        ControllerInterfaceObj.executeRequest();
+    }
+
+    $(document).ready(function(){
+        $('.login-button-div .login-button').on('click',loginListener);
+
+        $('.register-button-div .signup-button').on('click',signupListener);
+    });
+</script>
+
+<!-- End of guest header -->
+
+<link href="/UiLayer/Login/style/LoginBody.css" rel="stylesheet" type="text/css" />
+<link href="/UiLayer/Login/style/loginForm.css" rel="stylesheet" type="text/css" />
+
+<body class="light-primary-color">
+	<div class="container-fluid LoginBody">
+		<div class="col-md-3"></div>
+		<form class="col-md-6 loginForm">
+			<div class="row username-row">
+				<div class="col-md-6">
+					<input type="text" name="username" class="usernameInput">
+				</div>
+				<div class="col-md-6">
+					نام کاربری
+				</div>
+			</div>
+		
+			<div class="row password-row">
+				<div class="col-md-6">
+					<input type="password" name="password" class="passwordInput">
+				</div>
+				<div class="col-md-6">
+					کلمه عبور
+				</div>
+			</div>
+
+			<div class="row confirmButton-row">
+				<div class="col-md-5"></div>
+				<div class="col-md-2">
+					<button type="button" class="confirmButton">
+						ورود					
+					</button>
+				</div>
+				<div class="col-md-5"></div>
+				
+			</div>
+			
+		</form>
+		<div class="col-md-3"></div>
+			
+	</div>
+
+</body>
+<script type="text/javascript">
+    function loginConfirmListener(){
+        var usernameInput = $('.username-row .usernameInput').val();
+        var passwordInput = $('.password-row .passwordInput').val();
+        var loginParametersList = [['task','login'],['j_username',usernameInput],['j_password',passwordInput]];
+        var requestParameters = {
+            requestType:'login',
+            loginParametersList:loginParametersList
+        };
+
+        ControllerInterfaceObj.setRequestParameters(requestParameters);
+        ControllerInterfaceObj.executeRequest();
+    }
+    $(document).ready(function(){
+        
+        $('.login-button-div .login-button').hide();
+
+        $('.confirmButton-row .confirmButton').on('click',loginConfirmListener);
+    });
+</script>
+
+<!-- Begin Guest Footer -->
+<link href="/UiLayer/GuestFooter/style/footer.css" rel="stylesheet" type="text/css" />
+
+<footer class="primary-color">
+    <div class="contact-div">
+        <h3 class="contact-div-text secondary-text">
+            نسخه آزمایشی
+        </h3>
+    </div>
+</footer>
+</html>
+
+<!-- End of Guest Footer -->
