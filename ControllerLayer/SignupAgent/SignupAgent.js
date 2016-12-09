@@ -1,4 +1,3 @@
-$.getScript('/ServerInterface/ServerInterface.js');
 function SignupAgent(){
 	this.requestAry = [];
 }
@@ -34,9 +33,9 @@ SignupAgent.prototype.setRequestAry = function(inputAry){
 SignupAgent.prototype.requestSignup = function(){
 	// var requestAry = [['task','signup'],['username',username],['password',password],['userType',userType]];
 	var requestAry = this.requestAry;
-	if(!!requestAry.length){
-		requestAry = [['task','signup'],["username",'ali'],["password",'123'],["role",'teacher']];
-	}
+	//if(!!requestAry.length){
+	//	requestAry = [['task','signup'],["username",'ali'],["password",'123'],["role",'teacher']];
+	//}
 	var serverInterfaceObj = new ServerInterface();
     serverInterfaceObj.doRequest(requestAry,this.getSuccessResponse,this.getErrorResponse);
 	console.log('request for signup has been sent');
@@ -46,12 +45,21 @@ SignupAgent.prototype.requestSignup = function(){
 SignupAgent.prototype.getSuccessResponse = function(response){
     console.log('response from signup request sent to server:');
     console.log(response);
+	console.log('do we still have our request array?');
+	console.log(response);
+
+    //var parametersList = [['username',this.requestAry['username']],['userType',this.requestAry['userType']]];
+    var parametersList = [['username',response['username']]];
+
+	var redirectAgent = new RedirectManager();
+    redirectAgent.setParametersList(parametersList);
+    redirectAgent.redirectTo('signupSuccessful');
 
 };
-var Successful;
+
 SignupAgent.prototype.getErrorResponse = function(response){
-    console.log('response from signup request sent to server:');
-    console.log(response);
+    alert('error in signup Request :');
+    alert(response);
 
 };
 

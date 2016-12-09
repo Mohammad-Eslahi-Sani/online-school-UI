@@ -1,0 +1,6 @@
+.GuestPageBody{
+    position: fixed;
+    overflow-y: auto;
+    top: 4em;
+    bottom: 4em;
+}

@@ -7,17 +7,16 @@
     <!-- ################################################################################ -->
     <!-- ########## Begin Origin includes  -->
 
-
     <!-- js libraries:  -->
     <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
 
     <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
 
     <!--   js classes  -->
-    <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
     <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
     <!-- css libraries   -->
@@ -96,71 +95,46 @@
         $('.register-button-div .signup-button').on('click',signupListener);
     });
 </script>
-
 <!-- End of guest header -->
 
-<link href="../../UiLayer/Login/style/LoginBody.css" rel="stylesheet" type="text/css" />
-<link href="../../UiLayer/Login/style/loginForm.css" rel="stylesheet" type="text/css" />
-
 <body class="light-primary-color">
-	<div class="container-fluid LoginBody">
-		<div class="col-md-3"></div>
-		<form class="col-md-6 loginForm">
-			<div class="row username-row">
-				<div class="col-md-6">
-					<input type="text" name="username" class="usernameInput">
-				</div>
-				<div class="col-md-6">
-					نام کاربری
-				</div>
-			</div>
-		
-			<div class="row password-row">
-				<div class="col-md-6">
-					<input type="password" name="password" class="passwordInput">
-				</div>
-				<div class="col-md-6">
-					کلمه عبور
-				</div>
-			</div>
+    <div class="container-fluid GuestPageBody">
+        ثبت نام شما با موفقیت انجام شد!
+        <br/>
+        <div class="row username-row">
+            <h4>نام کاربری:</h4>
+            <p class="username-field"></p>
+        </div>
 
-			<div class="row confirmButton-row">
-				<div class="col-md-5"></div>
-				<div class="col-md-2">
-					<button type="button" class="confirmButton">
-						ورود					
-					</button>
-				</div>
-				<div class="col-md-5"></div>
-				
-			</div>
-			
-		</form>
-		<div class="col-md-3"></div>
-			
-	</div>
+        <div class="row userType-row">
+            <h4>نوع کاربری:</h4>
+            <p class="userType-field"></p>
+        </div>
 
+    </div>
 </body>
-<script type="text/javascript">
-    function loginConfirmListener(){
-        var usernameInput = $('.username-row .usernameInput').val();
-        var passwordInput = $('.password-row .passwordInput').val();
-        var loginParametersList = [['task','login'],['username',usernameInput],['password',passwordInput]];
-        var requestParameters = {
-            requestType:'login',
-            inputList:loginParametersList
-        };
 
-        ControllerInterfaceObj.setRequestParameters(requestParameters);
-        ControllerInterfaceObj.executeRequest();
+<script type="text/javascript">
+    function setUserDescription(){
+        var url = window.location.href;
+        var urlData = url.split("?")[1];
+        console.log(urlData);
+        if(!!urlData){
+            urlData = urlData.split("&");
+            for(var i = 0;i<urlData.length;i++){
+                urlData[i]=urlData[i].split("=");
+                setItem(urlData[i][0],urlData[i][1]);
+            }
+        }
+    }
+    function setItem(type,item){
+        $('div.row.'+type+'-row p.'+type+'-field')[0].innerHTML =item;
     }
     $(document).ready(function(){
-        
-        $('.login-button-div .login-button').hide();
-
-        $('.confirmButton-row .confirmButton').on('click',loginConfirmListener);
+        setUserDescription();
     });
 </script>
+
 
 <!-- Begin Guest Footer -->
 <link href="../../UiLayer/GuestFooter/style/footer.css" rel="stylesheet" type="text/css" />

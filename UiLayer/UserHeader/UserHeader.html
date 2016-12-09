@@ -5,21 +5,30 @@
     <!-- ################################################################################ -->
     <!-- ########## Begin Origin includes  -->
 
-    <!-- js libraries:  -->
-    <script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
 
-    <script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+
+
+    <!-- js libraries:  -->
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
 
     <!--   js classes  -->
-    <script type="text/javascript" src="/ControllerLayer/RedirectManager/RedirectManager.js"></script>
-    <script type="text/javascript" src="/ControllerLayerInterface/ControllerLayerInterface.js"></script>
+    <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/CourseCreator/CourseCreator.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
+    <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
     <!-- css libraries   -->
-    <link href="/UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- css styles    -->
-    <link href="/UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
-    <link href="/UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -36,8 +45,8 @@
     <!-- css libraries   -->
 
     <!-- css styles    -->
-    <link href="/UiLayer/UserPage/style/UserPage.css" rel="stylesheet" type="text/css" />
-    <link href="/UiLayer/UserHeader/style/header.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/UserPage/style/UserPage.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/UserHeader/style/header.css" rel="stylesheet" type="text/css" />
 
     <!-- ##### End of User Page includes -->
     <!-- ################################################################################ -->
@@ -50,12 +59,12 @@
                     خروج
                 </button>
             </div>
-            <div class="col-md-1 username-col">
+            <div class="col-md-1 userType-col">
                 <span>
                     معلم / دانش آموز
                 </span>
             </div>
-            <div class="col-md-1 userType-col">
+            <div class="col-md-1 username-col">
                 
                 <span>
                     مهدی اصلاحی ثانی
@@ -82,8 +91,13 @@
         ControllerInterfaceObj.setRequestParameters({requestType:'exit'});
         ControllerInterfaceObj.executeRequest();
     }
+    function setProfile(){
+        $('div.username-col span')[0].innerHTML = $.cookie("username");
+        $('div.userType-col span')[0].innerHTML = $.cookie("userType");
+    }
 
     $(document).ready(function(){
         $('.exit-col .exit-button').on('click',exitListener);
+        setProfile();
     });
 </script>

@@ -1,26 +1,31 @@
 <!-- header and footer must not be modified from here -->
 <!-- Begin guest header -->
+<!DOCTYPE html>
 <html class="GuestPage orange-yellow-theme">
 <head>
 
 	<!-- ################################################################################ -->
 	<!-- ########## Begin Origin includes  -->
 
-	<!-- js libraries:  -->
-	<script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
 
-	<script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+	<!-- js libraries:  -->
+	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+
+	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
 
 	<!--   js classes  -->
-	<script type="text/javascript" src="/ControllerLayer/RedirectManager/RedirectManager.js"></script>
-	<script type="text/javascript" src="/ControllerLayerInterface/ControllerLayerInterface.js"></script>
+	<script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
+	<script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
+	<script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
+	<script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
+	<script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
 	<!-- css libraries   -->
-	<link href="/UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
 	<!-- css styles    -->
-	<link href="/UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
-	<link href="/UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -37,9 +42,10 @@
 	<!-- css libraries   -->
 
 	<!-- css styles    -->
-	<link href="/UiLayer/GuestPage/style/GuestPage.css" rel="stylesheet" type="text/css" />
-	<link href="/UiLayer/GuestHeader/style/announceMessageDiv.css" rel="stylesheet" type="text/css" />
-	<link href="/UiLayer/GuestHeader/style/header.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/GuestPage/style/GuestPage.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/GuestPage/style/GuestPageBody.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/GuestHeader/style/announceMessageDiv.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/GuestHeader/style/header.css" rel="stylesheet" type="text/css" />
 
 	<!-- ##### End of Guest Page includes -->
 	<!-- ################################################################################ -->
@@ -91,11 +97,12 @@
 	});
 </script>
 
+
 <!-- End of guest header -->
 
 
-<link href="/UiLayer/Signup/style/SignupBody.css" rel="stylesheet" type="text/css" />
-<link href="/UiLayer/Signup/style/signupForm.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/Signup/style/SignupBody.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/Signup/style/signupForm.css" rel="stylesheet" type="text/css" />
 
 <body class="light-primary-color">
 	<div class="container-fluid SignupBody">
@@ -164,23 +171,23 @@
         var userTypeInput = $('.userType-row .userType-select option:selected').val();
 		var parametersAry =[
 			['task','signup'],
-			['_username',usernameInput],
-			['_password',passwordInput],
-			['_role',userTypeInput],
-			['_name',usernameInput],
-			['_family',''],
-			['_balance',0],
-			['_email',''],
-			['_phoneNumber',0],
-			['_nationalNumber',0],
-			['_birthDate',0],
-			['_field','CE'],
-			['_grade','bachelor']
+			['username',usernameInput],
+			['password',passwordInput],
+			['role',userTypeInput],
+			['name',usernameInput],
+			['family',''],
+			['balance',0],
+			['email',''],
+			['phoneNumber',0],
+			['nationalNumber',0],
+			['birthDate',0],
+			['field','computerScience'],
+			['grade','bachelor']
 		];
 
         var requestParameters = {
             requestType: 'signup',
-            signupParametersList: parametersAry
+            inputList: parametersAry
         };
         ControllerInterfaceObj.setRequestParameters(requestParameters);
         ControllerInterfaceObj.executeRequest();
@@ -194,7 +201,7 @@
     });
 </script>
 <!-- Begin Guest Footer -->
-<link href="/UiLayer/GuestFooter/style/footer.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/GuestFooter/style/footer.css" rel="stylesheet" type="text/css" />
 
 <footer class="primary-color">
 	<div class="contact-div">
@@ -204,5 +211,6 @@
 	</div>
 </footer>
 </html>
+
 
 <!-- End of Guest Footer -->

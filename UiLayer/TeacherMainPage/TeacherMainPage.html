@@ -7,25 +7,33 @@
 	<!-- ################################################################################ -->
 	<!-- ########## Begin Origin includes  -->
 
-	<!-- js libraries:  -->
-	<script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
-
-	<script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
-
-	<!--   js classes  -->
-	<script type="text/javascript" src="/ControllerLayer/RedirectManager/RedirectManager.js"></script>
-	<script type="text/javascript" src="/ControllerLayerInterface/ControllerLayerInterface.js"></script>
-
-	<!-- css libraries   -->
-	<link href="/UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
-	<!-- css styles    -->
-	<link href="/UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
-	<link href="/UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
 
 
+    <!-- js libraries:  -->
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
 
-	<!-- ##### End of Origin includes -->
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+
+    <!--   js classes  -->
+    <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/CourseCreator/CourseCreator.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
+	<script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
+	<script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
+
+    <!-- css libraries   -->
+    <link href="../../UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- css styles    -->
+    <link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    <!-- ##### End of Origin includes -->
 	<!-- ################################################################################ -->
 
 	<!-- ################################################################################ -->
@@ -38,8 +46,8 @@
 	<!-- css libraries   -->
 
 	<!-- css styles    -->
-	<link href="/UiLayer/UserPage/style/UserPage.css" rel="stylesheet" type="text/css" />
-	<link href="/UiLayer/UserHeader/style/header.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/UserPage/style/UserPage.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/UserHeader/style/header.css" rel="stylesheet" type="text/css" />
 
 	<!-- ##### End of User Page includes -->
 	<!-- ################################################################################ -->
@@ -52,12 +60,12 @@
 				خروج
 			</button>
 		</div>
-		<div class="col-md-1 username-col">
+		<div class="col-md-1 userType-col">
                 <span>
                     معلم / دانش آموز
                 </span>
 		</div>
-		<div class="col-md-1 userType-col">
+		<div class="col-md-1 username-col">
 
                 <span>
                     مهدی اصلاحی ثانی
@@ -84,15 +92,20 @@
 		ControllerInterfaceObj.setRequestParameters({requestType:'exit'});
 		ControllerInterfaceObj.executeRequest();
 	}
+	function setProfile(){
+		$('div.username-col span')[0].innerHTML = $.cookie("username");
+		$('div.userType-col span')[0].innerHTML = $.cookie("userType");
+	}
 
 	$(document).ready(function(){
 		$('.exit-col .exit-button').on('click',exitListener);
+		setProfile();
 	});
 </script>
 <!-- End of User Header -->
 
-<link href="/UiLayer/TeacherMainPage/style/TeacherMainPageBody.css" rel="stylesheet" type="text/css" />
-<link href="/UiLayer/TeacherMainPage/style/courseDiv.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/TeacherMainPage/style/TeacherMainPageBody.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/TeacherMainPage/style/courseDiv.css" rel="stylesheet" type="text/css" />
 
 <body class="light-primary-color">
 	<div class="container-fluid TeacherMainPageBody">
@@ -115,10 +128,33 @@
 			
 			</div>
 		</div>
-		
+
+        <div class="row teacher-panel">
+            <form class="create-course-form">
+                <div class="col-md-4 course-name">
+                    <input type="text" id="course-name">
+                    <label for="course-name">
+                        نام درس:
+                    </label>
+                </div>
+                <div class="col-md-4 course-field">
+                    <input type="text" id="course-field">
+                    <label for="course-field">
+                        رشته درس:
+                    </label>
+                </div>
+                <div class="col-md-2 confirm-button">
+                    <button type="button" class="create-course-button">
+                        ایجاد درس
+                    </button>
+                </div>
+            </form>
+
+        </div>
+<!--
 		<div class="container course-table-div">
 			<div class="row courses-row">
-				
+
 				<div class="col-md-3 course-div dark-secondary-color">
 					<span class="row course-name">
 						آموزش زبان انگلیسی
@@ -152,9 +188,9 @@
 					</span>
 				</div>
 
-			</div>	<!-- first row of courses -->
+			</div>	&lt;!&ndash; first row of courses &ndash;&gt;
 			<div class="row">
-				
+
 				<div class="col-md-3 course-div dark-secondary-color">
 					<span class="row course-name">
 						ساخت و تولید
@@ -187,22 +223,52 @@
 						تقی
 					</span>
 				</div>
-				
-			</div>	<!-- second row of courses -->
+
+			</div>	&lt;!&ndash; second row of courses &ndash;&gt;
 		</div>
-	</div>
+	-->
+    </div>
 
 </body>
 
+<script type="text/javascript">
+    function createCourseListener(){
+        var courseName = $('div.teacher-panel form.create-course-form div.course-name input#course-name').val();
+        var courseField = $('div.teacher-panel form.create-course-form div.course-field input#course-field').val();
+        var FieldsAry =[
+            ['task','createCourse'],
+            ['name',courseName],
+            ['field',courseField],
+            ['createDate',0],
+            ['validate',true],
+            ['weekCount',10],
+            ['grade','bachelor']
+        ];
+
+        var requestParameters = {
+            requestType: 'createCourse',
+            inputList: FieldsAry
+        };
+        ControllerInterfaceObj.setRequestParameters(requestParameters);
+        ControllerInterfaceObj.executeRequest();
+
+    }
+
+    $(document).ready(function(){
+        $('div.teacher-panel form.create-course-form div.confirm-button button.create-course-button').on('click',createCourseListener);
+    });
+</script>
+
+
 <!-- Begin User Footer -->
-<link href="/UiLayer/UserFooter/style/footer.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/UserFooter/style/footer.css" rel="stylesheet" type="text/css" />
 
 <footer class="primary-color">
-	<div class="contact-div">
-		<h3 class="contact-div-text secondary-text">
-			نسخه آزمایشی
-		</h3>
-	</div>
+    <div class="contact-div">
+        <h3 class="contact-div-text secondary-text">
+            نسخه آزمایشی
+        </h3>
+    </div>
 </footer>
 </html>
 

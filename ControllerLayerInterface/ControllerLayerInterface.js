@@ -1,10 +1,6 @@
 /**
  * Created by Mohammad on 12/2/2016.
  */
-$.getScript('/ControllerLayer/RedirectManager/RedirectManger.js');
-$.getScript('/ControllerLayer/SignupAgent/SignupAgent.js');
-$.getScript('/ControllerLayer/LoginAgent/LoginAgent.js');
-
 function ControllerLayerInterface(){
     this.requestParameters = {};
 }
@@ -35,11 +31,15 @@ ControllerLayerInterface.prototype.executeRequest = function(){
             this.announce();
             break;
         case 'exit':
-            this.requestParameters['redirectionUrl'] = 'MainPage';
+            //this.requestParameters['redirectionUrl'] = 'MainPage';
             this.exit();
-            this.redirect();
+            //this.redirect();
+            break;
+        case 'createCourse':
+            this.createCourse();
             break;
         default :
+
             break;
     }
 };
@@ -54,7 +54,7 @@ ControllerLayerInterface.prototype.search = function(){
 };
 
 ControllerLayerInterface.prototype.signUp = function(){
-    var parametersAry = this.requestParameters['signupParametersList'];
+    var parametersAry = this.requestParameters['inputList'];
     var agent = new SignupAgent();
     // agent.checkFields(usernameInput,passwordInput,passwordAgainInput,userTypeInput);
     agent.setRequestAry(parametersAry);
@@ -62,7 +62,7 @@ ControllerLayerInterface.prototype.signUp = function(){
 };
 
 ControllerLayerInterface.prototype.login = function(){
-    var lAgent = new LoginAgent(this.requestParameters['loginParametersList']);
+    var lAgent = new LoginAgent(this.requestParameters['inputList']);
     lAgent.requestLogin();
 };
 
@@ -70,6 +70,12 @@ ControllerLayerInterface.prototype.announce = function(){
 
 };
 
-ControllerLayerInterface.prototype.exit = function(){
+ControllerLayerInterface.prototype.createCourse = function(){
+    var lAgent = new CourseCreator(this.requestParameters['inputList']);
+    lAgent.requestCreateCourse();
+};
 
+ControllerLayerInterface.prototype.exit = function(){
+    var lAgent = new ExitAgent();
+    lAgent.requestExit();
 };

@@ -1,7 +1,8 @@
 function ServerInterface(){
-	this.serverAddress = 'http://172.18.242.188:8080';
+	this.serverAddress = 'http://172.17.242.98:8080';
 	this.urlDict = {
-		login : this.serverAddress+'/online-school/j_spring_security_check',
+		login : this.serverAddress+'/online-school/login',
+		exit : this.serverAddress+'/online-school/signout',
 		signup: this.serverAddress+'/online-school/signup',
 		createCourse: this.serverAddress+'/online-school/course/create',
 		readCourse: this.serverAddress+'/online-school/course/read'
@@ -16,11 +17,13 @@ ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
 			requestUrl = this.urlDict[request[i][1]];
 		}
 		else{
-			requestObj[request[i][0]+""] = request[i][1]+"";
+			requestObj[request[i][0]+""] = request[i][1];
 		}
+    }
 
-	}
-	
+    if(!!$.cookie('sessionId')){
+        requestObj['sessionId'] = $.cookie('sessionId');
+    }
 	alert('ajax is starting');
 	console.log(requestObj);
 	requestObj = JSON.stringify(requestObj);
@@ -29,13 +32,13 @@ ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
     $.ajax({
         url: requestUrl,
         dataType   : 'json',
-        contentType: 'application/json',
-        mimeType: 'application/json',
+        contentType: 'application/json;charset=utf8',
         type: 'POST',
         data: requestObj,
 
         success: function(r){
-            r = JSON.parse(r);
+            //console.log('success respone before parse:');
+            //console.log(r);
             sFunc(r);
         },
 

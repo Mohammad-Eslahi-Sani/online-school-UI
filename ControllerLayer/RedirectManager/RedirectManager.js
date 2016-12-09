@@ -1,12 +1,13 @@
 function RedirectManager(){
 	this.urlDictionary = {
-        loginUrl: '/UiLayer/Login/Login.html',
-        signupUrl: '/UiLayer/Signup/Signup.html',
-        teacherMainPageUrl : '/UiLayer/TeacherMainPage/TeacherMainPage.html',
-        studentMainPageUrl : '/UiLayer/StudentMainPage/StudentMainPage.html',
-        teacherCoursePageUrl: '/UiLayer/TeacherCoursePage/TeacherCoursePage.html',
-        studentCoursePageUrl: '/UiLayer/StudentCoursePage/StudentCoursePage.html',
-        mainPageUrl: '/UiLayer/MainPage/MainPage.html'
+        loginUrl: '../../UiLayer/Login/Login.html',
+        signupUrl: '../../UiLayer/Signup/Signup.html',
+        teacherMainPageUrl : '../../UiLayer/TeacherMainPage/TeacherMainPage.html',
+        studentMainPageUrl : '../../UiLayer/StudentMainPage/StudentMainPage.html',
+        teacherCoursePageUrl: '../../UiLayer/TeacherCoursePage/TeacherCoursePage.html',
+        studentCoursePageUrl: '../../UiLayer/StudentCoursePage/StudentCoursePage.html',
+        mainPageUrl: '../../UiLayer/MainPage/MainPage.html',
+		signupSuccessful: '../../UiLayer/SignupSuccessful/SignupSuccessful.html'
     };
 	this.parametersList = [];
 }
@@ -37,8 +38,18 @@ RedirectManager.prototype.redirectTo = function(destUrl){
 		case 'teacherCoursePage':
             destUrl = this.urlDictionary['teacherCoursePageUrl'];
 			break;
+		case 'mainPage':
+		case 'MainPage':
+			destUrl = this.urlDictionary['mainPageUrl'];
+			break;
+		case 'signupSuccessful':
+		case 'signUpSuccessful':
+		case 'SignupSuccessful':
+		case 'SignUpsuccessful':
+			destUrl = this.urlDictionary['signupSuccessful'];
+			break;
 		default:
-            destUrl = this.urlDictionary['mainPageUrl'];
+			destUrl = this.urlDictionary[destUrl];
 			break;
 	}
 	for(var i = 0;i<this.parametersList.length;i++){

@@ -1,9 +1,63 @@
 @font-face {
-    font-family: "roya";
-    font-weight: 300;
-    src: local("☺"), url("../../fonts/WebRoya/WebRoya.woff") format("woff"), url("../../fonts/WebRoya/WebRoya.ttf") format("truetype"), url("../../fonts/WebRoya/WebRoya.svg#webfont3bltmsAc") format("svg");
+    font-family: 'b koodak';
+    src: url('../../../UiLayer/OriginPage/style/fonts/Koodak/BKoodakBold.eot?#') format('eot'),  /* IE6–8 */
+    url('../../../UiLayer/OriginPage/style/fonts/Koodak/BKoodakBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../../../UiLayer/OriginPage/style/fonts/Koodak/BKoodakBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
 }
+
+
+@-moz-document url-prefix(){
+    @font-face {
+        font-family: 'b koodak';
+        src: url('../../../UiLayer/OriginPage/style/fonts/Koodak/BKoodakBold.eot?#') format('eot'),  /* IE6–8 */
+        url('../../../UiLayer/OriginPage/style/fonts/Koodak/BKoodakBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+        url('../../../UiLayer/OriginPage/style/fonts/Koodak/BKoodakBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+    }
+
+}
+
+
+
+@font-face {
+    font-family: 'b zar';
+    src: url('../../../UiLayer/OriginPage/style/fonts/Zar/BZar.eot?#') format('eot'),  /* IE6–8 */
+    url('../../../UiLayer/OriginPage/style/fonts/Zar/BZar.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../../../UiLayer/OriginPage/style/fonts/Zar/BZar.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+    font-family: 'b ziba';
+    src: url('../../../UiLayer/OriginPage/style/fonts/Ziba/BZiba.eot?#') format('eot'),  /* IE6–8 */
+    url('../../../UiLayer/OriginPage/style/fonts/Ziba/BZiba.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../../../UiLayer/OriginPage/style/fonts/Ziba/BZiba.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'b lotus';
+    src: url('../../../UiLayer/OriginPage/style/fonts/Lotus/BLotus.eot?#') format('eot'),  /* IE6–8 */
+    url('../../../UiLayer/OriginPage/style/fonts/Lotus/BLotus.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../../../UiLayer/OriginPage/style/fonts/Lotus/BLotus.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+
+@font-face {
+    font-family: "roya";
+    src: local("☺"), url("../../../UiLayer/OriginPage/style/fonts/WebRoya/WebRoya.woff") format("woff"), url("../../../UiLayer/OriginPage/style/fonts/WebRoya/WebRoya.ttf") format("truetype"), url("../../../UiLayer/OriginPage/style/fonts/WebRoya/WebRoya.svg#webfont3bltmsAc") format("svg");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Lotus;
+    src: url('../../../UiLayer/OriginPage/style/fonts/Lotus/BLotus.eot');
+    src: url('../../../UiLayer/OriginPage/style/fonts/Lotus/BLotus.eot?#iefix') format('embedded-opentype'),
+    url('../../../UiLayer/OriginPage/style/fonts/Lotus/BLotus.woff') format('woff'),
+    url('../../../UiLayer/OriginPage/style/fonts/Lotus/BLotus.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 body {
-    font-family: roya;
+    font-family:"b koodak","b ziba","b lotus", "roya", Arial, Helvetica, sans-serif;
     direction: rtl;
 }
