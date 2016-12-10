@@ -1,6 +1,9 @@
 div.MainPageBody{
 	position: fixed;
 	overflow-y: auto;
-	top: 4em;
+    overflow-x: hidden;
+	top: 8em;
 	bottom: 4em;
+	left:0;
+	right:0;
 }

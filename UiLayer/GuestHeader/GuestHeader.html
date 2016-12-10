@@ -5,17 +5,19 @@
     <!-- ################################################################################ -->
     <!-- ########## Begin Origin includes  -->
 
-
     <!-- js libraries:  -->
     <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
 
     <!--   js classes  -->
     <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/CourseCreator/CourseCreator.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
     <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
     <!-- css libraries   -->
@@ -23,6 +25,7 @@
 
     <!-- css styles    -->
     <link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/style/background.css" rel="stylesheet" type="text/css" />
     <link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
 
 
@@ -53,22 +56,48 @@
 </head>
 <header class="primary-color container-fluid">
     <div class="row">
-        <div class="col-md-1 register-button-div">
-            <button class="signup-button">
-                ثبت نام
-            </button>
-        </div>
-        <div class="col-md-1 login-button-div">
-            <button class="login-button">
-                ورود
-            </button>
-        </div>
+        <div class="col-md-3 search-div">
+            <div class="row search-input-container">
+                <div class="col-md-4 search-icon-div">
+                    <span class="glyphicon glyphicon-search"></span>
+                </div>
+                <div class="col-md-8 search-input-div">
+                    <input size="30" type="text" placeholder="جست و جو در بین درس ها">
+                </div>
+            </div>
 
-        <div class="col-md-6"></div>
-        <div class="col-md-4 project-name-div">
-            <h3>
-                مدرسه آنلاین
-            </h3>
+        </div>
+        <div class="col-md-3 contact-div">
+            <div class="col-md-10 contact-text-div">
+                <h4>
+                    ارتباط با ما
+                </h4>
+            </div>
+            <div class="col-md-2 contact-icon-div">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </div>
+        </div>
+        <div class="col-md-3 profile-div">
+            <!--<div class="col-md-10 profile-text-div">
+                <h4>
+                    حساب کاربری
+                </h4>
+            </div>
+
+            <div class="col-md-2 profile-icon-div">
+                <span class="glyphicon glyphicon-user"></span>
+            </div>-->
+        </div>
+        <div class="col-md-3 home-div">
+            <div class="col-md-10 profile-text-div">
+                <h4>
+                   خانه
+                </h4>
+            </div>
+
+            <div class="col-md-2 home-icon-div">
+                <span class="glyphicon glyphicon-home"></span>
+            </div>
         </div>
 
     </div>
@@ -79,18 +108,33 @@
 </header>
 <script type="text/javascript">
     var ControllerInterfaceObj = new ControllerLayerInterface();
-    function loginListener(){
-        ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'login'});
+    function searchListener(){
+        ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
         ControllerInterfaceObj.executeRequest();
     }
-    function signupListener(){
-        ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'signup'});
+
+    function homeListener(){
+        if(!$.cookie('username')){
+            ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+        }
+        else{
+            if($.cookie('userType')=='teacher'){
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'teacherMainPage'});
+            }
+            else if($.cookie('userType')=='student'){
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'studentMainPage'});
+            }
+            else{
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+            }
+        }
         ControllerInterfaceObj.executeRequest();
+
     }
 
     $(document).ready(function(){
-        $('.login-button-div .login-button').on('click',loginListener);
 
-        $('.register-button-div .signup-button').on('click',signupListener);
+        $('.search-div .search-icon-div span.glyphicon-search').on('click',searchListener);
+        $('.home-div').on('click',homeListener);
     });
 </script>

@@ -7,17 +7,19 @@
 	<!-- ################################################################################ -->
 	<!-- ########## Begin Origin includes  -->
 
-
 	<!-- js libraries:  -->
 	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
 
 	<!--   js classes  -->
 	<script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
+	<script type="text/javascript" src="../../ControllerLayer/CourseCreator/CourseCreator.js"></script>
 	<script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
 	<script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
 	<script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
+	<script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
 	<script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
 	<!-- css libraries   -->
@@ -25,6 +27,7 @@
 
 	<!-- css styles    -->
 	<link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+	<link href="../../UiLayer/OriginPage/style/background.css" rel="stylesheet" type="text/css" />
 	<link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
 
 
@@ -55,22 +58,48 @@
 </head>
 <header class="primary-color container-fluid">
 	<div class="row">
-		<div class="col-md-1 register-button-div">
-			<button class="signup-button">
-				ثبت نام
-			</button>
-		</div>
-		<div class="col-md-1 login-button-div">
-			<button class="login-button">
-				ورود
-			</button>
-		</div>
+		<div class="col-md-3 search-div">
+			<div class="row search-input-container">
+				<div class="col-md-4 search-icon-div">
+					<span class="glyphicon glyphicon-search"></span>
+				</div>
+				<div class="col-md-8 search-input-div">
+					<input size="30" type="text" placeholder="جست و جو در بین درس ها">
+				</div>
+			</div>
 
-		<div class="col-md-6"></div>
-		<div class="col-md-4 project-name-div">
-			<h3>
-				مدرسه آنلاین
-			</h3>
+		</div>
+		<div class="col-md-3 contact-div">
+			<div class="col-md-10 contact-text-div">
+				<h4>
+					ارتباط با ما
+				</h4>
+			</div>
+			<div class="col-md-2 contact-icon-div">
+				<span class="glyphicon glyphicon-envelope"></span>
+			</div>
+		</div>
+		<div class="col-md-3 profile-div">
+			<!--<div class="col-md-10 profile-text-div">
+                <h4>
+                    حساب کاربری
+                </h4>
+            </div>
+
+            <div class="col-md-2 profile-icon-div">
+                <span class="glyphicon glyphicon-user"></span>
+            </div>-->
+		</div>
+		<div class="col-md-3 home-div">
+			<div class="col-md-10 profile-text-div">
+				<h4>
+					خانه
+				</h4>
+			</div>
+
+			<div class="col-md-2 home-icon-div">
+				<span class="glyphicon glyphicon-home"></span>
+			</div>
 		</div>
 
 	</div>
@@ -81,19 +110,34 @@
 </header>
 <script type="text/javascript">
 	var ControllerInterfaceObj = new ControllerLayerInterface();
-	function loginListener(){
-		ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'login'});
+	function searchListener(){
+		ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
 		ControllerInterfaceObj.executeRequest();
 	}
-	function signupListener(){
-		ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'signup'});
+
+	function homeListener(){
+		if(!$.cookie('username')){
+			ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+		}
+		else{
+			if($.cookie('userType')=='teacher'){
+				ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'teacherMainPage'});
+			}
+			else if($.cookie('userType')=='student'){
+				ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'studentMainPage'});
+			}
+			else{
+				ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+			}
+		}
 		ControllerInterfaceObj.executeRequest();
+
 	}
 
 	$(document).ready(function(){
-		$('.login-button-div .login-button').on('click',loginListener);
 
-		$('.register-button-div .signup-button').on('click',signupListener);
+		$('.search-div .search-icon-div span.glyphicon-search').on('click',searchListener);
+		$('.home-div').on('click',homeListener);
 	});
 </script>
 
@@ -106,60 +150,218 @@
 
 <body class="light-primary-color">
 	<div class="container-fluid SignupBody">
-		<div class="col-md-3"></div>
-		<form class="col-md-6 signupForm">
-			<div class="row username-row">
-				<div class="col-md-6">
-					<input type="text" name="username" class="usernameInput">
-				</div>
-				<div class="col-md-6">
-					نام کاربری
-				</div>
-			</div>
-		
-			<div class="row password-row">
-				<div class="col-md-6">
-					<input type="password" name="password" class="passwordInput">
-				</div>
-				<div class="col-md-6">
-					کلمه عبور
-				</div>
-			</div>
+        <div class="col-md-1"></div>
+		<form class="col-md-10 signupForm dark-secondary-color">
+            <div class="container">
+                <div class="col-md-4 contact-form">
+                    <div class="row title">
+                        <h3>
+                            اطلاعات تماس
+                        </h3>
+                    </div>
 
-			<div class="row password-again-row">
-				<div class="col-md-6">
-					<input type="password" name="password-again" class="passwordAgainInput">
-				</div>
-				<div class="col-md-6">
-					کلمه عبور را دوباره وارد کنید
-				</div>
+                    <div class="row email-row">
+                        <div class="col-md-1 empty-left"></div>
 
-			</div>
-			<div class="row userType-row">
-				<div class="col-md-6">
-					<select class="userType-select" >
-						<option value="student">دانش آموز</option>
-						<option value="teacher">معلم</option>
-					</select>
-				</div>
-				<div class="col-md-6">
-					نوع کاربری
-				</div>
-			</div>
+                        <div class="col-md-6 input-div">
+                            <input type="text" name="email" class="emailInput" id="email-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="email-input" class="email-label">
+                                ایمیل
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+
+                    <div class="row phoneNumber-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="text" name="phoneNumber" class="phoneNumberInput" id="phoneNumber-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="phoneNumber-input" class="phoneNumber-label">
+                                شماره تماس
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-4 user-form">
+                    <div class="row title">
+                        <h3>
+                            مشخصات کاربری
+                        </h3>
+                    </div>
+
+                    <div class="row username-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="text" name="username" class="usernameInput" id="username-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="username-input" class="username-label">
+                                نام کاربری
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+                    <div class="row password-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="password" name="password" class="passwordInput" id="password-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="password-input">
+                                کلمه عبور
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+                    <div class="row password-again-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="password" name="password-again" class="passwordAgainInput" id="password-again-input">
+                        </div>
+                        <div class="col-md-4 label-div">
+                            <label for="password-again-input">
+                                کلمه عبور را دوباره وارد کنید
+                            </label>
+                        </div>
+                        <!--<div class="col-md-0 empty-right"></div>-->
+                    </div>
+
+
+                    <div class="row userType-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <select class="userType-select" id="userType-select">
+                                <option value="student">دانش آموز</option>
+                                <option value="teacher">معلم</option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="userType-select">
+                                نوع کاربری
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-4 personal-form">
+                    <div class="row title">
+                        <h3>
+                            مشخصات شخصی
+                        </h3>
+                    </div>
+
+                    <div class="row name-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="text" name="name" class="nameInput" id="name-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="name-input" class="name-label">
+                                نام
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+
+                    <div class="row family-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="text" name="family" class="familyInput" id="family-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="family-input" class="family-label">
+                                نام خانوادگی
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+
+                    <div class="row nationalNumber-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="text" name="nationalNumber" class="nationalNumberInput" id="nationalNumber-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="nationalNumber-input" class="nationalNumber-label">
+                                کد ملی
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+                    <div class="row field-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="text" name="field" class="fieldInput" id="field-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="field-input" class="field-label">
+                                رشته تحصیلی
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+
+                    <div class="row grade-row">
+                        <div class="col-md-1 empty-left"></div>
+
+                        <div class="col-md-6 input-div">
+                            <input type="text" name="grade" class="gradeInput" id="grade-input">
+                        </div>
+                        <div class="col-md-3 label-div">
+                            <label for="grade-input" class="grade-label">
+                                مقطع تحصیلی
+                            </label>
+                        </div>
+                        <div class="col-md-2 empty-right"></div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
 			<div class="row confirmButton-row">
-				<div class="col-md-5"></div>
-				<div class="col-md-2">
+                <div class="col-md-0"></div>
+				<div class="col-md-6">
 					<button type="button" class="confirmButton">
 						ثبت نام کن					
 					</button>
 				</div>
-				<div class="col-md-5"></div>
+				<div class="col-md-6"></div>
 				
 			</div>
 			
 		</form>
-		<div class="col-md-3"></div>
-			
+        <div class="col-md-1"></div>
+
 	</div>
 
 </body>
@@ -169,20 +371,30 @@
         var passwordInput = $('.password-row .passwordInput').val();
         var passwordAgainInput = $('.password-again-row .passwordAgainInput').val();
         var userTypeInput = $('.userType-row .userType-select option:selected').val();
-		var parametersAry =[
+
+
+        var nameInput = $('.name-row .nameInput').val();
+        var familyInput = $('.family-row .familyInput').val();
+        var nationalNumberInput = $('.nationalNumber-row .nationalNumberInput').val();
+        var fieldInput = $('.field-row .fieldInput').val();
+        var gradeInput = $('.grade-row .gradeInput').val();
+        var emailInput = $('.email-row .emailInput').val();
+        var phoneNumberInput = $('.phoneNumber-row .phoneNumberInput').val();
+
+        var parametersAry =[
 			['task','signup'],
 			['username',usernameInput],
 			['password',passwordInput],
 			['role',userTypeInput],
-			['name',usernameInput],
-			['family',''],
+			['name',nameInput],
+			['family',familyInput],
 			['balance',0],
-			['email',''],
-			['phoneNumber',0],
-			['nationalNumber',0],
+			['email',emailInput],
+			['phoneNumber',phoneNumberInput],
+			['nationalNumber',nationalNumberInput],
 			['birthDate',0],
-			['field','computerScience'],
-			['grade','bachelor']
+			['field',fieldInput],
+			['grade',gradeInput]
 		];
 
         var requestParameters = {
@@ -194,22 +406,10 @@
 
     }
     $(document).ready(function(){
-
-	    $('.register-button-div .signup-button').hide();
-
     	$('.signupForm .confirmButton-row .confirmButton').on('click',signUpConfirmListener);
     });
 </script>
 <!-- Begin Guest Footer -->
-<link href="../../UiLayer/GuestFooter/style/footer.css" rel="stylesheet" type="text/css" />
-
-<footer class="primary-color">
-	<div class="contact-div">
-		<h3 class="contact-div-text secondary-text">
-			نسخه آزمایشی
-		</h3>
-	</div>
-</footer>
 </html>
 
 

@@ -55,7 +55,9 @@
     font-style: normal;
 }
 
-
+.glyphicon{
+    font-size:2em;
+}
 
 body {
     font-family:"b koodak","b ziba","b lotus", "roya", Arial, Helvetica, sans-serif;

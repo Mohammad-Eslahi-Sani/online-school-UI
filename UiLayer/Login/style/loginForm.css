@@ -1,3 +1,15 @@
+.loginForm{
+    margin-top:7em;
+}
+
 .loginForm .row{
 	margin: 1em 0;
+}
+
+.loginForm .row .input-div{
+    padding-right: 0;
+}
+
+.loginForm .row .label-div{
+    padding-left: 0;
 }

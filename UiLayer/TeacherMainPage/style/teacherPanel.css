@@ -1,0 +1,8 @@
+.TeacherMainPageBody .teacher-panel{
+    height: 10em;
+}
+
+.TeacherMainPageBody .teacher-panel .menu-item{
+    margin:0.5em 0.5em 0 0;
+
+}

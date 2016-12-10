@@ -11,6 +11,8 @@ LoginAgent.prototype.requestLogin = function(){
     if(!!this.loginList[1][1]){
         $.cookie('username',this.loginList[1][1],cookieOption);
     }
+    $.removeCookie('sessionId',{path:'/'});
+
     var serverInterfaceObj = new ServerInterface();
     serverInterfaceObj.doRequest(requestAry,this.getSuccessResponse,this.getErrorResponse);
 	console.log('request for login has been sent');
@@ -21,7 +23,6 @@ LoginAgent.prototype.getSuccessResponse = function(response){
 	console.log(response['sessionId']);
 	console.log(response['role']);
 	//console.log(JSON.parse(response));
-
 
 
     var tempUserType = 'teacher';
@@ -40,6 +41,7 @@ LoginAgent.prototype.getSuccessResponse = function(response){
     $.cookie('userType',tempUserType,cookieOption);
     $.cookie('sessionId',tempToken,cookieOption);
 
+    console.log($.cookie());
 	var redirector = new RedirectManager();
 	if(tempUserType=='student'){
         redirector.redirectTo('studentMainPage');

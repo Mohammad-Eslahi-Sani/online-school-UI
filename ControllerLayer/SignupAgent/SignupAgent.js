@@ -36,6 +36,8 @@ SignupAgent.prototype.requestSignup = function(){
 	//if(!!requestAry.length){
 	//	requestAry = [['task','signup'],["username",'ali'],["password",'123'],["role",'teacher']];
 	//}
+	$.removeCookie('sessionId',{path:'/'});
+
 	var serverInterfaceObj = new ServerInterface();
     serverInterfaceObj.doRequest(requestAry,this.getSuccessResponse,this.getErrorResponse);
 	console.log('request for signup has been sent');
@@ -51,6 +53,7 @@ SignupAgent.prototype.getSuccessResponse = function(response){
     //var parametersList = [['username',this.requestAry['username']],['userType',this.requestAry['userType']]];
     var parametersList = [['username',response['username']]];
 
+	$.cookie('userType',response['role'],{expires:1,path:'/'});
 	var redirectAgent = new RedirectManager();
     redirectAgent.setParametersList(parametersList);
     redirectAgent.redirectTo('signupSuccessful');

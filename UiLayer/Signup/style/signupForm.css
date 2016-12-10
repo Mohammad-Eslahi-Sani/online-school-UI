@@ -1,3 +1,16 @@
+.signupForm{
+    margin-top: 3em;
+}
+
 .signupForm .row{
 	margin: 1em 0;
+}
+
+
+.signupForm .row .input-div{
+    padding-right: 0;
+}
+
+.signupForm .row .label-div{
+    padding-left: 0;
 }

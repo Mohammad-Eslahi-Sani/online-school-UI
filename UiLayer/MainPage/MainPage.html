@@ -1,221 +1,243 @@
 <!-- header and footer must not be modified from here -->
 <!-- Begin guest header -->
+<!DOCTYPE html>
 <html class="GuestPage orange-yellow-theme">
 <head>
 
-	<!-- ################################################################################ -->
-	<!-- ########## Begin Origin includes  -->
+    <!-- ################################################################################ -->
+    <!-- ########## Begin Origin includes  -->
 
-	<!-- js libraries:  -->
-	<script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+    <!-- js libraries:  -->
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="/UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
 
-	<!--   js classes  -->
-	<script type="text/javascript" src="/ControllerLayer/RedirectManager/RedirectManager.js"></script>
-	<script type="text/javascript" src="/ControllerLayerInterface/ControllerLayerInterface.js"></script>
+    <!--   js classes  -->
+    <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/CourseCreator/CourseCreator.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
+    <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
-	<!-- css libraries   -->
-	<link href="/UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- css libraries   -->
+    <link href="../../UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-	<!-- css styles    -->
-	<link href="/UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
-	<link href="/UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+    <!-- css styles    -->
+    <link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/style/background.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
 
 
 
-	<!-- ##### End of Origin includes -->
-	<!-- ################################################################################ -->
+    <!-- ##### End of Origin includes -->
+    <!-- ################################################################################ -->
 
-	<!-- ################################################################################ -->
-	<!-- ########## Begin Guest Page includes  -->
+    <!-- ################################################################################ -->
+    <!-- ########## Begin Guest Page includes  -->
 
-	<!-- js libraries:  -->
+    <!-- js libraries:  -->
 
-	<!--   js classes  -->
+    <!--   js classes  -->
 
-	<!-- css libraries   -->
+    <!-- css libraries   -->
 
-	<!-- css styles    -->
-	<link href="/UiLayer/GuestPage/style/GuestPage.css" rel="stylesheet" type="text/css" />
-	<link href="/UiLayer/GuestHeader/style/announceMessageDiv.css" rel="stylesheet" type="text/css" />
-	<link href="/UiLayer/GuestHeader/style/header.css" rel="stylesheet" type="text/css" />
+    <!-- css styles    -->
+    <link href="../../UiLayer/GuestPage/style/GuestPage.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/GuestPage/style/GuestPageBody.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/GuestHeader/style/announceMessageDiv.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/GuestHeader/style/header.css" rel="stylesheet" type="text/css" />
 
-	<!-- ##### End of Guest Page includes -->
-	<!-- ################################################################################ -->
+    <!-- ##### End of Guest Page includes -->
+    <!-- ################################################################################ -->
 
 
 
 </head>
 <header class="primary-color container-fluid">
-	<div class="row">
-		<div class="col-md-1 register-button-div">
-			<button class="signup-button">
-				ثبت نام
-			</button>
-		</div>
-		<div class="col-md-1 login-button-div">
-			<button class="login-button">
-				ورود
-			</button>
-		</div>
+    <div class="row">
+        <div class="col-md-3 search-div">
+            <div class="row search-input-container">
+                <div class="col-md-4 search-icon-div">
+                    <span class="glyphicon glyphicon-search"></span>
+                </div>
+                <div class="col-md-8 search-input-div">
+                    <input size="30" type="text" placeholder="جست و جو در بین درس ها">
+                </div>
+            </div>
 
-		<div class="col-md-6"></div>
-		<div class="col-md-4 project-name-div">
-			<h3>
-				مدرسه آنلاین
-			</h3>
-		</div>
+        </div>
+        <div class="col-md-3 contact-div">
+            <div class="col-md-10 contact-text-div">
+                <h4>
+                    ارتباط با ما
+                </h4>
+            </div>
+            <div class="col-md-2 contact-icon-div">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </div>
+        </div>
+        <div class="col-md-3 profile-div">
+            <!--<div class="col-md-10 profile-text-div">
+                <h4>
+                    حساب کاربری
+                </h4>
+            </div>
 
-	</div>
+            <div class="col-md-2 profile-icon-div">
+                <span class="glyphicon glyphicon-user"></span>
+            </div>-->
+        </div>
+        <div class="col-md-3 home-div">
+            <div class="col-md-10 profile-text-div">
+                <h4>
+                    خانه
+                </h4>
+            </div>
 
-	<div class="announce-message-div">
-		<h3 class="announce-message-text secondary-text"> Announce Message Here! </h3>
-	</div>
+            <div class="col-md-2 home-icon-div">
+                <span class="glyphicon glyphicon-home"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="announce-message-div">
+        <h3 class="announce-message-text secondary-text"> Announce Message Here! </h3>
+    </div>
 </header>
 <script type="text/javascript">
-	var ControllerInterfaceObj = new ControllerLayerInterface();
-	function loginListener(){
-		ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'login'});
-		ControllerInterfaceObj.executeRequest();
-	}
-	function signupListener(){
-		ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'signup'});
-		ControllerInterfaceObj.executeRequest();
-	}
+    var ControllerInterfaceObj = new ControllerLayerInterface();
+    function searchListener(){
+        ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
+        ControllerInterfaceObj.executeRequest();
+    }
 
-	$(document).ready(function(){
-		$('.login-button-div .login-button').on('click',loginListener);
+    function homeListener(){
+        if(!$.cookie('username')){
+            ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+        }
+        else{
+            if($.cookie('userType')=='teacher'){
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'teacherMainPage'});
+            }
+            else if($.cookie('userType')=='student'){
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'studentMainPage'});
+            }
+            else{
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+            }
+        }
+        ControllerInterfaceObj.executeRequest();
 
-		$('.register-button-div .signup-button').on('click',signupListener);
-	});
+    }
+
+    $(document).ready(function(){
+
+        $('.search-div .search-icon-div span.glyphicon-search').on('click',searchListener);
+        $('.home-div').on('click',homeListener);
+
+    });
 </script>
 
 <!-- End of guest header -->
 
-<link href="/UiLayer/MainPage/style/MainPageBody.css" rel="stylesheet" type="text/css" />
-<link href="/UiLayer/MainPage/style/courseDiv.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/MainPage/style/MainPageBody.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/MainPage/style/courseDiv.css" rel="stylesheet" type="text/css" />
+<link href="../../UiLayer/MainPage/style/welcomeDiv.css" rel="stylesheet" type="text/css" />
 
 <body class="light-primary-color">
 	<div class="container-fluid MainPageBody">
-		<div class="row title-row">
-			<div class="col-md-4 search-column">
-				<span>
-				جستجو در بین تمام درس ها:
-				</span>
-				<input type="text">
-				<button class="search-button">برو</button>
-			</div>
 
-			<div class="col-md-3 main-title-column">
-				<h4>
-					درس های جدید		
-				</h4>
-			</div>
 
-			<div class="col-md-2">
-			
-			</div>
-		</div>
-		
-		<div class="container course-table-div">
-			<div class="row courses-row">
-				
-				<div class="col-md-3 course-div dark-secondary-color">
-					<span class="row course-name">
+        <div class="col-md-4 container course-table-div">
+            <div class="row course-title course-div dark-secondary-color">
+                <h3>
+                  آخرین درس ها
+                </h3>
+            </div>
+            <div class="row course-div dark-secondary-color">
+
+					<h4 class="row course-name">
 						آموزش زبان انگلیسی
-					</span>
+					</h4>
 					<span class="row course-teacher-name">
 						محمد اصلاحی
 					</span>
-				</div>
-				<div class="col-md-3 course-div dark-secondary-color">
-					<span class="row course-name">
+            </div>
+            <div class="row course-div dark-secondary-color">
+					<h4 class="row course-name">
 						آموزش جاوا
-					</span>
+					</h4>
 					<span class="row course-teacher-name">
 						محسن علومی
 					</span>
-				</div>
-				<div class="col-md-3 course-div dark-secondary-color">
-					<span class="row course-name">
+            </div>
+            <div class="row course-div dark-secondary-color">
+					<h4 class="row course-name">
 						آموزش اندروید
-					</span>
+					</h4>
 					<span class="row course-teacher-name">
 						کیارش شمسی
 					</span>
-				</div>
-				<div class="col-md-3 course-div dark-secondary-color">
-					<span class="row course-name">
+            </div>
+            <div class="row course-div dark-secondary-color">
+					<h4 class="row course-name">
 						مدیریت منابع انسانی
-					</span>
+					</h4>
 					<span class="row course-teacher-name">
 						محمد حسین حاجی وندی
 					</span>
-				</div>
+            </div>
+        </div>
 
-			</div>	<!-- first row of courses -->
-			<div class="row">
-				
-				<div class="col-md-3 course-div dark-secondary-color">
-					<span class="row course-name">
-						ساخت و تولید
-					</span>
-					<span class="row course-teacher-name">
-						مصطفی
-					</span>
-				</div>
-				<div class="col-md-3 course-div dark-secondary-color">
-					<span class="row course-name">
-						شبکه
-					</span>
-					<span class="row course-teacher-name">
-						دکتر آنالویی
-					</span>
-				</div>
-				<div class="col-md-3 course-div dark-secondary-color">
-					<span class="row course-name">
-						آموزش شیمی دبیرستان
-					</span>
-					<span class="row course-teacher-name">
-						جعفر
-					</span>
-				</div>
-				<div class="col-md-3 course-div dark-secondary-color">
-					<span class="row course-name">
-						فیزیک پیش دانشگاهی
-					</span>
-					<span class="row course-teacher-name">
-						تقی
-					</span>
-				</div>
-				
-			</div>	<!-- second row of courses -->
-		</div>
-	</div>
+        <div class="col-md-4 empty-middle-column"></div>
+
+        <div class="col-md-3 container welcome-div dark-secondary-color">
+            <h2>
+                به مدرسه آنلاین خوش آمدید
+            </h2>
+            <p>
+                هدف ما فراهم کردن امکانات آموزشی برای همه فارسی زبانان جهان است
+            </p>
+
+            <p>
+                شما در مدرسه آنلاین هم میتوانید به یادگیری بپردازید و هم میتوانید به تدریس مجازی بپردازید. پس همین الآن
+                <a  class="signup-link">
+                    ثبت نام
+                </a>
+                کنید یا
+                <a class="login-link">
+                    وارد شوید
+                </a>
+            </p>
+
+        </div>
+
+        <div class="col-md-1 empty-left-column"></div>
+
+    </div>
 
 </body>
 <script type="text/javascript">
-    function searchListener(){
-        	ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
-            ControllerInterfaceObj.executeRequest();
+    function loginListener(){
+        ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'login'});
+        ControllerInterfaceObj.executeRequest();
     }
+    function signupListener(){
+        ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'signup'});
+        ControllerInterfaceObj.executeRequest();
+    }
+
     $(document).ready(function(){
-        
-        $('.search-column .search-button').on('click',searchListener);
+        $('div.MainPageBody div.welcome-div a.login-link').on('click',loginListener);
+        $('div.MainPageBody div.welcome-div a.signup-link').on('click',signupListener);
 
     });
 </script>
 <!-- Begin Guest Footer -->
-<link href="/UiLayer/GuestFooter/style/footer.css" rel="stylesheet" type="text/css" />
-
-<footer class="primary-color">
-	<div class="contact-div">
-		<h3 class="contact-div-text secondary-text">
-			نسخه آزمایشی
-		</h3>
-	</div>
-</footer>
 </html>
 
 <!-- End of Guest Footer -->

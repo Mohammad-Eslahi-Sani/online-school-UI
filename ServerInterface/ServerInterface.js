@@ -24,7 +24,7 @@ ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
     if(!!$.cookie('sessionId')){
         requestObj['sessionId'] = $.cookie('sessionId');
     }
-	alert('ajax is starting');
+	console.log('ajax is starting');
 	console.log(requestObj);
 	requestObj = JSON.stringify(requestObj);
     console.log('after making json:');
@@ -43,7 +43,7 @@ ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
         },
 
         error: function(e){
-            alert('error in ajax:');
+            console.log('error in ajax:');
             eFunc(e);
         }
     });
