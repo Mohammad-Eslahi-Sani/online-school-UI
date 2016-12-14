@@ -1,401 +1,594 @@
-<!-- header and footer must not be modified from here -->
-<!-- Begin guest header -->
-<!DOCTYPE html>
-<html class="GuestPage orange-yellow-theme">
+<!DOCTYPE HTML>
+<html>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- Head from header file begins -->
+
 <head>
-
-	<!-- ################################################################################ -->
-	<!-- ########## Begin Origin includes  -->
-
-	<!-- js libraries:  -->
-	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
-	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/bootstrap.min.js"></script>
-
-	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
-
-	<!--   js classes  -->
-	<script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
-	<script type="text/javascript" src="../../ControllerLayer/CourseCreator/CourseCreator.js"></script>
-	<script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
-	<script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
-	<script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
-	<script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
-	<script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
-
-	<!-- css libraries   -->
-	<link href="../../UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
-	<!-- css styles    -->
-	<link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
-	<link href="../../UiLayer/OriginPage/style/background.css" rel="stylesheet" type="text/css" />
-	<link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Online &mdash; School</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="learn and teach online in persian" />
+    <meta name="keywords" content="learn, teach, online, school, persian, farsi, education" />
+    <meta name="author" content="IUST" />
 
 
+    <!--
+      //////////////////////////////////////////////////////
 
-	<!-- ##### End of Origin includes -->
-	<!-- ################################################################################ -->
+      FREE HTML5 TEMPLATE
+      DESIGNED & DEVELOPED by FREEHTML5.CO
 
-	<!-- ################################################################################ -->
-	<!-- ########## Begin Guest Page includes  -->
+      Website: 		http://freehtml5.co/
+      Email: 			info@freehtml5.co
+      Twitter: 		http://twitter.com/fh5co
+      Facebook: 		https://www.facebook.com/fh5co
 
-	<!-- js libraries:  -->
-
-	<!--   js classes  -->
-
-	<!-- css libraries   -->
-
-	<!-- css styles    -->
-	<link href="../../UiLayer/GuestPage/style/GuestPage.css" rel="stylesheet" type="text/css" />
-	<link href="../../UiLayer/GuestPage/style/GuestPageBody.css" rel="stylesheet" type="text/css" />
-	<link href="../../UiLayer/GuestHeader/style/announceMessageDiv.css" rel="stylesheet" type="text/css" />
-	<link href="../../UiLayer/GuestHeader/style/header.css" rel="stylesheet" type="text/css" />
-
-	<!-- ##### End of Guest Page includes -->
-	<!-- ################################################################################ -->
+      //////////////////////////////////////////////////////
+       -->
 
 
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+
+    <!--
+      //////////////////////////////////////////////////////
+                    Origin includes begin
+    -->
+
+    <!--   splash template -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/icomoon.css">
+    <!-- Themify Icons-->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/themify-icons.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/magnific-popup.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/owl.theme.default.min.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- End of splash templates -->
+
+    <!-- js libraries:  -->
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+
+    <!--   js classes  -->
+    <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/CourseCreator/CourseCreator.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/RedirectManager/RedirectManager.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
+    <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
+
+    <!-- css libraries   -->
+    <link href="../../UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- css styles    -->
+    <link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/style/background.css" rel="stylesheet" type="text/css" />
+    <link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    <!--
+      //////////////////////////////////////////////////////
+                    Origin includes ends
+    -->
 
 </head>
-<header class="primary-color container-fluid">
-	<div class="row">
-		<div class="col-md-3 search-div">
-			<div class="row search-input-container">
-				<div class="col-md-4 search-icon-div">
-					<span class="glyphicon glyphicon-search"></span>
-				</div>
-				<div class="col-md-8 search-input-div">
-					<input size="30" type="text" placeholder="جست و جو در بین درس ها">
-				</div>
-			</div>
 
-		</div>
-		<div class="col-md-3 contact-div">
-			<div class="col-md-10 contact-text-div">
-				<h4>
-					ارتباط با ما
-				</h4>
-			</div>
-			<div class="col-md-2 contact-icon-div">
-				<span class="glyphicon glyphicon-envelope"></span>
-			</div>
-		</div>
-		<div class="col-md-3 profile-div">
-			<!--<div class="col-md-10 profile-text-div">
-                <h4>
-                    حساب کاربری
-                </h4>
+<!-- Head from header file Ends -->
+<!-- ---------------------------------------------------------------------------------- -->
+
+<body>
+
+<div class="gtco-loader"></div>
+
+<div id="page">
+
+
+    <div class="page-inner">
+        <!-- ---------------------------------------------------------------------------------- -->
+        <!-- nav and header from header file begins -->
+
+        <nav class="gtco-nav" role="navigation">
+            <div class="gtco-container">
+
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <div id="gtco-logo"><a href="../../UiLayer/MainPage2/index.html">Splash <em>.</em></a></div>
+                    </div>
+                    <div class="col-xs-8 text-right menu-1">
+                        <ul>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Tour</a></li>
+                            <li class="has-dropdown">
+                                <a href="#">Dropdown</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Web Design</a></li>
+                                    <li><a href="#">eCommerce</a></li>
+                                    <li><a href="#">Branding</a></li>
+                                    <li><a href="#">API</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li class="btn-cta"><a href="#"><span>Get started</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
+        </nav>
 
-            <div class="col-md-2 profile-icon-div">
-                <span class="glyphicon glyphicon-user"></span>
-            </div>-->
-		</div>
-		<div class="col-md-3 home-div">
-			<div class="col-md-10 profile-text-div">
-				<h4>
-					خانه
-				</h4>
-			</div>
+        <header id="gtco-header" class="gtco-cover" role="banner"
+                style="background-image: url(../../UiLayer/OriginPage/splashTemplateResources/images/img_4.jpg)">
+            <div class="overlay"></div>
+            <div class="gtco-container">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0 text-left">
 
-			<div class="col-md-2 home-icon-div">
-				<span class="glyphicon glyphicon-home"></span>
-			</div>
-		</div>
 
-	</div>
+                        <div class="row row-mt-15em">
+                            <div class="col-md-6 mt-text animate-box" data-animate-effect="fadeInUp">
+                        <span class="intro-text-small">
+                            فرم ثبت نام
+                        </span>
+                            </div>
+                            <div class="col-md-5 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+                                <div class="form-wrap">
+                                    <div class="tab">
+                                        <ul class="tab-menu">
+                                            <li class="gtco-third"><a href="#" data-tab="contact-form">
+                                                اطلاعات تماس
+                                            </a></li>
+                                            <li class="gtco-second"><a href="#" data-tab="user-form">
+                                                مشخصات کاربری
+                                            </a></li>
+                                            <li class="active gtco-first"><a href="#" data-tab="personal-form">
+                                                مشخصات شخصی
+                                            </a></li>
 
-	<div class="announce-message-div">
-		<h3 class="announce-message-text secondary-text"> Announce Message Here! </h3>
-	</div>
-</header>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-content-inner active" data-content="personal-form">
+                                                <form   class="personal-form" action="#">
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label  for="name">
+                                                                نام
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <input type="text" class="form-control" id="name">
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label  for="name">
+                                                                نام
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="family">
+                                                                نام خانوادگی
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <input type="text" class="col-md-9 form-control" id="family">
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="family">
+                                                                نام خانوادگی
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="nationalNumber">
+                                                                کد ملی
+                                                            </label>
+
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <input type="text" class="form-control" id="nationalNumber">
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="nationalNumber">
+                                                                کد ملی
+                                                            </label>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="field">
+                                                                رشته تحصیلی
+                                                            </label>
+
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <select class="form-control" id="field">
+                                                                <option value="computerScience">
+                                                                    علوم کامپیوتر
+                                                                </option>
+                                                                <option value="architecture">
+                                                                    معماری
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="field">
+                                                                رشته تحصیلی
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="grade">
+                                                                مقطع تحصیلی
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <select class="form-control" id="grade">
+                                                                <option value="bachelor">
+                                                                    لیسانس
+                                                                </option>
+                                                                <option value="master">
+                                                                    کارشناسی ارشد
+                                                                </option>
+                                                                <option value="phd">
+                                                                    دکتری
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="grade">
+                                                                مقطع تحصیلی
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-md-12">
+                                                            <input id="go-to-user-form" type="button" class="btn btn-primary" value="ادامه">
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="tab-content-inner " data-content="user-form">
+                                                <form   class="user-form" action="#">
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="username">
+                                                                نام کاربری
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <input type="text" class="form-control" id="username">
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="username">
+                                                                نام کاربری
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="password">
+                                                                رمز عبور
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <input type="password" class="form-control" id="password">
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="password">
+                                                                رمز عبور
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="password2">
+                                                                تکرار رمز عبور
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <input type="password" class="form-control" id="password2">
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="password2">
+                                                                تکرار رمز عبور
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="role">
+                                                                تکرار رمز عبور
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <select class="form-control" id="role">
+                                                                <option value="teacher">
+                                                                    معلم
+                                                                </option>
+                                                                <option value="student">
+                                                                    دانش آموز
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="role">
+                                                                تکرار رمز عبور
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-md-12">
+                                                            <input id="go-to-contact-form" type="button" class="btn btn-primary" value="ادامه">
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="tab-content-inner" data-content="contact-form">
+                                                <form   class="contact-form" action="#">
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="phoneNumber">
+                                                                شماره تماس
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <input type="text" class="form-control" id="phoneNumber">
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="phoneNumber">
+                                                                شماره تماس
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+                                                            <label for="email">
+                                                                ایمیل
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-12 col-xs-12 col-lg-9 col-md-9">
+                                                            <input type="text" class="form-control" id="email">
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                                            <label for="email">
+                                                                ایمیل
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-md-12">
+                                                            <input type="button" id="submitSignup" class="btn btn-primary" value="ارسال">
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- nav and header from header file ends -->
+        <!-- ---------------------------------------------------------------------------------- -->
+
+
+        <!-- Begin Guest Footer -->
+
+        <footer id="gtco-footer" role="contentinfo">
+            <div class="gtco-container">
+                <div class="row row-p	b-md">
+
+                    <div class="col-md-4">
+                        <div class="gtco-widget">
+                            <h3>About <span class="footer-logo">Splash<span>.<span></span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eos molestias quod sint ipsum possimus temporibus officia iste perspiciatis consectetur in fugiat repudiandae cum. Totam cupiditate nostrum ut neque ab?</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-push-1">
+                        <div class="gtco-widget">
+                            <h3>Links</h3>
+                            <ul class="gtco-footer-links">
+                                <li><a href="#">Knowledge Base</a></li>
+                                <li><a href="#">Career</a></li>
+                                <li><a href="#">Press</a></li>
+                                <li><a href="#">Terms of services</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="gtco-widget">
+                            <h3>Get In Touch</h3>
+                            <ul class="gtco-quick-contact">
+                                <li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
+                                <li><a href="#"><i class="icon-mail2"></i> info@FreeHTML5.co</a></li>
+                                <li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        <p class="pull-left">
+                            <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
+                            <small class="block">Designed by <a href="http://FreeHTML5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+                        </p>
+                        <p class="pull-right">
+                        <ul class="gtco-social-icons pull-right">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- End of Guest Footer -->
+
+    </div>
+
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
+
+
+<!--        Begin Footer splash includes from footer file   -->
+<!-- jQuery -->
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.waypoints.min.js"></script>
+<!-- Carousel -->
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/owl.carousel.min.js"></script>
+<!-- countTo -->
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.countTo.js"></script>
+<!-- Magnific Popup -->
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.magnific-popup.min.js"></script>
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/magnific-popup-options.js"></script>
+<!-- Main -->
+<script src="../../UiLayer/OriginPage/splashTemplateResources/js/main.js"></script>
+<!--        End of Footer splash includes from footer file   -->
+
+
+<!-- Footer script codes -->
+<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+
 <script type="text/javascript">
-	var ControllerInterfaceObj = new ControllerLayerInterface();
-	function searchListener(){
-		ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
-		ControllerInterfaceObj.executeRequest();
-	}
+    var ControllerInterfaceObj = new ControllerLayerInterface();
+    function searchListener(){
+        ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
+        ControllerInterfaceObj.executeRequest();
+    }
 
-	function homeListener(){
-		if(!$.cookie('username')){
-			ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
-		}
-		else{
-			if($.cookie('userType')=='teacher'){
-				ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'teacherMainPage'});
-			}
-			else if($.cookie('userType')=='student'){
-				ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'studentMainPage'});
-			}
-			else{
-				ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
-			}
-		}
-		ControllerInterfaceObj.executeRequest();
+    function homeListener(){
+        if(!$.cookie('username')){
+            ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+        }
+        else{
+            if($.cookie('userType')=='teacher'){
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'teacherMainPage'});
+            }
+            else if($.cookie('userType')=='student'){
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'studentMainPage'});
+            }
+            else{
+                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+            }
+        }
+        ControllerInterfaceObj.executeRequest();
 
-	}
+    }
 
-	$(document).ready(function(){
+    $(document).ready(function(){
 
-		$('.search-div .search-icon-div span.glyphicon-search').on('click',searchListener);
-		$('.home-div').on('click',homeListener);
-	});
+        $('.search-div .search-icon-div span.glyphicon-search').on('click',searchListener);
+        $('.home-div').on('click',homeListener);
+    });
 </script>
+<!-- End of Footer script condes-->
 
-
-<!-- End of guest header -->
-
-
-<link href="../../UiLayer/Signup/style/SignupBody.css" rel="stylesheet" type="text/css" />
-<link href="../../UiLayer/Signup/style/signupForm.css" rel="stylesheet" type="text/css" />
-
-<body class="light-primary-color">
-	<div class="container-fluid SignupBody">
-        <div class="col-md-1"></div>
-		<form class="col-md-10 signupForm dark-secondary-color">
-            <div class="container">
-                <div class="col-md-4 contact-form">
-                    <div class="row title">
-                        <h3>
-                            اطلاعات تماس
-                        </h3>
-                    </div>
-
-                    <div class="row email-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="text" name="email" class="emailInput" id="email-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="email-input" class="email-label">
-                                ایمیل
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-
-                    <div class="row phoneNumber-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="text" name="phoneNumber" class="phoneNumberInput" id="phoneNumber-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="phoneNumber-input" class="phoneNumber-label">
-                                شماره تماس
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-
-                </div>
-                <div class="col-md-4 user-form">
-                    <div class="row title">
-                        <h3>
-                            مشخصات کاربری
-                        </h3>
-                    </div>
-
-                    <div class="row username-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="text" name="username" class="usernameInput" id="username-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="username-input" class="username-label">
-                                نام کاربری
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-                    <div class="row password-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="password" name="password" class="passwordInput" id="password-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="password-input">
-                                کلمه عبور
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-                    <div class="row password-again-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="password" name="password-again" class="passwordAgainInput" id="password-again-input">
-                        </div>
-                        <div class="col-md-4 label-div">
-                            <label for="password-again-input">
-                                کلمه عبور را دوباره وارد کنید
-                            </label>
-                        </div>
-                        <!--<div class="col-md-0 empty-right"></div>-->
-                    </div>
-
-
-                    <div class="row userType-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <select class="userType-select" id="userType-select">
-                                <option value="student">دانش آموز</option>
-                                <option value="teacher">معلم</option>
-                            </select>
-
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="userType-select">
-                                نوع کاربری
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-
-
-                </div>
-                <div class="col-md-4 personal-form">
-                    <div class="row title">
-                        <h3>
-                            مشخصات شخصی
-                        </h3>
-                    </div>
-
-                    <div class="row name-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="text" name="name" class="nameInput" id="name-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="name-input" class="name-label">
-                                نام
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-
-                    <div class="row family-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="text" name="family" class="familyInput" id="family-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="family-input" class="family-label">
-                                نام خانوادگی
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-
-                    <div class="row nationalNumber-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="text" name="nationalNumber" class="nationalNumberInput" id="nationalNumber-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="nationalNumber-input" class="nationalNumber-label">
-                                کد ملی
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-                    <div class="row field-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="text" name="field" class="fieldInput" id="field-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="field-input" class="field-label">
-                                رشته تحصیلی
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-
-                    <div class="row grade-row">
-                        <div class="col-md-1 empty-left"></div>
-
-                        <div class="col-md-6 input-div">
-                            <input type="text" name="grade" class="gradeInput" id="grade-input">
-                        </div>
-                        <div class="col-md-3 label-div">
-                            <label for="grade-input" class="grade-label">
-                                مقطع تحصیلی
-                            </label>
-                        </div>
-                        <div class="col-md-2 empty-right"></div>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-			<div class="row confirmButton-row">
-                <div class="col-md-0"></div>
-				<div class="col-md-6">
-					<button type="button" class="confirmButton">
-						ثبت نام کن					
-					</button>
-				</div>
-				<div class="col-md-6"></div>
-				
-			</div>
-			
-		</form>
-        <div class="col-md-1"></div>
-
-	</div>
-
-</body>
 <script type="text/javascript">
-	function signUpConfirmListener(){
-        var usernameInput = $('.username-row .usernameInput').val();
-        var passwordInput = $('.password-row .passwordInput').val();
-        var passwordAgainInput = $('.password-again-row .passwordAgainInput').val();
-        var userTypeInput = $('.userType-row .userType-select option:selected').val();
+    function signUpConfirmListener(){
+        var usernameInput = $('form.user-form input#username').val();
+        var passwordInput = $('form.user-form input#password').val();
+        var passwordAgainInput = $('form.user-form input#password2').val();
+        var userTypeInput = $('form.user-form select#role option:selected').val();
 
 
-        var nameInput = $('.name-row .nameInput').val();
-        var familyInput = $('.family-row .familyInput').val();
-        var nationalNumberInput = $('.nationalNumber-row .nationalNumberInput').val();
-        var fieldInput = $('.field-row .fieldInput').val();
-        var gradeInput = $('.grade-row .gradeInput').val();
-        var emailInput = $('.email-row .emailInput').val();
-        var phoneNumberInput = $('.phoneNumber-row .phoneNumberInput').val();
+        var nameInput = $('form.personal-form input#name').val();
+        var familyInput = $('form.personal-form input#family').val();
+        var nationalNumberInput = $('form.personal-form input#nationalNumber').val();
+        var fieldInput = $('form.personal-form select#field option:selected').val();
+        var gradeInput = $('form.personal-form select#grade option:selected').val();
+
+        var emailInput = $('form.contact-form input#email').val();
+        var phoneNumberInput = $('form.user-form input#phoneNumber').val();
 
         var parametersAry =[
-			['task','signup'],
-			['username',usernameInput],
-			['password',passwordInput],
-			['role',userTypeInput],
-			['name',nameInput],
-			['family',familyInput],
-			['balance',0],
-			['email',emailInput],
-			['phoneNumber',phoneNumberInput],
-			['nationalNumber',nationalNumberInput],
-			['birthDate',0],
-			['field',fieldInput],
-			['grade',gradeInput]
-		];
+            ['task','signup'],
+            ['username',usernameInput],
+            ['password',passwordInput],
+            ['role',userTypeInput],
+            ['name',nameInput],
+            ['family',familyInput],
+            ['balance',0],
+            ['email',emailInput],
+            ['phoneNumber',phoneNumberInput],
+            ['nationalNumber',nationalNumberInput],
+            ['birthDate',0],
+            ['field',fieldInput],
+            ['grade',gradeInput]
+        ];
 
         var requestParameters = {
             requestType: 'signup',
@@ -406,11 +599,12 @@
 
     }
     $(document).ready(function(){
-    	$('.signupForm .confirmButton-row .confirmButton').on('click',signUpConfirmListener);
+        $('form.contact-form input#submitSignup').on('click',signUpConfirmListener);
     });
 </script>
-<!-- Begin Guest Footer -->
+
+
+
+</body>
 </html>
 
-
-<!-- End of Guest Footer -->
