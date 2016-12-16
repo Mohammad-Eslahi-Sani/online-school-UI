@@ -76,6 +76,7 @@
     <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
     <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/bootstrap.min.js"></script>
 
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
 
     <!--   js classes  -->
     <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
@@ -86,49 +87,107 @@
     <script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
     <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
+
+
+
     <!-- css libraries   -->
     <link href="../../UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+    <!--    Kendo    -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/libs/kendo/css/kendo.common.min.css" />
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/libs/kendo/css/kendo.default.min.css" />
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/libs/kendo/css/kendo.rtl.min.css">
+    <script src="../../UiLayer/OriginPage/libs/kendo/js/kendo.all.min.js"></script>
+    <script src="../../UiLayer/OriginPage/libs/kendo/fa-IR.js"></script>
+
+
 
     <!-- css styles    -->
     <link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
     <link href="../../UiLayer/OriginPage/style/background.css" rel="stylesheet" type="text/css" />
     <link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
     <!--
-      //////////////////////////////////////////////////////
-                    Origin includes ends
-    -->
+          //////////////////////////////////////////////////////
+                        Origin includes ends
+        -->
 
 </head>
 
+<!--        ########################################    -->
+<!--        nav         -->
+<link rel="stylesheet" href="../../UiLayer/GuestHeader/style/nav.css">
 <nav class="gtco-nav" role="navigation">
     <div class="gtco-container">
 
         <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <div id="gtco-logo"><a href="../../UiLayer/MainPage2/index.html">Splash <em>.</em></a></div>
-            </div>
-            <div class="col-xs-8 text-right menu-1">
-                <ul>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Tour</a></li>
-                    <li class="has-dropdown">
-                        <a href="#">Dropdown</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">eCommerce</a></li>
-                            <li><a href="#">Branding</a></li>
-                            <li><a href="#">API</a></li>
-                        </ul>
+            <div class="col-xs-8 menu-1">
+                <ul class="kendo-menu">
+                    <li>
+                        <a href="#">
+                            ورود
+                        </a>
+                        <em>/</em>
+                        <a href="#">
+                            عضویت
+                        </a>
                     </li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="btn-cta"><a href="#"><span>Get started</span></a></li>
+                    <li class="btn-cta"><a href="#">
+                        <input type="text" id="search-input" placeholder="جستجو">
+                    </a></li>
                 </ul>
             </div>
+            <div class="col-sm-4 col-xs-12  text-right">
+                <div id="gtco-logo"><a href="../../UiLayer/MainPage2/index.html">
+                    مدرسه آنلاین
+                </a></div>
+            </div>
+
         </div>
 
     </div>
 </nav>
+<script type="application/javascript">
+    function loginListener(){
+        var myWindow = $("#window"),
+                undo = $("#undo");
+
+        undo.click(function() {
+            myWindow.data("kendoWindow").open();
+            undo.fadeOut();
+        });
+
+        function onClose() {
+            undo.fadeIn();
+        }
+
+        myWindow.kendoWindow({
+            width: "600px",
+            title: "About Alvar Aalto",
+            visible: false,
+            actions: [
+                "Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            close: onClose
+        }).data("kendoWindow").center().open();
+
+    }
+    function signUpListener(){
+
+    }
+    $(document).ready(function() {
+        $("#menu").kendoMenu();
+    });
+
+</script>
+
+
+
+<!--    ############################################    -->
+
 
 <header id="gtco-header" class="gtco-cover" role="banner"
         style="background-image: url(../../UiLayer/OriginPage/splashTemplateResources/images/img_4.jpg)">
@@ -148,83 +207,9 @@
                         </h1>
                     </div>
                     <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
-                        <div class="form-wrap">
-                            <div class="tab">
-                                <ul class="tab-menu">
-                                    <li class="active gtco-first"><a href="#" data-tab="signup">
-                                        ثبت نام
-                                    </a></li>
-                                    <li class="gtco-second"><a href="#" data-tab="login">
-                                        ورود
-                                    </a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-content-inner active" data-content="signup">
-                                        <form action="#">
-                                            <div class="row form-group">
-                                                <div class="col-md-12">
-                                                    <label for="username">
-                                                        نام کاربری
-                                                    </label>
-                                                    <input type="text" class="form-control" id="username">
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col-md-12">
-                                                    <label for="password">
-                                                        رمز عبور
-                                                    </label>
-                                                    <input type="password" class="form-control" id="password">
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col-md-12">
-                                                    <label for="password2">
-                                                        تکرار رمز عبور
-                                                    </label>
-                                                    <input type="password" class="form-control" id="password2">
-                                                </div>
-                                            </div>
 
-                                            <div class="row form-group">
-                                                <div class="col-md-12">
-                                                    <input type="submit" class="btn btn-primary" value="ثبت نام">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                    <div class="tab-content-inner" data-content="login">
-                                        <form action="#">
-                                            <div class="row form-group">
-                                                <div class="col-md-12">
-                                                    <label for="username">
-                                                        نام کاربری
-                                                    </label>
-                                                    <input type="text" class="form-control" id="username">
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col-md-12">
-                                                    <label for="password">
-                                                        رمز عبور
-                                                    </label>
-                                                    <input type="password" class="form-control" id="password">
-                                                </div>
-                                            </div>
-
-                                            <div class="row form-group">
-                                                <div class="col-md-12">
-                                                    <input type="submit" class="btn btn-primary" value="ورود">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
+
                 </div>
 
 
@@ -232,3 +217,4 @@
         </div>
     </div>
 </header>
+
