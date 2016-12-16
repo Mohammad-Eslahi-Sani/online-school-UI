@@ -124,11 +124,16 @@
             <div class="col-xs-8 menu-1">
                 <ul class="kendo-menu">
                     <li>
-                        <a href="#">
+                        <a id="showProfileWindow">
+                            پروفایل
+                        </a>
+                    </li>
+                    <li>
+                        <a  id="showLoginWindow" href="#">
                             ورود
                         </a>
                         <em>/</em>
-                        <a href="#">
+                        <a  id="showSignUpWindow" href="#">
                             عضویت
                         </a>
                     </li>
@@ -147,23 +152,60 @@
 
     </div>
 </nav>
+
+<!--    ############################################    -->
+<!-- login window -->
+<link rel="stylesheet" href="../../UiLayer/GuestHeader/style/login-form.css">
+<div id="loginWindow" class="k-rtl">
+    <div class="login-form-container">
+        <form  action="#">
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="username">
+                        نام کاربری
+                    </label>
+                    <input type="text" class="form-control" id="username">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="password">
+                        رمز عبور
+                    </label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <input  id="login-confirm" type="submit" class="k-button k-primary" value="
+                تایید
+                ">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
 <script type="application/javascript">
-    function loginListener(){
-        var myWindow = $("#window"),
-                undo = $("#undo");
+    $(document).ready(function() {
+        $("#menu").kendoMenu();
+
+        var myWindow = $("#loginWindow"),
+                undo = $("#showLoginWindow");
 
         undo.click(function() {
-            myWindow.data("kendoWindow").open();
-            undo.fadeOut();
+            myWindow.data("kendoWindow").center().open();
+//            undo.fadeOut();
         });
 
         function onClose() {
-            undo.fadeIn();
+//            undo.fadeIn();
         }
 
         myWindow.kendoWindow({
-            width: "600px",
-            title: "About Alvar Aalto",
+            width: "300px",
+            title: "ورود",
             visible: false,
             actions: [
                 "Pin",
@@ -172,14 +214,105 @@
                 "Close"
             ],
             close: onClose
-        }).data("kendoWindow").center().open();
+        }).data("kendoWindow");
 
-    }
-    function signUpListener(){
 
-    }
+
+    });
+
+</script>
+
+<!--    ############################################    -->
+<!-- signUp window -->
+<link rel="stylesheet" href="../../UiLayer/GuestHeader/style/signUp-form.css">
+<div id="signUpWindow" class="k-rtl">
+    <div class="signUp-form-container">
+        <form  action="#">
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="signUp-username">
+                        نام کاربری
+                    </label>
+                    <input type="text" class="form-control" id="signUp-username">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="signUp-password">
+                        رمز عبور
+                    </label>
+                    <input type="password" class="form-control" id="signUp-password">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="signUp-re-password">
+                        تکرار رمز عبور
+                    </label>
+                    <input type="password" class="form-control" id="signUp-re-password">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="role">
+                        نوع کاربری
+                    </label>
+                    <select id="role" class="k-rtl">
+                        <option value="teacher">
+                            معلم
+                        </option>
+                        <option value="student">
+                            دانش آموز
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <input id="signUp-confirm" type="submit" class="k-button k-primary" value="
+                تایید
+                ">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<script type="application/javascript">
     $(document).ready(function() {
-        $("#menu").kendoMenu();
+        // create ComboBox from select HTML element
+        $("#role").kendoComboBox();
+        var roleSelect = $("#size").data("kendoComboBox");
+
+
+
+        var signUpWindow = $("#signUpWindow"),
+                showSignUpWindow = $("#showSignUpWindow");
+
+        showSignUpWindow.click(function() {
+            signUpWindow.data("kendoWindow").center().open();
+//            showSignUpWindow.fadeOut();
+        });
+
+        function onClose() {
+//            showSignUpWindow.fadeIn();
+        }
+
+        signUpWindow.kendoWindow({
+            width: "300px",
+            title: "ثبت نام",
+            visible: false,
+            actions: [
+                "Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            close: onClose
+        }).data("kendoWindow");
+
+
+
     });
 
 </script>

@@ -1,0 +1,7 @@
+div#loginWindow div.login-form-container{
+     margin: 0 3em;
+}
+
+div#loginWindow div.login-form-container input#login-confirm{
+    float:left;
+}
