@@ -1,21 +1,24 @@
 /**
- * Created by Mohammad on 12/7/2016.
+ * Created by Mohammad on 12/23/2016.
  */
 
-function CourseCreator(inputFields){
+function JoinCourse(inputFields){
     this.courseFields = inputFields;
+
 }
 
-CourseCreator.prototype.getSuccessResponse = function(response){
-    alert('successful response from create course request sent to server:');
+
+JoinCourse.prototype.getSuccessResponse = function(response) {
+    alert('successful response from join course request sent to server:');
     console.log(response);
 
     console.log('success parse:');
     console.log(response['response']);
+
 };
 
-CourseCreator.prototype.getErrorResponse = function(response){
-    alert('error in create course Request :');
+JoinCourse.prototype.getErrorResponse = function(response) {
+    alert('error in join course Request :');
     console.log(response);
 
     console.log('error parse:');
@@ -23,18 +26,13 @@ CourseCreator.prototype.getErrorResponse = function(response){
 
 };
 
-CourseCreator.prototype.requestCreateCourse = function(response){
+JoinCourse.prototype.requestJoinCourse = function(response){
     var requestAry = this.courseFields;
     //if(!!requestAry.length){
     //	requestAry = [['task','signup'],["username",'ali'],["password",'123'],["role",'teacher']];
     //}
     var serverInterfaceObj = new ServerInterface();
     serverInterfaceObj.doRequest(requestAry,this.getSuccessResponse,this.getErrorResponse);
-    console.log('request for create course has been sent');
+    console.log('request for join course has been sent');
 
 };
-
-
-
-
-
