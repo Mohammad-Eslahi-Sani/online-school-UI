@@ -13,11 +13,15 @@ ExitAgent.prototype.requestExit = function(){
 };
 
 ExitAgent.prototype.getSuccessResponse = function(response){
-    alert('successful response for exit request');
+    alert('You have been signed out successfully!');
     console.log(response);
 
     if(response['response']=='error'){
-        console.log("unable to exit!");
+        console.log("signout success response says error");
+    }
+    else{
+        var rd = new RedirectManager();
+        rd.redirectTo('MainPage');
     }
 
 };
