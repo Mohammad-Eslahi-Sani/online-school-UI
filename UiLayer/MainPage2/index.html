@@ -775,10 +775,12 @@
             $('input#login-confirm').on('click',loginConfirmListener);
 
             var myWindow = $("#loginWindow"),
-                    undo = $("#showLoginWindow");
+                    undo = $("a#showLoginWindow");
 
             undo.click(function() {
+				console.log('login window must be shown');
                 myWindow.data("kendoWindow").center().open();
+
 //            undo.fadeOut();
             });
 
@@ -804,10 +806,11 @@
             $('input#signUp-confirm').on('click',signUpConfirmListener);
 
             var signUpWindow = $("#signUpWindow"),
-                    showSignUpWindow = $("#showSignUpWindow");
+                    showSignUpWindow = $("a#showSignUpWindow");
 
             showSignUpWindow.click(function() {
-                signUpWindow.data("kendoWindow").top().open();
+                console.log('login window must be shown');
+                signUpWindow.data("kendoWindow").center().open();
 //            showSignUpWindow.fadeOut();
             });
 
