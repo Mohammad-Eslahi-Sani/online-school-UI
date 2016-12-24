@@ -1,12 +1,58 @@
-<!DOCTYPE html>
-<html class="UserPage orange-yellow-theme">
+
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Online &mdash; School</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="learn and teach online in persian" />
+    <meta name="keywords" content="learn, teach, online, school, persian, farsi, education" />
+    <meta name="author" content="IUST" />
 
-    <!-- ################################################################################ -->
-    <!-- ########## Begin Origin includes  -->
 
+    <!--
+      //////////////////////////////////////////////////////
 
+      FREE HTML5 TEMPLATE
+      DESIGNED & DEVELOPED by FREEHTML5.CO
 
+      Website: 		http://freehtml5.co/
+      Email: 			info@freehtml5.co
+      Twitter: 		http://twitter.com/fh5co
+      Facebook: 		https://www.facebook.com/fh5co
+
+      //////////////////////////////////////////////////////
+       -->
+
+    <!--   splash template -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/icomoon.css">
+    <!-- Themify Icons-->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/themify-icons.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/magnific-popup.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/owl.theme.default.min.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/splashTemplateResources/css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- End of splash templates -->
 
     <!-- js libraries:  -->
     <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery-2.2.0.min.js"></script>
@@ -21,10 +67,28 @@
     <script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/JoinCourse/JoinCourse.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/SearchAgent/SearchAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/ShowLessons/ShowLessons.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/GetCourse/GetCourse.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/GetProfile/GetProfile.js"></script>
     <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
+
+
+
 
     <!-- css libraries   -->
     <link href="../../UiLayer/OriginPage/libs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+    <!--    Kendo    -->
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/libs/kendo/css/kendo.common.min.css" />
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/libs/kendo/css/kendo.default.min.css" />
+    <link rel="stylesheet" href="../../UiLayer/OriginPage/libs/kendo/css/kendo.rtl.min.css">
+    <script src="../../UiLayer/OriginPage/libs/kendo/js/kendo.all.min.js"></script>
+    <script src="../../UiLayer/OriginPage/libs/kendo/fa-IR.js"></script>
+
+
 
     <!-- css styles    -->
     <link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
@@ -32,107 +96,208 @@
     <link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
 
 
-    <!-- ##### End of Origin includes -->
-    <!-- ################################################################################ -->
 
-    <!-- ################################################################################ -->
-    <!-- ########## Begin User Page includes  -->
 
-    <!-- js libraries:  -->
 
-    <!--   js classes  -->
 
-    <!-- css libraries   -->
+    <!-- Begin Footer of splash template -->
 
-    <!-- css styles    -->
-    <link href="../../UiLayer/UserPage/style/UserPage.css" rel="stylesheet" type="text/css" />
-    <link href="../../UiLayer/UserHeader/style/header.css" rel="stylesheet" type="text/css" />
 
-    <!-- ##### End of User Page includes -->
-    <!-- ################################################################################ -->
+    <!-- jQuery -->
+    <!--<script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.min.js"></script>-->
+    <!-- jQuery Easing -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/owl.carousel.min.js"></script>
+    <!-- countTo -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.countTo.js"></script>
+    <!-- Magnific Popup -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.magnific-popup.min.js"></script>
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/magnific-popup-options.js"></script>
+    <!-- Main -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/main.js"></script>
+
+
+    <!-- End of Splash Footer includes template -->
+
+
+
+    <!--
+             //////////////////////////////////////////////////////
+                           Origin includes ends
+           -->
 
 </head>
-<header class="primary-color container-fluid">
-    <div class="row">
-        <div class="col-md-3 search-div">
-            <div class="row search-input-container">
-                <div class="col-md-4 search-icon-div">
+
+<!--        ########################################    -->
+<!--        nav         -->
+<link rel="stylesheet" href="../../UiLayer/UserHeader/style/nav.css">
+<nav class="gtco-nav" role="navigation">
+    <div class="gtco-container">
+
+        <div class="row">
+            <div class="col-xs-8 menu-1">
+                <ul id="menu">
+                    <li>
+                        <a href="">
+                            اصلاحی
+                            <img class="user-image k-image" src="../../UiLayer/UserHeader/img/default-avatar.png" width="30" height="30">
+                        </a>
+                        <ul  id="userDropDown">
+                            <li>
+                                <a  id="profileButton" href="#">
+                                    ‍پروفایل
+                                </a>
+                            </li>
+                            <li>
+                                <a  id="exitButton" href="#">
+                                    خروج
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a  id="showListButton" href="#">
+                            لیست درس های من
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-xs-12  text-right">
+                <div id="gtco-logo">
+                    <a id="site-title" href="../../UiLayer/MainPage2/index.html">
+                    مدرسه آنلاین
+                    </a>
+                    <input type="text" id="search-input" placeholder="جستجو">
                     <span class="glyphicon glyphicon-search"></span>
                 </div>
-                <div class="col-md-8 search-input-div">
-                    <input size="30" type="text" placeholder="جست و جو در بین درس ها">
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<!--    ############################################    -->
+<!--            Profile window          -->
+<link rel="stylesheet" href="../../UiLayer/UserHeader/style/">
+<div id="profileWindow" class="k-rtl">
+    <div class="profile-form-container">
+        <form  action="#">
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="username">
+                        نام کاربری
+                    </label>
+                    <input type="text" class="form-control" id="username">
                 </div>
             </div>
-
-        </div>
-        <div class="col-md-3 contact-div">
-            <div class="col-md-10 contact-text-div">
-                <h4>
-                    ارتباط با ما
-                </h4>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="password">
+                        رمز عبور
+                    </label>
+                    <input type="password" class="form-control" id="password">
+                </div>
             </div>
-            <div class="col-md-2 contact-icon-div">
-                <span class="glyphicon glyphicon-envelope"></span>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <input  id="login-confirm" type="button" class="k-button k-primary" value="
+                تایید
+                ">
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 profile-div">
-            <!--<div class="col-md-10 profile-text-div">
-                <h4>
-                    حساب کاربری
-                </h4>
-            </div>
-
-            <div class="col-md-2 profile-icon-div">
-                <span class="glyphicon glyphicon-user"></span>
-            </div>-->
-        </div>
-        <div class="col-md-3 home-div">
-            <div class="col-md-10 profile-text-div">
-                <h4>
-                    خانه
-                </h4>
-            </div>
-
-            <div class="col-md-2 home-icon-div">
-                <span class="glyphicon glyphicon-home"></span>
-            </div>
-        </div>
-
+        </form>
     </div>
 
-    <div class="announce-message-div">
-        <h3 class="announce-message-text secondary-text"> Announce Message Here! </h3>
+</div>
+
+
+<header id="gtco-header" class="gtco-cover" role="banner"
+        style="background-image: url(../../UiLayer/OriginPage/splashTemplateResources/images/img_4.jpg)">
+    <div class="overlay"></div>
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-left">
+
+
+                <div class="row row-mt-15em">
+                    <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+                        <span class="intro-text-small">
+                            به مدرسه آنلاین خوش آمدید
+                        </span>
+                        <h1>
+                            میتوانید به صورت مجازی هم یادبگیرید و هم به دیگران یاد بدهید!
+                        </h1>
+                    </div>
+                    <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
     </div>
 </header>
-<script type="text/javascript">
+
+
+
+
+<!--    ############################################    -->
+<!--            User header java script codes          -->
+
+<script type="application/javascript">
     var ControllerInterfaceObj = new ControllerLayerInterface();
-    function searchListener(){
-        ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
+    function exitListener(){
+        console.log('exit listenr has been called');
+        var exitParametersList = [['task','exit']];
+        var requestParameters = {
+            requestType:'exit',
+            inputList:exitParametersList
+        };
+
+        ControllerInterfaceObj.setRequestParameters(requestParameters);
         ControllerInterfaceObj.executeRequest();
     }
+    $(document).ready(function() {
+        $("#menu").kendoMenu();
+        $("a#exitButton").on('click',exitListener);
+        var userProfileLink = $("a#userProfile");
+        userProfileLink.innerText = $.cookie('username');
 
-    function homeListener(){
-        if(!$.cookie('username')){
-            ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
+        var myWindow = $("#profileWindow");
+
+        userProfileLink.click(function() {
+            myWindow.data("kendoWindow").center().open();
+//            undo.fadeOut();
+        });
+
+        function onClose() {
+//            undo.fadeIn();
         }
-        else{
-            if($.cookie('userType')=='teacher'){
-                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'teacherMainPage'});
-            }
-            else if($.cookie('userType')=='student'){
-                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'studentMainPage'});
-            }
-            else{
-                ControllerInterfaceObj.setRequestParameters({requestType:'redirection',redirectUrl:'mainPage'});
-            }
-        }
-        ControllerInterfaceObj.executeRequest();
 
-    }
+        myWindow.kendoWindow({
+            width: "300px",
+            title: "پروفایل",
+            visible: false,
+            actions: [
+                "Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            close: onClose
+        }).data("kendoWindow");
 
-    $(document).ready(function(){
-
-        $('.search-div .search-icon-div span.glyphicon-search').on('click',searchListener);
-        $('.home-div').on('click',homeListener);
     });
+
 </script>
+
+
+<!--    ############################################    -->
