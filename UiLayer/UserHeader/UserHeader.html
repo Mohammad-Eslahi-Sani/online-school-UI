@@ -149,7 +149,7 @@
                         </a>
                         <ul  id="userDropDown">
                             <li>
-                                <a  id="profileButton" href="#">
+                                <a  id="userProfile" href="#">
                                     ‍پروفایل
                                 </a>
                             </li>
@@ -266,7 +266,7 @@
         ControllerInterfaceObj.executeRequest();
     }
     $(document).ready(function() {
-        $("#menu").kendoMenu();
+        $("ul#menu").kendoMenu();
         $("a#exitButton").on('click',exitListener);
         var userProfileLink = $("a#userProfile");
         userProfileLink.innerText = $.cookie('username');
