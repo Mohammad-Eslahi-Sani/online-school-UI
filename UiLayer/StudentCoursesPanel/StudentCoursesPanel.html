@@ -192,7 +192,7 @@
 								مدرسه آنلاین
 							</a>
 							<input type="text" id="search-input" placeholder="جستجو">
-							<span class="glyphicon glyphicon-search"></span>
+							<span id="search-button" class="glyphicon glyphicon-search"></span>
 						</div>
 					</div>
 
@@ -244,15 +244,140 @@
 
         <link rel="stylesheet" href="../../UiLayer/StudentCoursesPanel/style/panelbar.css">
         <link rel="stylesheet" href="../../UiLayer/StudentCoursesPanel/style/body.css">
+        <link rel="stylesheet" href="../../UiLayer/StudentCoursesPanel/style/courseDiv.css">
 
         <div class="gtco-section body-div border-bottom">
 			<div class="gtco-container">
 				<div class="row">
 					<div class="col-md-12">
 						<!-- left side section -->
-						<div class="col-md-6 animate-box">
+						<div	id="left-section" class="col-md-6 col-md-push-4 animate-box">
+							<div class="row">
+                                <h3  id="courses-title">
+                                    درس های فعال
+                                </h3>
+							</div>
+							<div id="courses-container" class="">
+								<div class="row courseNum1 course-div">
+									<div class="col-md-2 show-button-div">
+										<button class="k-button show-course" >
+											نمایش
+										</button>
+									</div>
+									<div class="col-md-8 main-div">
+										<div class="row title-row">
+                                        <span>
+                                            آموزش برنامه نویسی به زبان پایتون
+                                        </span>
+										</div>
+										<div class="row author-row">
+                                        <span>
+                                            حاجی وندی
+                                        </span>
+										</div>
+									</div>
+									<div class="col-md-2 image-div">
+										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
+									</div>
 
-						</div>
+								</div>
+								<div class="row courseNum1 course-div">
+									<div class="col-md-2 show-button-div">
+										<button class="k-button show-course" >
+											نمایش
+										</button>
+									</div>
+									<div class="col-md-8 main-div">
+										<div class="row title-row">
+                                        <span>
+                                            آموزش برنامه نویسی به زبان پایتون
+                                        </span>
+										</div>
+										<div class="row author-row">
+                                        <span>
+                                            حاجی وندی
+                                        </span>
+										</div>
+									</div>
+									<div class="col-md-2 image-div">
+										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
+									</div>
+
+								</div>
+								<div class="row courseNum1 course-div">
+									<div class="col-md-2 show-button-div">
+										<button class="k-button show-course" >
+											نمایش
+										</button>
+									</div>
+									<div class="col-md-8 main-div">
+										<div class="row title-row">
+                                        <span>
+                                            آموزش برنامه نویسی به زبان پایتون
+                                        </span>
+										</div>
+										<div class="row author-row">
+                                        <span>
+                                            حاجی وندی
+                                        </span>
+										</div>
+									</div>
+									<div class="col-md-2 image-div">
+										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
+									</div>
+
+								</div>
+								<div class="row courseNum1 course-div">
+									<div class="col-md-2 show-button-div">
+										<button class="k-button show-course" >
+											نمایش
+										</button>
+									</div>
+									<div class="col-md-8 main-div">
+										<div class="row title-row">
+                                        <span>
+                                            آموزش برنامه نویسی به زبان پایتون
+                                        </span>
+										</div>
+										<div class="row author-row">
+                                        <span>
+                                            حاجی وندی
+                                        </span>
+										</div>
+									</div>
+									<div class="col-md-2 image-div">
+										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
+									</div>
+
+								</div>
+								<div class="row courseNum1 course-div">
+									<div class="col-md-2 show-button-div">
+										<button class="k-button show-course" >
+											نمایش
+										</button>
+									</div>
+									<div class="col-md-8 main-div">
+										<div class="row title-row">
+                                        <span>
+                                            آموزش برنامه نویسی به زبان پایتون
+                                        </span>
+										</div>
+										<div class="row author-row">
+                                        <span>
+                                            حاجی وندی
+                                        </span>
+										</div>
+									</div>
+									<div class="col-md-2 image-div">
+										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
+									</div>
+
+								</div>
+
+							</div>
+
+
+                        </div>
 
 						<!-- right side section -->
 						<div class="col-md-2 col-md-push-4 animate-box">
@@ -397,10 +522,6 @@
 
 <script type="text/javascript">
 	var ControllerInterfaceObj = new ControllerLayerInterface();
-	function searchListener(){
-		ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
-		ControllerInterfaceObj.executeRequest();
-	}
 
 	function exitListener(){
 		console.log('exit listenr has been called');
@@ -432,7 +553,6 @@
 		ControllerInterfaceObj.executeRequest();
 
 	}
-
 	$(document).ready(function(){
 		$("ul#menu").kendoMenu();
 		$('.search-div .search-icon-div span.glyphicon-search').on('click',searchListener);
@@ -473,6 +593,9 @@
 	});
 </script>
 <!--   End of script code for main page -->
+<script type="text/javascript" src="../../UiLayer/UserHeader/js/search.js"></script>
+
+<script type="text/javascript" src="../../UiLayer/StudentCoursesPanel/js/courses-container.js" charset="UTF-8"></script>
 
 
 </html>

@@ -1,5 +1,11 @@
-.StudentMainPageBody .course-table-div .course-div{
+.body-div div#courses-container .course-div{
 	margin: 1em;
-	width: 18em;
+	width: 35em;
+	background-color: white;
+	border-style: outset;
+	padding:2em;
+}
 
+.body-div div#courses-container .course-div .title-row{
+	margin-bottom: 1em;
 }
