@@ -22,7 +22,7 @@ SearchAgent.prototype.getErrorResponse = function(response){
 
 };
 
-SearchAgent.prototype.requestSearch = function(response){
+SearchAgent.prototype.requestSearch = function(){
     var requestAry = this.searchFields;
     var serverInterfaceObj = new ServerInterface();
     serverInterfaceObj.doRequest(requestAry,this.getSuccessResponse,this.getErrorResponse);

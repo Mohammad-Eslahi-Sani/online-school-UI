@@ -50,6 +50,8 @@ ControllerLayerInterface.prototype.redirect = function(){
 };
 
 ControllerLayerInterface.prototype.search = function(){
+    var sAgent = new SearchAgent(this.requestParameters['inputList']);
+    sAgent.requestSearch();
 
 };
 

@@ -192,7 +192,7 @@
 								مدرسه آنلاین
 							</a>
 							<input type="text" id="search-input" placeholder="جستجو">
-							<span class="glyphicon glyphicon-search"></span>
+							<span id="search-button" class="glyphicon glyphicon-search"></span>
 						</div>
 					</div>
 
@@ -657,10 +657,6 @@
 
     <script type="text/javascript">
 		var ControllerInterfaceObj = new ControllerLayerInterface();
-        function searchListener(){
-            ControllerInterfaceObj.setRequestParameters({requestType:'search',searchField:'Test Search'});
-            ControllerInterfaceObj.executeRequest();
-        }
 
 		function exitListener(){
 			console.log('exit listenr has been called');
@@ -728,6 +724,8 @@
         });
     </script>
     <!--   End of script code for main page -->
+
+	<script type="text/javascript" src="../../UiLayer/UserHeader/js/search.js"></script>
 
 
 </html>
