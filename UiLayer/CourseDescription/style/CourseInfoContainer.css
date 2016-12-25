@@ -1,0 +1,21 @@
+.course-info-container > div{
+    margin:3em 0;
+}
+.course-author-row{
+    line-height: 3em;
+}
+
+.course-details-row span,.course-author-row span{
+    font-size: 1.5em;
+}
+
+.course-details-row .glyphicon{
+    color:#00aeef;
+}
+
+
+.course-description-row{
+    border-style: outset;
+    padding: 1em;
+    text-align: justify;
+}

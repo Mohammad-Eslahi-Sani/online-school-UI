@@ -1,0 +1,16 @@
+ul#panelbar{
+    margin-top:4em;
+}
+
+ul#panelbar span.panel-row-title{
+    padding-right: 2em;
+    color:black;
+}
+
+ul#panelbar li{
+    color:black;
+}
+
+ul#panelbar .k-state-selected{
+    background-color: lavender;
+}
