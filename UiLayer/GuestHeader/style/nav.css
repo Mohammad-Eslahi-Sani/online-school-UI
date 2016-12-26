@@ -1,3 +1,75 @@
-nav div.menu-1 ul.kendo-menu{
+nav.gtco-nav{
+    padding: 0.7em 0;
+}
+nav, nav ul#menu{
+    background-color: white;
+    border:none;
+}
+
+nav div.menu-1 ul#menu{
     float:left;
+}
+
+nav ul#menu > li{
+    min-height: 3em;
+    border:none;
+}
+
+nav a#site-title{
+    color:black;
+    font-size: x-large;
+}
+
+nav ul#menu span{
+    color:black;
+}
+
+.k-menu .k-item>.k-link{
+    line-height: normal;
+}
+
+nav input#search-input{
+    font-size: medium;
+    width: 3em;
+    animation-name: searchInputUnFocusAnimation;
+    animation-duration: 0.5s;
+
+}
+
+@keyframes searchInputFocusAnimation {
+    from {
+        font-size: medium;
+        width: 3em;
+    }
+    to {
+        font-size: large;
+        width: 6em;
+    }
+}
+
+
+@keyframes searchInputUnFocusAnimation {
+    from {
+        font-size: large;
+        width: 6em;
+    }
+    to {
+        font-size: medium;
+        width: 3em;
+    }
+}
+
+nav input#search-input:focus{
+    animation-name: searchInputFocusAnimation;
+    animation-duration: 0.5s;
+    font-size: large;
+    width: 6em;
+}
+
+nav .glyphicon{
+    font-size: medium;
+}
+
+nav .glyphicon:hover{
+    cursor: pointer;
 }

@@ -85,6 +85,11 @@
     <script type="text/javascript" src="../../ControllerLayer/LoginAgent/LoginAgent.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/SignupAgent/SignupAgent.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/ExitAgent/ExitAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/JoinCourse/JoinCourse.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/SearchAgent/SearchAgent.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/ShowLessons/ShowLessons.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/GetCourse/GetCourse.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/GetProfile/GetProfile.js"></script>
     <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
 
@@ -107,10 +112,42 @@
     <link href="../../UiLayer/OriginPage/style/font.css" rel="stylesheet" type="text/css" />
     <link href="../../UiLayer/OriginPage/style/background.css" rel="stylesheet" type="text/css" />
     <link href="../../UiLayer/OriginPage/themes/orange-yellow-theme.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+    <!-- Begin Footer of splash template -->
+
+
+    <!-- jQuery -->
+    <!--<script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.min.js"></script>-->
+    <!-- jQuery Easing -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/owl.carousel.min.js"></script>
+    <!-- countTo -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.countTo.js"></script>
+    <!-- Magnific Popup -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/jquery.magnific-popup.min.js"></script>
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/magnific-popup-options.js"></script>
+    <!-- Main -->
+    <script src="../../UiLayer/OriginPage/splashTemplateResources/js/main.js"></script>
+
+
+    <!-- End of Splash Footer includes template -->
+
+
+
     <!--
-          //////////////////////////////////////////////////////
-                        Origin includes ends
-        -->
+              //////////////////////////////////////////////////////
+                            Origin includes ends
+            -->
 
 </head>
 
@@ -122,25 +159,32 @@
 
         <div class="row">
             <div class="col-sm-8 col-xs-8 menu-1">
-                <ul class="kendo-menu">
+                <ul id="menu">
                     <li>
                         <a  id="showLoginWindow" href="#">
-                            ورود
-                        </a>
-                        <em>/</em>
-                        <a  id="showSignUpWindow" href="#">
-                            عضویت
+                            <span class="glyphicon glyphicon-log-in"></span>
+                            <span class="text-span">
+                                                            ورود
+                            </span>
                         </a>
                     </li>
-
+                    <li>
+                        <a  id="showSignUpWindow" href="#">
+                            <span class="glyphicon glyphicon-registration-mark"></span>
+                            <span class="text-span">
+                            عضویت
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class=" col-sm-4 col-xs-12  text-right">
                 <div id="gtco-logo">
-                    <a href="../../UiLayer/MainPage2/index.html">
+                    <a id="site-title" href="../../UiLayer/MainPage2/index.html">
                         مدرسه آنلاین
                     </a>
                     <input type="text" id="search-input" placeholder="جستجو">
+                    <span id="search-button" class="glyphicon glyphicon-search"></span>
                 </div>
             </div>
 
@@ -148,13 +192,8 @@
 
     </div>
 </nav>
-<script type="application/javascript">
-    var ControllerInterfaceObj = new ControllerLayerInterface();
-    $(document).ready(function() {
-        $("#menu").kendoMenu();
-    });
-
-</script>
+<script charset="utf-8" type="text/javascript" src="../../UiLayer/GuestHeader/js/nav.js"></script>
+<script charset="utf-8" type="text/javascript" src="../../UiLayer/GuestHeader/js/search.js"></script>
 
 <!--    ############################################    -->
 <!-- login window -->
@@ -189,52 +228,7 @@
     </div>
 
 </div>
-<script type="application/javascript">
-    function loginConfirmListener(){
-        var usernameInput = $('input#username').val();
-        var passwordInput = $('input#password').val();
-        var loginParametersList = [['task','login'],['username',usernameInput],['password',passwordInput]];
-        var requestParameters = {
-            requestType:'login',
-            inputList:loginParametersList
-        };
-
-        ControllerInterfaceObj.setRequestParameters(requestParameters);
-        ControllerInterfaceObj.executeRequest();
-    }
-    $(document).ready(function() {
-        $('input#login-confirm').on('click',loginConfirmListener);
-
-        var myWindow = $("#loginWindow"),
-                undo = $("#showLoginWindow");
-
-        undo.click(function() {
-            myWindow.data("kendoWindow").center().open();
-//            undo.fadeOut();
-        });
-
-        function onClose() {
-//            undo.fadeIn();
-        }
-
-        myWindow.kendoWindow({
-            width: "300px",
-            title: "ورود",
-            visible: false,
-            actions: [
-                "Pin",
-                "Minimize",
-                "Maximize",
-                "Close"
-            ],
-            close: onClose
-        }).data("kendoWindow");
-
-
-
-    });
-
-</script>
+<script charset="utf-8" type="text/javascript" src="../../UiLayer/GuestHeader/js/login.js"></script>
 
 <!--    ############################################    -->
 <!-- signUp window -->
@@ -292,88 +286,7 @@
     </div>
 
 </div>
-<script type="application/javascript">
-    function signUpConfirmListener(){
-        var usernameInput = $('input#signUp-username').val();
-        var passwordInput = $('input#signUp-password').val();
-        var passwordAgainInput = $('input#signUp-re-password').val();
-        var userTypeInput = $('.userType-row .userType-select option:selected').val();
-//        var userTypeInput = $("#role").data("kendoComboBox");
-        var defaultValue = '---';
-
-//        var nameInput = $('.name-row .nameInput').val();
-        var nameInput = usernameInput;
-//        var familyInput = $('.family-row .familyInput').val();
-        var familyInput = defaultValue;
-//        var nationalNumberInput = $('.nationalNumber-row .nationalNumberInput').val();
-        var nationalNumberInput = defaultValue;
-//        var fieldInput = $('.field-row .fieldInput').val();
-        var fieldInput = defaultValue;
-//        var gradeInput = $('.grade-row .gradeInput').val();
-        var gradeInput = defaultValue;
-//        var emailInput = $('.email-row .emailInput').val();
-        var emailInput = defaultValue;
-//        var phoneNumberInput = $('.phoneNumber-row .phoneNumberInput').val();
-        var phoneNumberInput = defaultValue;
-
-        var parametersAry =[
-            ['task','signup'],
-            ['username',usernameInput],
-            ['password',passwordInput],
-            ['role',userTypeInput],
-            ['name',nameInput],
-            ['family',familyInput],
-            ['balance',0],
-            ['email',emailInput],
-            ['phoneNumber',phoneNumberInput],
-            ['nationalNumber',nationalNumberInput],
-            ['birthDate',0],
-            ['field',fieldInput],
-            ['grade',gradeInput]
-        ];
-
-        var requestParameters = {
-            requestType: 'signup',
-            inputList: parametersAry
-        };
-        ControllerInterfaceObj.setRequestParameters(requestParameters);
-        ControllerInterfaceObj.executeRequest();
-
-    }
-
-    $(document).ready(function() {
-        // create ComboBox from select HTML element
-        $("#role").kendoComboBox();
-        $('input#signUp-confirm').on('click',signUpConfirmListener);
-
-        var signUpWindow = $("#signUpWindow"),
-                showSignUpWindow = $("#showSignUpWindow");
-
-        showSignUpWindow.click(function() {
-            signUpWindow.data("kendoWindow").center().open();
-//            showSignUpWindow.fadeOut();
-        });
-
-        function onClose() {
-//            showSignUpWindow.fadeIn();
-        }
-
-        signUpWindow.kendoWindow({
-            width: "300px",
-            title: "ثبت نام",
-            visible: false,
-            actions: [
-                "Pin",
-                "Minimize",
-                "Maximize",
-                "Close"
-            ],
-            close: onClose
-        }).data("kendoWindow");
-
-    });
-
-</script>
+<script charset="utf-8" type="text/javascript" src="../../UiLayer/GuestHeader/js/signup.js"></script>
 
 
 
