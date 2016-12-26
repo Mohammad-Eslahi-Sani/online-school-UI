@@ -56,7 +56,7 @@ $(document).ready(function() {
     $('input#signUp-confirm').on('click',signUpConfirmListener);
 
     var signUpWindow = $("#signUpWindow"),
-        showSignUpWindow = $("#showSignUpWindow");
+        showSignUpWindow = $("nav ul#menu a#showSignUpWindow");
 
     showSignUpWindow.click(function() {
         signUpWindow.data("kendoWindow").center().open();

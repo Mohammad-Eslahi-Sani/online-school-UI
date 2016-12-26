@@ -22,6 +22,6 @@ function homeListener(){
 }
 
 $(document).ready(function() {
-    $("#menu").kendoMenu();
+    $("nav ul#menu").kendoMenu();
     $('.home-div').on('click',homeListener);
 });

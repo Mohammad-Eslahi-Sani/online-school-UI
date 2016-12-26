@@ -18,7 +18,7 @@ $(document).ready(function() {
     $('input#login-confirm').on('click',loginConfirmListener);
 
     var myWindow = $("#loginWindow"),
-        undo = $("#showLoginWindow");
+        undo = $("nav ul#menu a#showLoginWindow");
 
     undo.click(function() {
         myWindow.data("kendoWindow").center().open();
