@@ -1,3 +1,7 @@
-form div.row{
-    padding-right: 3em;
+div#signUpWindow div.signUp-form-container{
+    margin: 0 3em;
+}
+
+div#signUpWindow div.signUp-form-container input#signUp-confirm{
+    float:left;
 }

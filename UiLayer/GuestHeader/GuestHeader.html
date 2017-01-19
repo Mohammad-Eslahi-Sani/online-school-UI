@@ -234,180 +234,58 @@
 <!-- signUp window -->
 <link rel="stylesheet" href="../../UiLayer/GuestHeader/style/signUp-form.css">
 <div id="signUpWindow" class="k-rtl">
-    <ul>
-        <li class="k-state-active">
-            اطلاعات اصلی
-        </li>
-        <li>
-            اطلاعات اضافی
-        </li>
-        <li>
-            آواتار
-        </li>
-    </ul>
-    <div>
-        <form id="required-fields-form">
-            <div id="required-inputs-container">
-                <div class="username-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="signUp-username" class="required">
-                            نام کاربری
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input name="signUp-username" type="text" class="form-control k-textbox" id="signUp-username"
-                               required validationMessage="
-                           وارد نمودن نام کاربری الزامیست!
-                           ">
-                    </div>
+    <div class="signUp-form-container">
+        <form  action="#">
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="signUp-username">
+                        نام کاربری
+                    </label>
+                    <input type="text" class="form-control" id="signUp-username">
                 </div>
-                <div class="email-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="email" class="required">
-                            ایمیل
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input name="email" type="email" class="form-control k-textbox" id="email"
-                               required validationMessage="
-وارد نمودن ایمیل الزامیست!
-                           "
-                               data-email-msg="e.g. myname@example.net فرمت ورودی درست نیست"
-                                >
-                    </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="signUp-password">
+                        رمز عبور
+                    </label>
+                    <input type="password" class="form-control" id="signUp-password">
                 </div>
-                <div class="password-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="signUp-password" class="required">
-                            رمز عبور
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input name="signUp-password" type="password" class="form-control k-textbox" id="signUp-password"
-                               required validationMessage="
-وارد نمودن پسورد الزامیست!
-                           ">
-                    </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="signUp-re-password">
+                        تکرار رمز عبور
+                    </label>
+                    <input type="password" class="form-control" id="signUp-re-password">
                 </div>
-                <div class="signUp-re-password row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="signUp-re-password" class="required">
-                            تکرار رمز عبور
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input name="signUp-re-password" type="password" class="form-control k-textbox" id="signUp-re-password"
-                               required validationMessage="
-تکرار رمز عبور الزامیست!
-                           ">
-                    </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="role">
+                        نوع کاربری
+                    </label>
+                    <select id="role" class="k-rtl">
+                        <option value="teacher">
+                            معلم
+                        </option>
+                        <option value="student">
+                            دانش آموز
+                        </option>
+                    </select>
                 </div>
-                <div class="role-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="role-input" class="role-label">
-                            نوع کاربری
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input type="text" name="role" class="roleInput" id="role-input"
-                               data-role="dropdown" data-container-for="role-input">
-                    </div>
-
-                </div>
-                <div class="row submit-div">
-                    <button id="signUp-form-submit" class="k-button k-complete">
-                        ارسال اطلاعات
-                    </button>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <input id="signUp-confirm" type="button" class="k-button k-primary" value="
+                تایید
+                ">
                 </div>
             </div>
         </form>
     </div>
-    <div>
-        <form id="additional-fields-form">
-            <div id="additional-inputs-container">
-                <div class="name-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="name-input" class="name-label">
-                            نام
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input type="text" name="name" class="nameInput" id="name-input">
-                    </div>
-
-                </div>
-                <div class="family-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="family-input" class="family-label">
-                            نام خانوادگی
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input type="text" name="family" class="familyInput" id="family-input">
-                    </div>
-
-                </div>
-                <div class="nationalId-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="nationalNumber-input" class="nationalNumber-label">
-                            کد ملی
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input type="text" name="nationalNumber" class="nationalNumberInput" id="nationalNumber-input">
-                    </div>
-
-                </div>
-                <div class="field-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="field-input" class="field-label">
-                            رشته تحصیلی
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input type="text" name="field" class="fieldInput" id="field-input"
-                               data-role="dropdown" data-container-for="field-input">
-                    </div>
-
-                </div>
-                <div class="grade-row row form-group">
-                    <div class="col-md-12 label-div">
-                        <label for="grade-input" class="grade-label">
-                            مقطع تحصیلی
-                        </label>
-                    </div>
-                    <div class="col-md-12 input-div">
-                        <input type="text" name="grade" class="gradeInput" id="grade-input"
-                               data-role="dropdown" data-container-for="grade-input">
-                    </div>
-
-                </div>
-            </div>
-        </form>
-
-    </div>
-    <div>
-        <form id="avatar-form">
-            <div id="file-input-container">
-                <div class="k-content">
-                    <input type="file" name="files" id="files" />
-                </div>
-
-            </div>
-        </form>
-    </div>
-
 
 </div>
-<script id="fileTemplate" type="text/x-kendo-template">
-    <span class='k-progress'></span>
-    <div class='file-wrapper'>
-        <span class='file-icon #=addExtensionClass(files[0].extension)#'></span>
-        <h4 class='file-heading file-name-heading'>نام :#=name#</h4>
-        <h4 class='file-heading file-size-heading'>انداره :#=size# bytes</h4>
-        <button type='button' class='k-upload-action'></button>
-    </div>
-</script>
 <script charset="utf-8" type="text/javascript" src="../../UiLayer/GuestHeader/js/signup.js"></script>
 
 
