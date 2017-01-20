@@ -1,11 +1,12 @@
 function ServerInterface(){
-	this.serverAddress = 'http://172.17.242.98:8080';
+	this.serverAddress = 'http://www.mocky.io';
 	this.urlDict = {
 		login : this.serverAddress+'/online-school/login',
 		exit : this.serverAddress+'/online-school/signout',
 		signup: this.serverAddress+'/online-school/signup',
 		createCourse: this.serverAddress+'/online-school/course/create',
-		readCourse: this.serverAddress+'/online-school/course/read'
+		readCourse: this.serverAddress+'/online-school/course/read',
+        showLessonsList: this.serverAddress+'/v2/5881ff36250000dc23c9eed0'
 	};
 }
 
@@ -31,7 +32,7 @@ ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
     console.log(requestObj);
     $.ajax({
         url: requestUrl,
-        dataType   : 'json',
+        dataType   : 'jsonp',
         contentType: 'application/json;charset=utf8',
         type: 'POST',
         data: requestObj,

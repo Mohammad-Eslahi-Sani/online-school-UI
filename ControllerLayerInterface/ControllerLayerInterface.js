@@ -12,6 +12,11 @@ ControllerLayerInterface.prototype.setRequestParameters = function(inRequestPara
 ControllerLayerInterface.prototype.executeRequest = function(){
     var requestType = this.requestParameters['requestType'];
     switch (requestType){
+        case 'showLessons':
+        case 'getLessonsList':
+        case 'showLessonsList':
+            this.showLessons();
+            break;
         case 'search':
             this.search();
             break;
@@ -67,6 +72,12 @@ ControllerLayerInterface.prototype.login = function(){
     var lAgent = new LoginAgent(this.requestParameters['inputList']);
     lAgent.requestLogin();
 };
+
+ControllerLayerInterface.prototype.showLessons = function(){
+    var showLessonsAgent = new ShowLessons(this.requestParameters['inputList']);
+    showLessonsAgent.requestLessonsList();
+};
+
 
 ControllerLayerInterface.prototype.announce = function(){
 
