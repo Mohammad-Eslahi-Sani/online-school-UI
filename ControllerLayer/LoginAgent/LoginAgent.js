@@ -52,7 +52,7 @@ LoginAgent.prototype.getSuccessResponse = function(response){
 };
 
 LoginAgent.prototype.getErrorResponse = function(response) {
-    alert('Unable to login!');
+    console.log('Unable to login!');
 
 
     console.log('response unparsed for login request');

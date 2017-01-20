@@ -8,7 +8,7 @@ function ShowLessons(inputFields){
 }
 
 ShowLessons.prototype.getSuccessResponse = function(response){
-    alert('successful response from show lessons request sent to server:');
+    console.log('successful response from show lessons request sent to server:');
     console.log(response);
 
     var lessonsListLength = response.length;

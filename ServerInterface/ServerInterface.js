@@ -1,7 +1,7 @@
 function ServerInterface(){
 	this.serverAddress = 'http://www.mocky.io';
 	this.urlDict = {
-		login : this.serverAddress+'/online-school/login',
+		login : this.serverAddress+'/v2/588231012800001a06cbd424',
 		exit : this.serverAddress+'/online-school/signout',
 		signup: this.serverAddress+'/online-school/signup',
 		createCourse: this.serverAddress+'/online-school/course/create',

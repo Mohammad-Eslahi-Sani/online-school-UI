@@ -1,12 +1,12 @@
 function RedirectManager(){
 	this.urlDictionary = {
-        loginUrl: '../../UiLayer/Login/Login.html',
-        signupUrl: '../../UiLayer/Signup/Signup.html',
-        teacherMainPageUrl : '../../UiLayer/TeacherMainPage/TeacherMainPage.html',
-        studentMainPageUrl : '../../UiLayer/StudentMainPage/StudentMainPage.html',
-        teacherCoursePageUrl: '../../UiLayer/TeacherCoursePage/TeacherCoursePage.html',
-        studentCoursePageUrl: '../../UiLayer/StudentCoursePage/StudentCoursePage.html',
-        mainPageUrl: '../../UiLayer/MainPage/MainPage.html',
+        login: '../../UiLayer/Login/Login.html',
+        signup: '../../UiLayer/Signup/Signup.html',
+        teacherMainPage : '../../UiLayer/UserMainPage/UserMainPage.html',
+        studentMainPage : '../../UiLayer/UserMainPage/UserMainPage.html',
+        teacherCoursePage: '../../UiLayer/TeacherCoursePage/TeacherCoursePage.html',
+        studentCoursePage: '../../UiLayer/StudentCoursePage/StudentCoursePage.html',
+        mainPage: '../../UiLayer/MainPage2/index.html',
 		signupSuccessful: '../../UiLayer/SignupSuccessful/SignupSuccessful.html'
     };
 	this.parametersList = [];
@@ -16,31 +16,31 @@ RedirectManager.prototype.redirectTo = function(destUrl){
 	switch(destUrl){
 		case 'StudentMainPage':
 		case 'studentMainPage':
-			destUrl = this.urlDictionary['studentMainPageUrl'];
+			destUrl = this.urlDictionary['studentMainPage'];
 			break;
 		case 'TeacherMainPage':
-		case 'theacherMainPage':
-            destUrl = this.urlDictionary['teacherMainPageUrl'];
+		case 'teacherMainPage':
+            destUrl = this.urlDictionary['teacherMainPage'];
 			break;
 		case 'Login':
 		case 'login':
-            destUrl = this.urlDictionary['loginUrl'];
+            destUrl = this.urlDictionary['login'];
 			break;
 		case 'Signup':
 		case 'signup':
-            destUrl = this.urlDictionary['signupUrl'];
+            destUrl = this.urlDictionary['signup'];
 			break;
 		case 'StudentCoursePage':
 		case 'studentCoursePage':
-            destUrl = this.urlDictionary['studentCoursePageUrl'];
+            destUrl = this.urlDictionary['studentCoursePage'];
 			break;
 		case 'TeacherCoursePage':
 		case 'teacherCoursePage':
-            destUrl = this.urlDictionary['teacherCoursePageUrl'];
+            destUrl = this.urlDictionary['teacherCoursePage'];
 			break;
 		case 'mainPage':
 		case 'MainPage':
-			destUrl = this.urlDictionary['mainPageUrl'];
+			destUrl = this.urlDictionary['mainPage'];
 			break;
 		case 'signupSuccessful':
 		case 'signUpSuccessful':
@@ -50,8 +50,11 @@ RedirectManager.prototype.redirectTo = function(destUrl){
 			break;
 		default:
 			destUrl = this.urlDictionary[destUrl];
-			break;
+            break;
 	}
+    if(!destUrl){
+        alert('problem in finding destination page in redirect manager')
+    }
 	for(var i = 0;i<this.parametersList.length;i++){
 		if(i==0 && !!this.parametersList[0]){
 			destUrl += '?' + this.parametersList[i][0] + '=' + this.parametersList[i][1];
@@ -60,7 +63,7 @@ RedirectManager.prototype.redirectTo = function(destUrl){
 			destUrl += '&' + this.parametersList[i][0] + '=' + this.parametersList[i][1];
 		}
 	}
-	window.location.href = destUrl;
+	window.location.replace(destUrl);
 };
 
 RedirectManager.prototype.setParametersList = function(parametersList){
