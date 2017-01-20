@@ -3,7 +3,7 @@ function ServerInterface(){
 	this.urlDict = {
 		login : this.serverAddress+'/v2/588231012800001a06cbd424',
 		exit : this.serverAddress+'/online-school/signout',
-		signup: this.serverAddress+'/online-school/signup',
+		signup: this.serverAddress+'/v2/58824410280000ff08cbd437',
 		createCourse: this.serverAddress+'/online-school/course/create',
 		readCourse: this.serverAddress+'/online-school/course/read',
         showLessonsList: this.serverAddress+'/v2/5881ff36250000dc23c9eed0'

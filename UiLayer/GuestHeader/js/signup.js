@@ -6,7 +6,7 @@ function signUpConfirmListener(){
     var usernameInput = $('input#signUp-username').val();
     var passwordInput = $('input#signUp-password').val();
     var passwordAgainInput = $('input#signUp-re-password').val();
-    var userTypeInput = $('.userType-row .userType-select option:selected').val();
+    var userTypeInput = $('select#role option:selected').val();
 //        var userTypeInput = $("#role").data("kendoComboBox");
     var defaultValue = '---';
 
@@ -20,8 +20,8 @@ function signUpConfirmListener(){
     var fieldInput = defaultValue;
 //        var gradeInput = $('.grade-row .gradeInput').val();
     var gradeInput = defaultValue;
-//        var emailInput = $('.email-row .emailInput').val();
-    var emailInput = defaultValue;
+        var emailInput = $('input#signUp-email').val();
+//    var emailInput = defaultValue;
 //        var phoneNumberInput = $('.phoneNumber-row .phoneNumberInput').val();
     var phoneNumberInput = defaultValue;
 

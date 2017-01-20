@@ -31,13 +31,10 @@ SignupAgent.prototype.setRequestAry = function(inputAry){
 };
 
 SignupAgent.prototype.requestSignup = function(){
-	// var requestAry = [['task','signup'],['username',username],['password',password],['userType',userType]];
 	var requestAry = this.requestAry;
-	//if(!!requestAry.length){
-	//	requestAry = [['task','signup'],["username",'ali'],["password",'123'],["role",'teacher']];
-	//}
 	$.removeCookie('sessionId',{path:'/'});
-
+	$.cookie('username',requestAry[1][1],{path:'/',expires:1});
+	$.cookie('role',requestAry[3][1],{path:'/',expires:1});
 	var serverInterfaceObj = new ServerInterface();
     serverInterfaceObj.doRequest(requestAry,this.getSuccessResponse,this.getErrorResponse);
 	console.log('request for signup has been sent');
@@ -45,24 +42,29 @@ SignupAgent.prototype.requestSignup = function(){
 };
 
 SignupAgent.prototype.getSuccessResponse = function(response){
-    console.log('response from signup request sent to server:');
+    console.log('response of signup request received from server:');
     console.log(response);
-	console.log('do we still have our request array?');
-	console.log(response);
 
-    //var parametersList = [['username',this.requestAry['username']],['userType',this.requestAry['userType']]];
-    var parametersList = [['username',response['username']]];
+    var signupErrorFlag = true;
+	if(!!response['username'] && !!response['role']){
+        if($.cookie('username') == response['username'] && $.cookie('role')==response['role']){
+            signupErrorFlag = false;
+            alert(response['username'] + " have successfully been registered as a " + response['role'] );
+        }
+    }
 
-	$.cookie('userType',response['role'],{expires:1,path:'/'});
-	var redirectAgent = new RedirectManager();
-    redirectAgent.setParametersList(parametersList);
-    redirectAgent.redirectTo('signupSuccessful');
+    if(signupErrorFlag){
+        $.removeCookie('username',{path:'/'});
+        $.removeCookie('role',{path:'/'});
+
+        alert("Sorry, Error in registering you in server");
+    }
 
 };
 
 SignupAgent.prototype.getErrorResponse = function(response){
-    alert('error in signup Request :');
-    alert(response);
+    alert('Error in sending signup Request to server');
+    console.log(response);
 
 };
 
