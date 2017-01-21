@@ -7,13 +7,18 @@ function RedirectManager(){
         teacherCoursePage: '../../UiLayer/TeacherCoursePage/TeacherCoursePage.html',
         studentCoursePage: '../../UiLayer/StudentCoursePage/StudentCoursePage.html',
         mainPage: '../../UiLayer/MainPage2/index.html',
-		signupSuccessful: '../../UiLayer/SignupSuccessful/SignupSuccessful.html'
+		signupSuccessful: '../../UiLayer/SignupSuccessful/SignupSuccessful.html',
+        courseDescription: '../../UiLayer/CourseDescription/CourseDescription.html'
     };
 	this.parametersList = [];
 }
 
 RedirectManager.prototype.redirectTo = function(destUrl){
 	switch(destUrl){
+        case 'courseDescription':
+        case 'CourseDescription':
+            destUrl = this.urlDictionary['courseDescription'];
+            break;
 		case 'StudentMainPage':
 		case 'studentMainPage':
 			destUrl = this.urlDictionary['studentMainPage'];

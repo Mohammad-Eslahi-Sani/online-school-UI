@@ -12,6 +12,10 @@ ControllerLayerInterface.prototype.setRequestParameters = function(inRequestPara
 ControllerLayerInterface.prototype.executeRequest = function(){
     var requestType = this.requestParameters['requestType'];
     switch (requestType){
+        case 'courseDescription':
+        case 'lessonDescription':
+            this.courseDescription();
+            break;
         case 'showLessons':
         case 'getLessonsList':
         case 'showLessonsList':
@@ -44,7 +48,7 @@ ControllerLayerInterface.prototype.executeRequest = function(){
             this.createCourse();
             break;
         default :
-
+            console.log("request type not handled in controller layer interface");
             break;
     }
 };
@@ -59,6 +63,13 @@ ControllerLayerInterface.prototype.search = function(){
     sAgent.requestSearch();
 
 };
+
+ControllerLayerInterface.prototype.courseDescription = function(){
+    console.log('we have come here;');
+    var describeAgent = new CourseDescriptionRequestor(this.requestParameters['inputList']);
+    describeAgent.requestCourseDescription();
+};
+
 
 ControllerLayerInterface.prototype.signUp = function(){
     var parametersAry = this.requestParameters['inputList'];

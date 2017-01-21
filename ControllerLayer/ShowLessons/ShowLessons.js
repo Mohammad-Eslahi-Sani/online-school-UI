@@ -20,13 +20,12 @@ ShowLessons.prototype.getSuccessResponse = function(response){
         if(!response[i]['lessonDescription']){
             response[i]['lessonDescription']='blahblah';
         }
-
+        response[i]["imgUrl"] = "../../UiLayer/OriginPage/splashTemplateResources/images/img_1.jpg";
         currentElement = '<div id="lesson' +
             response[i]['lessonId'] +
             '" class="col-lg-4 col-md-4 col-sm-6">' +
-            '<a href="' +
-            response[i]['imgUrl'] +
-            '" class="fh5co-project-item image-popup">' +
+            '<a href="#"' +
+            'class="fh5co-project-item image-popup goToDescriptionPage">' +
             '<figure><div class="overlay"><i class="ti-plus"></i></div><img src="' +
             response[i]['imgUrl'] +
             '" alt="Image" class="img-responsive">' +
@@ -34,7 +33,8 @@ ShowLessons.prototype.getSuccessResponse = function(response){
             response[i]['lessonTitle'] +
             '</h2><p>' +
             response[i]['lessonDescription'] +
-            '</p></div></a></div>';
+            '</p></div></a>' +
+            '</div>';
         allElements += currentElement;
         currentElement = '';
     }
