@@ -7,7 +7,8 @@ function ServerInterface(){
 		createCourse: this.serverAddress+'/online-school/course/create',
 		readCourse: this.serverAddress+'/online-school/course/read',
         showLessonsList: this.serverAddress+'/v2/5881ff36250000dc23c9eed0',
-        requestCourseDescription: this.serverAddress+'/v2/588350c5280000f534cbd4c8'
+        requestCourseDescription: this.serverAddress+'/v2/588350c5280000f534cbd4c8',
+        requestUserCoursesList: this.serverAddress+'/v2/588459650f00001a1f31c069'
 	};
 }
 

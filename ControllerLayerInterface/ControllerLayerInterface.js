@@ -1,6 +1,7 @@
 /**
  * Created by Mohammad on 12/2/2016.
  */
+
 function ControllerLayerInterface(){
     this.requestParameters = {};
 }
@@ -12,6 +13,9 @@ ControllerLayerInterface.prototype.setRequestParameters = function(inRequestPara
 ControllerLayerInterface.prototype.executeRequest = function(){
     var requestType = this.requestParameters['requestType'];
     switch (requestType){
+        case 'userCoursesList':
+            this.userCoursesList();
+            break;
         case 'courseDescription':
         case 'lessonDescription':
             this.courseDescription();
@@ -64,8 +68,13 @@ ControllerLayerInterface.prototype.search = function(){
 
 };
 
+ControllerLayerInterface.prototype.userCoursesList = function(){
+    var sAgent = new UserCoursesListRequester(this.requestParameters['inputList']);
+    sAgent.requestUserCoursesList();
+};
+
+
 ControllerLayerInterface.prototype.courseDescription = function(){
-    console.log('we have come here;');
     var describeAgent = new CourseDescriptionRequestor(this.requestParameters['inputList']);
     describeAgent.requestCourseDescription();
 };
