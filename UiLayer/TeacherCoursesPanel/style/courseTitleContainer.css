@@ -1,0 +1,10 @@
+div.course-title-container h4.title-text{
+    margin-top: 0;
+}
+div.course-title-container input#course-title{
+    font-size: large;
+}
+
+div.course-title-container{
+    margin: 3em 0;
+}

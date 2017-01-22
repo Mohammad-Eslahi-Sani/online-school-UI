@@ -1,0 +1,12 @@
+div.session-div{
+    background-color: whitesmoke;
+    border-style: outset;
+    margin: 3em 0;
+    padding: 2em 2em;
+    overflow: auto;
+}
+
+div.session-div span.glyphicon-remove{
+    font-size: small;
+    color:red;
+}

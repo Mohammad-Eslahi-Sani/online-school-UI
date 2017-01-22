@@ -13,6 +13,9 @@ ControllerLayerInterface.prototype.setRequestParameters = function(inRequestPara
 ControllerLayerInterface.prototype.executeRequest = function(){
     var requestType = this.requestParameters['requestType'];
     switch (requestType){
+        case 'getCourseForTeacher':
+            this.getCourseForTeacher();
+            break;
         case 'userCoursesList':
             this.userCoursesList();
             break;
@@ -66,6 +69,11 @@ ControllerLayerInterface.prototype.search = function(){
     var sAgent = new SearchAgent(this.requestParameters['inputList']);
     sAgent.requestSearch();
 
+};
+
+ControllerLayerInterface.prototype.getCourseForTeacher = function(){
+    var sAgent = new GetCourseForTeacher(this.requestParameters['inputList']);
+    sAgent.requestCourseForTeacher();
 };
 
 ControllerLayerInterface.prototype.userCoursesList = function(){

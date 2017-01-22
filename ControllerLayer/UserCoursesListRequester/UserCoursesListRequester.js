@@ -22,10 +22,13 @@ UserCoursesListRequester.prototype.getSuccessResponse = function(response){
     var listLength = response.length;
     var currentElement = '';
     var totalElement = '';
+    totalElement += '<li id="new-course"><a>' +
+        'ояс ло?о' +
+        '</a></li>';
     for(var i=0; i<listLength ; i++){
-        currentElement = '<li id="course' +
+        currentElement = '<li class="course-item" id="course' +
             response[i]['courseId'] +
-            '"><a>' +
+            '"><a class="course-link">' +
             response[i]['courseTitle'] +
             '</a></li>';
         totalElement += currentElement;
@@ -37,6 +40,7 @@ UserCoursesListRequester.prototype.getSuccessResponse = function(response){
     $("#panelbar").kendoPanelBar({
         expandMode: "single"
     });
+    $('div#right-section ul#panelbar ul#user-courses-container a.course-link').on('click',requestCourseInfo);
 };
 
 UserCoursesListRequester.prototype.getErrorResponse = function(response) {

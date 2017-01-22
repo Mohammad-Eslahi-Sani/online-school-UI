@@ -79,6 +79,7 @@
     <script type="text/javascript" src="../../ControllerLayer/ShowLessons/ShowLessons.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/CourseDescriptionRequester/CourseDescriptionRequestor.js"></script>
     <script type="text/javascript" src="../../ControllerLayer/UserCoursesListRequester/UserCoursesListRequester.js"></script>
+    <script type="text/javascript" src="../../ControllerLayer/GetCourseForTeacher/GetCourseForTeacher.js"></script>
     <script type="text/javascript" src="../../ServerInterface/ServerInterface.js"></script>
 
 
@@ -253,138 +254,214 @@
 			<div class="gtco-container">
 				<div class="row">
 					<div class="col-md-12">
-						<!-- left side section -->
-						<div	id="left-section" class="col-md-6 col-md-push-4 animate-box">
-							<div class="row">
-								<h3  id="courses-title">
-									درس های فعال
-								</h3>
+
+                        <link rel="stylesheet" href="../../UiLayer/TeacherCoursesPanel/style/courseContainer.css">
+                        <link rel="stylesheet" href="../../UiLayer/TeacherCoursesPanel/style/courseTitleContainer.css">
+                        <link rel="stylesheet" href="../../UiLayer/TeacherCoursesPanel/style/sessionContainer.css">
+                        <!-- left side section -->
+						<div	id="left-section" class="col-md-9 col-md-push-1 animate-box">
+							<div class="row course-image-container">
+                                <div class="image-div">
+                                    <img id="course-img" src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="200" height="200">
+                                </div>
 							</div>
-							<div id="courses-container" class="">
-								<div class="row courseNum1 course-div">
-									<div class="col-md-2 show-button-div">
-										<button class="k-button show-course" >
-											نمایش
-										</button>
-									</div>
-									<div class="col-md-8 main-div">
-										<div class="row title-row">
-                                        <span>
-                                            آموزش برنامه نویسی به زبان پایتون
+                            <div class="row image-edit-button-container">
+                                <div class="col-md-3 col-md-push-2 image-edit-button">
+                                    <span>
+                                        آپلود عکس جدید
+                                    </span>
+                                    <span class="col col-md-2 glyphicon glyphicon-upload button-like-span"></span>
+                                </div>
+                            </div>
+                            <div class="row course-title-container">
+                                <div class="col col-md-4"> </div>
+                                <div class="col-md-3">
+                                    <button id="course-title-edit" type="button" class="k-button">
+                                        اعمال تغییرات
+                                    </button>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" id="course-title" value="پایتون">
+                                </div>
+                                <div class="col col-md-2">
+                                    <h4 class="title-text">
+                                        عنوان درس:
+                                    </h4>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row course-shortDescription-container">
+                                <div class="row">
+                                    <label for="course-shortDescription">
+                                        توضیح کوتاه
+                                    </label>
+                                </div>
+                                <div class="row">
+                                <textarea class="k-rtl" id="course-shortDescription" cols="150" rows="3">
+                                    آموزش روان برنامه نویسی به زبان پایتون
+                                </textarea>
+                                </div>
+                                <div class="row">
+                                    <button id="course-shortDescription-edit" type="button" class="col-md-2 k-button">
+                                        اعمال تغییرات
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row course-longDescription-container">
+                                <div class="row">
+                                    <label for="course-longDescription">
+                                        توضیح کامل
+                                    </label>
+                                </div>
+                                <div class="row">
+                                <textarea class="col-md-push-1 k-rtl" id="course-longDescription" cols="150" rows="8">
+                                    آموزش روان برنامه نویسی به زبان پایتون
+
+                                    آموزش روان برنامه نویسی به زبان پایتون
+
+                                                                        آموزش روان برنامه نویسی به زبان پایتون
+
+                                                                        آموزش روان برنامه نویسی به زبان پایتون
+
+                                </textarea>
+                                </div>
+                                <div class="row">
+                                    <button id="course-longDescription-edit" type="button" class="col-md-2 k-button">
+                                        اعمال تغییرات
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="row cost-row">
+                                <div class="col-md-6 empty-col">
+
+                                </div>
+
+                                <div class="col-md-6 cost-col">
+                                    <button class="col-md-3" id="course-cost-edit">
+                                        تایید
+                                    </button>
+                                    <span class="col-md-3 course-cost-currency">
+                                        هزار تومان
+                                    </span>
+                                    <input type="number" class="col-md-3" id="course-cost" value="10">
+                                    <h4 class="col-md-3">
+                                        <label for="course-cost">
+                                            قیمت:
+                                        </label>
+                                    </h4>
+                                </div>
+                            </div>
+
+                            <div class="row level-row">
+                                <div class="col-md-6 empty-col">
+                                </div>
+
+                                <div class="col-md-6 level-col">
+                                    <button class="col-md-4" id="course-level-edit">
+                                        تایید
+                                    </button>
+                                    <select class="col-md-4" id="course-level">
+                                        <option value="1">
+                                            آسان
+                                        </option>
+                                        <option value="2">
+                                            متوسط
+                                        </option>
+                                        <option value="3">
+                                            سخت
+                                        </option>
+                                    </select>
+                                    <h4 class="col-md-4">
+                                        <label for="course-level">
+                                            سطح درس
+                                        </label>
+                                    </h4>
+                                </div>
+
+
+
+                            </div>
+
+                            <div id="session0" class="row session-div">
+                                <div class="row session-number">
+                                    <h4>
+                                        شماره جلسه:
+                                        <span id="session-number">
+                                            0
                                         </span>
-										</div>
-										<div class="row author-row">
-                                        <span>
-                                            حاجی وندی
-                                        </span>
-										</div>
-									</div>
-									<div class="col-md-2 image-div">
-										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
-									</div>
+                                    </h4>
+
+                                </div>
+								<div class="row">
+									<h4>
+                                        <label for="session-description">
+                                            توضیح جلسه
+                                        </label>
+                                    </h4>
 
 								</div>
-								<div class="row courseNum1 course-div">
-									<div class="col-md-2 show-button-div">
-										<button class="k-button show-course" >
-											نمایش
-										</button>
-									</div>
-									<div class="col-md-8 main-div">
-										<div class="row title-row">
-                                        <span>
-                                            آموزش برنامه نویسی به زبان پایتون
-                                        </span>
-										</div>
-										<div class="row author-row">
-                                        <span>
-                                            حاجی وندی
-                                        </span>
-										</div>
-									</div>
-									<div class="col-md-2 image-div">
-										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
-									</div>
+								<div class="row">
+                                <textarea class="k-rtl" id="session-description" cols="125" rows="3">
+                                    آشنایی اولیه
+                                </textarea>
+								</div>
+								<div class="row">
+									<button id="session-description-edit" type="button" class="col-md-2 k-button">
+										اعمال تغییرات
+									</button>
+								</div>
+								<div class="row file-list">
+                                    <div id="file-1950" class="file-container">
+                                        <a class="file-link" href="../../UiLayer/StudentCoursesPanel/img/python-logo.png">
+                                            فایل اول
+                                        </a>
+                                        <span class="remove-file glyphicon glyphicon-remove"></span>
+                                    </div>
+									<div id="file-2432" class="file-container">
+                                        <a class="file-link" href="../../UiLayer/StudentCoursesPanel/img/python-logo.png">
+                                            فایل دوم
+                                        </a>
+                                        <span class="remove-file glyphicon glyphicon-remove"></span>
+                                    </div>
 
 								</div>
-								<div class="row courseNum1 course-div">
-									<div class="col-md-2 show-button-div">
-										<button class="k-button show-course" >
-											نمایش
-										</button>
-									</div>
-									<div class="col-md-8 main-div">
-										<div class="row title-row">
-                                        <span>
-                                            آموزش برنامه نویسی به زبان پایتون
-                                        </span>
-										</div>
-										<div class="row author-row">
-                                        <span>
-                                            حاجی وندی
-                                        </span>
-										</div>
-									</div>
-									<div class="col-md-2 image-div">
-										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
-									</div>
+                                <div class="row upload-file">
+                                    <button id="upload-session-file" type="button" class="k-button">
+                                        اضافه کردن فایل جدید
+                                    </button>
+                                </div>
+                            </div>
 
-								</div>
-								<div class="row courseNum1 course-div">
-									<div class="col-md-2 show-button-div">
-										<button class="k-button show-course" >
-											نمایش
-										</button>
-									</div>
-									<div class="col-md-8 main-div">
-										<div class="row title-row">
-                                        <span>
-                                            آموزش برنامه نویسی به زبان پایتون
-                                        </span>
-										</div>
-										<div class="row author-row">
-                                        <span>
-                                            حاجی وندی
-                                        </span>
-										</div>
-									</div>
-									<div class="col-md-2 image-div">
-										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
-									</div>
 
-								</div>
-								<div class="row courseNum1 course-div">
-									<div class="col-md-2 show-button-div">
-										<button class="k-button show-course" >
-											نمایش
-										</button>
-									</div>
-									<div class="col-md-8 main-div">
-										<div class="row title-row">
-                                        <span>
-                                            آموزش برنامه نویسی به زبان پایتون
-                                        </span>
-										</div>
-										<div class="row author-row">
-                                        <span>
-                                            حاجی وندی
-                                        </span>
-										</div>
-									</div>
-									<div class="col-md-2 image-div">
-										<img src="../../UiLayer/StudentCoursesPanel/img/python-logo.png" width="50" height="50">
-									</div>
+                            <div id="new-session" class="row session-div">
+                                <div class="row">
+                                    <label for="new-session-description">
+                                        توضیح جلسه
+                                    </label>
+                                </div>
+                                <div class="row">
+                                <textarea class="k-rtl" id="new-session-description" cols="125" rows="3">
 
-								</div>
+                                </textarea>
+                                </div>
 
-							</div>
+                                <div class="row">
+                                    <button class="col-md-3" id="add-new-session">
+                                        جلسه جدید اضافه شود
+                                    </button>
+                                </div>
+                            </div>
 
 
 						</div>
-
 						<!-- right side section -->
+                        <script type="text/javascript" src="../../UiLayer/TeacherCoursesPanel/js/requestCourseInfo.js"></script>
                         <script type="text/javascript" src="../../UiLayer/UserHeader/js/requestForUserCourses.js"></script>
-						<div class="col-md-2 col-md-push-4 animate-box">
+
+						<div id="right-section" class="col-md-2 col-md-push-1 animate-box">
 							<ul id="panelbar">
 								<li class="k-state-active">
                                     <span class="panel-row-title k-link k-state-selected">
