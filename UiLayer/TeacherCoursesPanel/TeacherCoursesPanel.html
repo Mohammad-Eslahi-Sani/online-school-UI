@@ -63,6 +63,7 @@
 	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../UiLayer/OriginPage/libs/js/jquery.base64.min.js"></script>
 
 	<!--   js classes  -->
     <script type="text/javascript" src="../../ControllerLayerInterface/ControllerLayerInterface.js"></script>
@@ -258,6 +259,11 @@
                         <link rel="stylesheet" href="../../UiLayer/TeacherCoursesPanel/style/courseContainer.css">
                         <link rel="stylesheet" href="../../UiLayer/TeacherCoursesPanel/style/courseTitleContainer.css">
                         <link rel="stylesheet" href="../../UiLayer/TeacherCoursesPanel/style/sessionContainer.css">
+                        <link rel="stylesheet" href="../../UiLayer/TeacherCoursesPanel/style/uploadImg.css">
+
+                        <script type="text/javascript" src="../../UiLayer/TeacherCoursesPanel/js/uploadImg.js"></script>
+
+
                         <!-- left side section -->
 						<div	id="left-section" class="col-md-9 col-md-push-1 animate-box">
 							<div class="row course-image-container">
@@ -266,11 +272,23 @@
                                 </div>
 							</div>
                             <div class="row image-edit-button-container">
-                                <div class="col-md-3 col-md-push-2 image-edit-button">
-                                    <span>
+                                <div class="col-md-3 image-edit-button">
+                                    <button id="bigImage-confirm">
+                                        ارسال عکس
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="file" id="bigImage-input">
+
+                                </div>
+                                <div class="col-md-2 ">
+                                    <label for="bigImage-input">
                                         آپلود عکس جدید
-                                    </span>
-                                    <span class="col col-md-2 glyphicon glyphicon-upload button-like-span"></span>
+                                    </label>
+
+                                </div>
+                                <div class="col-md-4">
+
                                 </div>
                             </div>
                             <div class="row course-title-container">
