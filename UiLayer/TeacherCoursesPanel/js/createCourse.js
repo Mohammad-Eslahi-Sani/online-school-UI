@@ -6,7 +6,7 @@ function createCourse(){
     var grade = $('select#new-course-grade option:selected').val();
 
 
-    var parametersList = [['task','createCourse'],['name',nameInput],['field',passwordInput],
+    var parametersList = [['task','createCourse'],['name',nameInput],['field',fieldInput],
     ['createDate',createDate],['weekCount',weekCount],['grade',grade]];
 
     var requestParameters = {
