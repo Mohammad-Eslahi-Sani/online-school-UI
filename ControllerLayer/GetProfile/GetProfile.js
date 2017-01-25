@@ -12,6 +12,10 @@ GetProfile.prototype.getSuccessResponse = function(response){
 
     console.log('success parse:');
     console.log(response['response']);
+
+    serverAddress = $.cookie('serverAddress');
+    $('img#course-img').attr('src',serverAddress+response['avatar']);
+
 };
 
 GetProfile.prototype.getErrorResponse = function(response){

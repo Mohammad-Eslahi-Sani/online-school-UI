@@ -59,7 +59,7 @@ CourseDescriptionRequestor.prototype.getSuccessResponse = function(response){
 };
 
 CourseDescriptionRequestor.prototype.getErrorResponse = function(response) {
-    alert('Unable to get description from server!');
+    console.log('Unable to get description from server!');
 
 
     console.log('response unparsed for login request');
