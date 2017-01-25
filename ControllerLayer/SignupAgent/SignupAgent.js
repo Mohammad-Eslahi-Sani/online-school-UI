@@ -49,7 +49,7 @@ SignupAgent.prototype.getSuccessResponse = function(response){
 	if(!!response['username'] && !!response['role']){
         if($.cookie('username') == response['username'] && $.cookie('role')==response['role']){
             signupErrorFlag = false;
-            alert(response['username'] + " have successfully been registered as a " + response['role'] );
+            console.log(response['username'] + " have successfully been registered as a " + response['role'] );
         }
     }
 
@@ -57,13 +57,13 @@ SignupAgent.prototype.getSuccessResponse = function(response){
         // $.removeCookie('username',{path:'/'});
         // $.removeCookie('role',{path:'/'});
 
-        alert("Sorry, Error in registering your information in server");
+        console.log("Sorry, Error in registering your information in server");
     }
 
 };
 
 SignupAgent.prototype.getErrorResponse = function(response){
-    alert('Error in sending your information to server');
+    console.log('Error in sending your information to server');
     console.log(response);
 
 };

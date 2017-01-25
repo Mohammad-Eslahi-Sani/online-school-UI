@@ -7,7 +7,7 @@ function CourseCreator(inputFields){
 }
 
 CourseCreator.prototype.getSuccessResponse = function(response){
-    alert('successful response from create course request sent to server:');
+    console.log('successful response from create course request sent to server:');
     console.log(response);
 
     console.log('success parse:');
@@ -15,7 +15,7 @@ CourseCreator.prototype.getSuccessResponse = function(response){
 };
 
 CourseCreator.prototype.getErrorResponse = function(response){
-    alert('error in create course Request :');
+    console.log('error in create course Request :');
     console.log(response);
 
     console.log('error parse:');

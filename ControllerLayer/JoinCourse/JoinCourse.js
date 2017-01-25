@@ -9,7 +9,7 @@ function JoinCourse(inputFields){
 
 
 JoinCourse.prototype.getSuccessResponse = function(response) {
-    alert('successful response from join course request sent to server:');
+    console.log('successful response from join course request sent to server:');
     console.log(response);
 
     console.log('success parse:');
@@ -18,7 +18,7 @@ JoinCourse.prototype.getSuccessResponse = function(response) {
 };
 
 JoinCourse.prototype.getErrorResponse = function(response) {
-    alert('error in join course Request :');
+    console.log('error in join course Request :');
     console.log(response);
 
     console.log('error parse:');

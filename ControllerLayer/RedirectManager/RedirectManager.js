@@ -58,7 +58,7 @@ RedirectManager.prototype.redirectTo = function(destUrl){
             break;
 	}
     if(!destUrl){
-        alert('problem in finding destination page in redirect manager')
+        console.log('problem in finding destination page in redirect manager')
     }
 	for(var i = 0;i<this.parametersList.length;i++){
 		if(i==0 && !!this.parametersList[0]){

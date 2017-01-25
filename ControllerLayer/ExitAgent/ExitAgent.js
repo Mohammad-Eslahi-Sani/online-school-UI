@@ -13,7 +13,7 @@ ExitAgent.prototype.requestExit = function(){
 };
 
 ExitAgent.prototype.getSuccessResponse = function(response){
-    alert('You have been signed out successfully!');
+    console.log('You have been signed out successfully!');
     console.log(response);
 
     if(response['response']=='error'){
@@ -27,6 +27,6 @@ ExitAgent.prototype.getSuccessResponse = function(response){
 };
 
 ExitAgent.prototype.getErrorResponse = function(response) {
-    alert('Unable to exit!');
+    console.log('Unable to exit!');
     console.log(response);
 };

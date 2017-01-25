@@ -12,9 +12,9 @@ function editProfile(){
 //        var nationalNumberInput = $('.nationalNumber-row .nationalNumberInput').val();
     var nationalNumberInput = $('input#profile-nationalNumber').val();
 //        var fieldInput = $('.field-row .fieldInput').val();
-    var fieldInput = defaultValue;
+    var fieldInput = 'computerScience';
 //        var gradeInput = $('.grade-row .gradeInput').val();
-    var gradeInput = defaultValue;
+    var gradeInput = 'bachelor';
         var emailInput = $('input#profile-email').val();
 //    var emailInput = defaultValue;
 //        var phoneNumberInput = $('.phoneNumber-row .phoneNumberInput').val();

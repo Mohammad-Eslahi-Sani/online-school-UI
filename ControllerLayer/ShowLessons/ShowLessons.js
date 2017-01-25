@@ -46,7 +46,7 @@ ShowLessons.prototype.getSuccessResponse = function(response){
 };
 
 ShowLessons.prototype.getErrorResponse = function(response){
-    alert('error in show lessons Request :');
+    console.log('error in show lessons Request :');
     console.log(response);
 
     console.log('error parse:');

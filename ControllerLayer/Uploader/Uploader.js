@@ -16,7 +16,7 @@ Uploader.prototype.requestUpload = function(){
 };
 
 Uploader.prototype.getSuccessResponse = function(response){
-    alert('Upload has been successful');
+    console.log('Upload has been successful');
     console.log(response['sessionId']);
     console.log(response['role']);
 

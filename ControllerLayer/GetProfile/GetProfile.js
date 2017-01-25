@@ -7,7 +7,7 @@ function GetProfile(inputFields){
 }
 
 GetProfile.prototype.getSuccessResponse = function(response){
-    alert('successful response from get profile request sent to server:');
+    console.log('successful response from get profile request sent to server:');
     console.log(response);
 
     console.log('success parse:');
@@ -23,7 +23,7 @@ GetProfile.prototype.getSuccessResponse = function(response){
     $('select#profile-role').val(response['role']);
     $('input#profile-phoneNumber').val(response['phoneNumber']);
     $('input#profile-nationalNumber').val(response['nationalNumber']);
-    $('input#profile-birthDate').val(response['birthDate'].getFullYear());
+    $('input#profile-birthDate').val(response['birthDate'].getFullYear()    );
 
       
 };
