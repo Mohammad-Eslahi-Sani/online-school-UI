@@ -21,39 +21,39 @@ CourseDescriptionRequestor.prototype.getSuccessResponse = function(response){
     console.log('success response received for course description request from server');
     //console.log(response);
 
-    if(!!response['bigImgUrl']){
-        $('div.course-info-container img#course-bigImage').attr("src",response['bigImgUrl']);
+    if(!!response['imagePath']){
+        $('div.course-info-container img#course-bigImage').attr("src",response['imagePath']);
     }
-    if(!!response['lessonTitle']){
-        $('div.course-info-container h2#course-title')[0].innerHTML = response['lessonTitle'];
+    if(!!response['name']){
+        $('div.course-info-container h2#course-title')[0].innerHTML = response['name'];
     }
-    if(!!response['lessonLongDescription']){
-        $('div.course-info-container p#course-description')[0].innerHTML = response['lessonLongDescription'];
+    if(!!response['description']){
+        $('div.course-info-container p#course-description')[0].innerHTML = response['description'];
     }
-    if(!!response['teacherName']){
-        $('div.course-info-container span#course-author')[0].innerHTML = response['teacherName'];
+    if(!!response['teacher']){
+        $('div.course-info-container span#course-author')[0].innerHTML = response['teacher'];
     }
     if(!!response['teacherAvatarUrl']){
         $('div.course-info-container img#author-image').attr("src",response['teacherAvatarUrl']);
     }
-    if(!!response['sessionCounts']){
-        $('div.course-info-container span#course-time')[0].innerHTML = response['sessionCounts'];
+    if(!!response['weekCount']){
+        $('div.course-info-container span#course-time')[0].innerHTML = response['weekCount'];
     }
-    if(!!response['courseLevel']){
-        var levelText = "ãÊæÓØ";
-        if(response['courseLevel']==1){
-            levelText = "ÂÓÇä"
+    if(!!response['grade']){
+        var levelText = "Ø¢Ø³Ø§Ù†";
+        if(response['courseLevel']==0){
+            levelText = "Ú©Ø§Ø±Ø´Ù†Ø§Ø³ÛŒ"
+        }
+        else if(response['courseLevel']==1){
+            levelText = "Ú©Ø§Ø±Ø´Ù†Ø§Ø³ÛŒ Ø§Ø±Ø´Ø¯"
         }
         else if(response['courseLevel']==2){
-            levelText = "ãÊæÓØ"
-        }
-        else if(response['courseLevel']==3){
-            levelText = "ÓÎÊ"
+            levelText = "Ø¯Ú©ØªØ±ÛŒ"
         }
         $('div.course-info-container span#course-level')[0].innerHTML = levelText;
     }
-    if(!!response['courseCost']){
-        $('div.course-info-container span#course-price')[0].innerHTML = response['courseCost'];
+    if(!!response['balance']){
+        $('div.course-info-container span#course-price')[0].innerHTML = response['balance'];
     }
 
 };
