@@ -63,7 +63,7 @@ ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
     }
 	
 
-    if(requestUrl=='requestCourseDescription'){
+    if(requestUrl==requestCourseDescription){
         requestUrl+= requestObj['id'];
         requestObj = {};
     }
