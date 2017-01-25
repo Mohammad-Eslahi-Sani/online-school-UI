@@ -30,7 +30,7 @@ ShowLessons.prototype.getSuccessResponse = function(response){
             '" class="fh5co-project-item image-popup goToDescriptionPage">' +
             '<figure><div class="overlay"><i class="ti-plus"></i></div><img src="' +
             serverAdd+response[i]['imagePath'] +
-            '" alt="Image" class="img-responsive">' +
+            '" alt="Image" height="150" width="150" class="img-responsive">' +
             '</figure><div class="fh5co-text"><h2>' +
             response[i]['name'] +
             '</h2><p>' +
