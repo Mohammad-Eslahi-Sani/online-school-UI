@@ -20,13 +20,13 @@ function getUrlParameter(sParam) {
 function requestCourseDescription(){
     var courseId = 1;
 
-    cookieId = getUrlParameter('lessonId');
-    if(!!cookieId){
+    courseId = getUrlParameter('lessonId');
+    if(!!courseId){
         courseId = 1;
     }
+    console.log('courseId: '+courseId)
 
-
-    var parametersList = [['task','requestCourseDescription'],['courseId',courseId]];
+    var parametersList = [['task','requestCourseDescription'],['id',courseId]];
     var requestParameters = {
         requestType:'courseDescription',
         inputList:parametersList
