@@ -1,0 +1,31 @@
+.profile-form-container{
+	padding-top: 2em;
+	border-style: outset;
+	background-color: white;
+}
+
+.profile-form-container .right-column input{
+	float: left;
+}
+
+.profile-form-container input,
+.profile-form-container select
+{
+	font-size: large;
+	padding: 0.2em 0.2em 0 0;
+}
+
+.profile-form-container select{
+	max-width: 50%;
+	min-width: 50%;
+
+}
+
+.profile-form-container .row{
+	margin-bottom: 2em;
+}
+
+.course-image-container{
+	margin-bottom: 2em;
+
+}

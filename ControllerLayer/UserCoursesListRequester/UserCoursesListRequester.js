@@ -22,9 +22,9 @@ UserCoursesListRequester.prototype.getSuccessResponse = function(response){
     var listLength = response.length;
     var currentElement = '';
     var totalElement = '';
-    totalElement += '<li id="new-course"><a>' +
-        '��� ��?�' +
-        '</a></li>';
+    /*totalElement += '<li id="new-course"><a>' +
+        'ایجاد درس جدید' +
+        '</a></li>';*/
     for(var i=0; i<listLength ; i++){
         currentElement = '<li class="course-item" id="course' +
             response[i]['courseId'] +

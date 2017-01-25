@@ -1,0 +1,11 @@
+div#createCourse div.create-course-form-container{
+     margin: 0 3em;
+}
+
+div#createCourse div.create-course-form-container input#create-course-confirm{
+    float:left;
+}
+
+div#createCourse div.create-course-form-container select{
+	width: 50%;
+}

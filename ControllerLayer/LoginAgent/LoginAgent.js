@@ -52,7 +52,7 @@ LoginAgent.prototype.getSuccessResponse = function(response){
 };
 
 LoginAgent.prototype.getErrorResponse = function(response) {
-    console.log('Unable to login!');
+    alert('لاگین انجام نشد. نام کاربری و یا رمز عبور اشتباه است.');
 
 
     console.log('response unparsed for login request');

@@ -1,6 +1,10 @@
 body {
-    background-image: url('../../../UiLayer/OriginPage/style/images/laptop-background.jpg');
+    background-image: url('../../../UiLayer/OriginPage/src/background3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+header{
+    background-image: url("../../../UiLayer/OriginPage/src/header-wallpaper.jpg") !important;
 }

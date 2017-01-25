@@ -1,20 +1,53 @@
 function ServerInterface(){
 	this.serverAddress = 'http://www.mocky.io';
+    this.schoolServer = 'http://172.17.242.46:8081/online-school';
 	this.urlDict = {
-		login : this.serverAddress+'/v2/588231012800001a06cbd424',
-		exit : this.serverAddress+'/online-school/signout',
-		signup: this.serverAddress+'/v2/58824410280000ff08cbd437',
-		createCourse: this.serverAddress+'/online-school/course/create',
-		readCourse: this.serverAddress+'/online-school/course/read',
-        showLessonsList: this.serverAddress+'/v2/5881ff36250000dc23c9eed0',
-        requestCourseDescription: this.serverAddress+'/v2/588350c5280000f534cbd4c8',
-        requestUserCoursesList: this.serverAddress+'/v2/588459650f00001a1f31c069',
-        getCourseForTeacher: this.serverAddress+'/v2/588512040f00004210ff6504'
+		// login : this.serverAddress+'/v2/588231012800001a06cbd424',
+        login : this.schoolServer+'/login',
+
+		// exit : this.serverAddress+'/online-school/signout',
+        exit : this.schoolServer+'/signout',
+		
+        // signup: this.serverAddress+'/v2/58824410280000ff08cbd437',
+        signup: this.schoolServer+'/signup',
+		
+        // createCourse: this.serverAddress+'/online-school/course/create',
+        createCourse: this.schoolServer+'/course/create',
+		
+        // readCourse: this.serverAddress+'/online-school/course/read',
+        readCourse: this.schoolServer+'/course/read',
+        
+        // showLessonsList: this.serverAddress+'/v2/5881ff36250000dc23c9eed0',
+        showLessonsList: this.schoolServer+'/course/read',
+        
+        // requestCourseDescription: this.serverAddress+'/v2/588350c5280000f534cbd4c8',
+        requestCourseDescription: this.schoolServer+'/v2/588350c5280000f534cbd4c8',
+        
+        // requestUserCoursesList: this.serverAddress+'/v2/588459650f00001a1f31c069',
+        requestUserCoursesList: this.schoolServer+'/v2/588459650f00001a1f31c069',
+        
+        // getCourseForTeacher: this.serverAddress+'/v2/588512040f00004210ff6504',
+        getCourseForTeacher: this.schoolServer+'/v2/588512040f00004210ff6504',
+        
+        upload:this.schoolServer+'/online-school/rest/upload',
+        // upload:this.schoolServer+'/online-school/rest/upload',
+
+
+        loadProfile:this.schoolServer+'/online-school/membership/profile'
+        // loadProfile:this.schoolServer+'/online-school/membership/profile'
+
 	};
 }
 
 ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
-	var requestObj = {};
+	var cookieOption = {
+        path: '/',
+        expires:1
+    };
+    $.cookie('serverAddress',this.schoolServer,cookieOption);
+
+    
+    var requestObj = {};
 	var requestUrl; 
 	for(var i=0 ; i < request.length ; i++){
 		if(request[i][0]=='task'){
@@ -35,7 +68,7 @@ ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
     console.log(requestObj);
     $.ajax({
         url: requestUrl,
-        dataType   : 'jsonp',
+        dataType   : 'json',
         contentType: 'application/json;charset=utf8',
         type: 'POST',
         data: requestObj,

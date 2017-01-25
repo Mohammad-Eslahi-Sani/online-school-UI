@@ -42,7 +42,7 @@ SignupAgent.prototype.requestSignup = function(){
 };
 
 SignupAgent.prototype.getSuccessResponse = function(response){
-    console.log('response of signup request received from server:');
+    console.log('response of registering your information received from server:');
     console.log(response);
 
     var signupErrorFlag = true;
@@ -54,16 +54,16 @@ SignupAgent.prototype.getSuccessResponse = function(response){
     }
 
     if(signupErrorFlag){
-        $.removeCookie('username',{path:'/'});
-        $.removeCookie('role',{path:'/'});
+        // $.removeCookie('username',{path:'/'});
+        // $.removeCookie('role',{path:'/'});
 
-        alert("Sorry, Error in registering you in server");
+        alert("Sorry, Error in registering your information in server");
     }
 
 };
 
 SignupAgent.prototype.getErrorResponse = function(response){
-    alert('Error in sending signup Request to server');
+    alert('Error in sending your information to server');
     console.log(response);
 
 };

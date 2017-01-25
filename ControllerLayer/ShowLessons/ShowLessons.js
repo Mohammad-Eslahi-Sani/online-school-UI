@@ -15,24 +15,25 @@ ShowLessons.prototype.getSuccessResponse = function(response){
     var showLessonsDiv = $('div.lessons-container div#ShowLessonsDiv');
     var allElements = '';
     var currentElement = '';
+    var serverAdd =$.cookie('serverAddress'); 
 
     for(var i=0;i<lessonsListLength;i++){
-        if(!response[i]['lessonDescription']){
-            response[i]['lessonDescription']='blahblah';
+        if(!response[i]['description']){
+            response[i]['description']='blahblah';
         }
         response[i]["imgUrl"] = "../../UiLayer/OriginPage/splashTemplateResources/images/img_1.jpg";
         currentElement = '<div id="lesson' +
-            response[i]['lessonId'] +
+            response[i]['id'] +
             '" class="col-lg-4 col-md-4 col-sm-6">' +
             '<a href="#"' +
             'class="fh5co-project-item image-popup goToDescriptionPage">' +
             '<figure><div class="overlay"><i class="ti-plus"></i></div><img src="' +
-            response[i]['imgUrl'] +
+            serverAdd+response[i]['imagePath'] +
             '" alt="Image" class="img-responsive">' +
             '</figure><div class="fh5co-text"><h2>' +
-            response[i]['lessonTitle'] +
+            response[i]['name'] +
             '</h2><p>' +
-            response[i]['lessonDescription'] +
+            response[i]['description'] +
             '</p></div></a>' +
             '</div>';
         allElements += currentElement;

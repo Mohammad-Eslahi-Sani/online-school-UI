@@ -13,6 +13,12 @@ ControllerLayerInterface.prototype.setRequestParameters = function(inRequestPara
 ControllerLayerInterface.prototype.executeRequest = function(){
     var requestType = this.requestParameters['requestType'];
     switch (requestType){
+        case 'loadProfile':
+            this.loadProfile();
+            break;
+        case 'upload':
+            this.upload();
+            break;
         case 'getCourseForTeacher':
             this.getCourseForTeacher();
             break;
@@ -61,6 +67,11 @@ ControllerLayerInterface.prototype.executeRequest = function(){
 };
 
 ControllerLayerInterface.prototype.redirect = function(){
+    var uploaderObj = new Uploader();
+    uploaderObj.requestUpload(this.requestParameters['inputList']);
+};
+
+ControllerLayerInterface.prototype.redirect = function(){
     var redirectObj = new RedirectManager();
     redirectObj.redirectTo(this.requestParameters['redirectUrl']);
 };
@@ -69,6 +80,11 @@ ControllerLayerInterface.prototype.search = function(){
     var sAgent = new SearchAgent(this.requestParameters['inputList']);
     sAgent.requestSearch();
 
+};
+
+ControllerLayerInterface.prototype.loadProfile = function(){
+    var sAgent = new ProfileLoader(this.requestParameters['inputList']);
+    sAgent.requestProfile();
 };
 
 ControllerLayerInterface.prototype.getCourseForTeacher = function(){
