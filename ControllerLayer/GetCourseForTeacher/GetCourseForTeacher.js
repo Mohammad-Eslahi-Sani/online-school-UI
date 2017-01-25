@@ -18,15 +18,16 @@ GetCourseForTeacher.prototype.getSuccessResponse = function(response){
     console.log('success response received for teacher course info request');
     console.log(response);
 
-    $('div#left-section div.image-div img#course-img').attr('src',response['bigImgUrl']);
-    $('div#left-section div.course-title-container input#course-title:text').val(response['courseTitle']);
+    var serverAddress = $.cookie('serverAddress');
+    $('div#left-section div.image-div img#course-img').attr('src',serverAddress+response['imagePath']);
+    $('div#left-section div.course-title-container input#course-title:text').val(response['name']);
     $('div#left-section div.course-shortDescription-container textarea#course-shortDescription')[0].innerHTML
-        = response['courseShortDescription'];
+        = '';
     $('div#left-section div.course-longDescription-container textarea#course-longDescription')[0].innerHTML
-        = response['courseLongDescription'];
+        = response['description'];
 
-    $('div#left-section div.cost-row input#course-cost').val(response['courseCost']);
-    $('div#left-section div.level-row select#course-level').val(response['courseLevel']);
+    $('div#left-section div.cost-row input#course-cost').val(response['balance']);
+    $('div#left-section div.level-row select#course-level').val(response['grade']);
 
 
 
@@ -42,15 +43,15 @@ GetCourseForTeacher.prototype.getSuccessResponse = function(response){
             sessionsList[i]['sessionNumber'] +
             '" class="row session-div">' +
             '<div class="row session-number"><h4>' +
-            'ÔãÇÑå ÌáÓå:' +
+            'Ø´Ù…Ø§Ø±Ù‡ Ø¬Ù„Ø³Ù‡:' +
             '<span id="session-number">' +
             sessionsList[i]['sessionNumber'] +
             '</span></h4></div><div class="row"><h4><label for="session-description">' +
-            ' ÊæÖ?Í ÌáÓå' +
+            ' ØªÙˆØ¶ÛŒØ­ Ø¬Ù„Ø³Ù‡' +
             '</label></h4></div><div class="row"><textarea class="k-rtl" id="session-description" cols="125" rows="3">' +
             sessionsList[i]['sessionText'] +
             '</textarea></div><div class="row"><button id="session-description-edit" type="button" class="col-md-2 k-button">' +
-            'ÇÚãÇá ÊÛ??ÑÇÊ' +
+            'Ø§Ø¹Ù…Ù„Ø§ ØªØºÛŒÛŒØ±' +
             '</button></div><div class="row file-list">';
 
         fileList = sessionsList[i]['sessionFilesList'];
@@ -69,7 +70,7 @@ GetCourseForTeacher.prototype.getSuccessResponse = function(response){
         currentElement +=
             '</div>' +
             '<div class="row upload-file"><button id="upload-session-file" type="button" class="k-button">' +
-            'ÇÖÇİå ˜ÑÏä İÇ?á ÌÏ?Ï' +
+            'Ø§Ø¶Ø§ÙÙ‡ Ú©Ø±Ø¯Ù† ÙØ§ÛŒÙ„' +
             '</button></div></div>';
 
         totalElement += currentElement;
