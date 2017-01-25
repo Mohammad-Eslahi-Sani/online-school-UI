@@ -3,6 +3,7 @@
  */
 
 function goToDescriptionPage(){
+    alert('click detected');
     var parametersList = [];
     var requestParameters = {
         requestType:'redirection',
@@ -13,7 +14,7 @@ function goToDescriptionPage(){
         path: '/',
         expires:1
     };
-    var lessonId = $(this).parent().attr('id');
+    var lessonId = $(this).attr('id');
     lessonId = lessonId.slice(6);       // lessonId example : lesson1023  --> 1023
     $.cookie('courseId',lessonId,cookieOption);
     ControllerInterfaceObj.setRequestParameters(requestParameters);

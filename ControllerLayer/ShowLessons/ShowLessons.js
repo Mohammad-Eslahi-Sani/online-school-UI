@@ -24,9 +24,10 @@ ShowLessons.prototype.getSuccessResponse = function(response){
         response[i]["imgUrl"] = "../../UiLayer/OriginPage/splashTemplateResources/images/img_1.jpg";
         currentElement = '<div id="lesson' +
             response[i]['id'] +
-            '" class="col-lg-4 col-md-4 col-sm-6">' +
-            '<a href="#"' +
-            'class="fh5co-project-item image-popup goToDescriptionPage">' +
+            '" class="col-lg-4 col-md-4 col-sm-6 lesson-div">' +
+            '<a href="../../UiLayer/CourseDescription/CourseDescription.html?lessonId='+
+            response[i]['id']+
+            '" class="fh5co-project-item image-popup goToDescriptionPage">' +
             '<figure><div class="overlay"><i class="ti-plus"></i></div><img src="' +
             serverAdd+response[i]['imagePath'] +
             '" alt="Image" class="img-responsive">' +
@@ -39,6 +40,7 @@ ShowLessons.prototype.getSuccessResponse = function(response){
         allElements += currentElement;
         currentElement = '';
     }
+    $('a.goToDescriptionPage').on('click',goToDescriptionPage);
 
     $(allElements).appendTo(showLessonsDiv);
 };
