@@ -14,8 +14,18 @@ GetProfile.prototype.getSuccessResponse = function(response){
     console.log(response['response']);
 
     serverAddress = $.cookie('serverAddress');
-    $('img#course-img').attr('src',serverAddress+response['avatar']);
+    $('img#course-img').attr(serverAddress+response['avatar']);
+  $('input#profile-name').val(response['name']);
+    $('input#profile-family').val(response['family']);
+    $('input#profile-username').val(response['username']);
+    $('input#profile-password').val(response['password']);
+    $('input#profile-email').val(response['email']);
+    $('select#profile-role').val(response['role']);
+    $('input#profile-phoneNumber').val(response['phoneNumber']);
+    $('input#profile-nationalNumber').val(response['nationalNumber']);
+    $('input#profile-birthDate').val(response['birthDate'].getFullYear());
 
+      
 };
 
 GetProfile.prototype.getErrorResponse = function(response){
