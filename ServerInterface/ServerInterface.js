@@ -21,7 +21,7 @@ function ServerInterface(){
         showLessonsList: this.schoolServer+'/course/read',
         
         // requestCourseDescription: this.serverAddress+'/v2/588350c5280000f534cbd4c8',
-        requestCourseDescription: this.schoolServer+'/course/course?id=',
+        requestCourseDescription: this.schoolServer+'/course/course',
         
         // requestUserCoursesList: this.serverAddress+'/v2/588459650f00001a1f31c069',
         requestUserCoursesList: this.schoolServer+'/v2/588459650f00001a1f31c069',
@@ -63,10 +63,6 @@ ServerInterface.prototype.doRequest = function(request,sFunc,eFunc){
     }
 	
 
-    if(requestUrl==requestCourseDescription){
-        requestUrl+= requestObj['id'];
-        requestObj = {};
-    }
     console.log('ajax is starting');
 	console.log(requestObj);
 	requestObj = JSON.stringify(requestObj);
