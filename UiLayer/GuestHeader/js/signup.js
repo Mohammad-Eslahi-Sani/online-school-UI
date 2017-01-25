@@ -17,9 +17,9 @@ function signUpConfirmListener(){
 //        var nationalNumberInput = $('.nationalNumber-row .nationalNumberInput').val();
     var nationalNumberInput = defaultValue;
 //        var fieldInput = $('.field-row .fieldInput').val();
-    var fieldInput = defaultValue;
+    var fieldInput = 'computerScience';
 //        var gradeInput = $('.grade-row .gradeInput').val();
-    var gradeInput = defaultValue;
+    var gradeInput = 'bachelor';
         var emailInput = $('input#signUp-email').val();
 //    var emailInput = defaultValue;
 //        var phoneNumberInput = $('.phoneNumber-row .phoneNumberInput').val();
