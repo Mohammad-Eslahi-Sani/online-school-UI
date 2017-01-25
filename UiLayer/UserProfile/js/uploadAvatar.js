@@ -9,8 +9,8 @@ $(document).ready(function(){
     $("#bigImage-input").kendoUpload({
         multiple: false,
         async: {
-            "saveUrl": "http://172.17.242.98:8081/online-school/rest/upload?type=logo",
-            "removeUrl": "http://172.17.242.98:8081/online-school/",
+            "saveUrl": "http://localhost:8081/online-school/rest/upload?type=logo",
+            "removeUrl": "http://localhost:8081/online-school/",
             "autoUpload": false
         },
         "localization": {
