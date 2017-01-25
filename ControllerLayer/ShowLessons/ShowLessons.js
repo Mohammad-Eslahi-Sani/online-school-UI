@@ -28,9 +28,9 @@ ShowLessons.prototype.getSuccessResponse = function(response){
             '<a href="../../UiLayer/CourseDescription/CourseDescription.html?lessonId='+
             response[i]['id']+
             '" class="fh5co-project-item image-popup goToDescriptionPage">' +
-            '<figure><div class="overlay"><i class="ti-plus"></i></div><img src="' +
+            '<figure max-width="200" max-height="200" ><div class="overlay"><i class="ti-plus"></i></div><img src="' +
             serverAdd+response[i]['imagePath'] +
-            '" alt="Image" height="150" width="150" class="img-responsive">' +
+            '" alt="Image" class="img-responsive">' +
             '</figure><div class="fh5co-text"><h2>' +
             response[i]['name'] +
             '</h2><p>' +

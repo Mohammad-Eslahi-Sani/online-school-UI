@@ -15,7 +15,7 @@ function signUpConfirmListener(){
 //        var familyInput = $('.family-row .familyInput').val();
     var familyInput = defaultValue;
 //        var nationalNumberInput = $('.nationalNumber-row .nationalNumberInput').val();
-    var nationalNumberInput = defaultValue;
+    var nationalNumberInput = 111;
 //        var fieldInput = $('.field-row .fieldInput').val();
     var fieldInput = 'computerScience';
 //        var gradeInput = $('.grade-row .gradeInput').val();
@@ -23,7 +23,7 @@ function signUpConfirmListener(){
         var emailInput = $('input#signUp-email').val();
 //    var emailInput = defaultValue;
 //        var phoneNumberInput = $('.phoneNumber-row .phoneNumberInput').val();
-    var phoneNumberInput = defaultValue;
+    var phoneNumberInput = 111;
 
     var parametersAry =[
         ['task','signup'],
